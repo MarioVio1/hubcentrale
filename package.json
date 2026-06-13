@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "for s in multimedia cosmetica libri lunastar manga pokemon livetv; do npx prisma generate --schema=prisma/$s/schema.prisma; done",
+    "vercel-build": "for s in multimedia cosmetica libri lunastar manga pokemon livetv; do npx prisma generate --schema=prisma/$s/schema.prisma; done && next build"
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
