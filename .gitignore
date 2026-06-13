@@ -1,9 +1,11 @@
 # Dependencies
 node_modules/
+apps/*/node_modules/
 bun.lock
 
 # Next.js
 .next/
+apps/*/.next/
 out/
 
 # Environment

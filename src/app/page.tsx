@@ -1,11 +1,11 @@
 const sections = [
-  { name: "Multimedia", sub: "CheRoba", href: "/multimedia", emoji: "🎬", color: "from-blue-900/40 to-blue-700/20" },
-  { name: "Cosmetica", sub: "GlowAI", href: "/cosmetica", emoji: "💄", color: "from-pink-900/40 to-purple-700/20" },
-  { name: "LibriFree", sub: "Libreria free", href: "/libri", emoji: "📚", color: "from-green-900/40 to-green-700/20" },
-  { name: "LunaStar", sub: "Game Hub", href: "/lunastar", emoji: "🎮", color: "from-purple-900/40 to-indigo-700/20" },
-  { name: "Manga", sub: "Mangaflow", href: "/manga", emoji: "📖", color: "from-red-900/40 to-orange-700/20" },
-  { name: "Pokémon", sub: "Veneto", href: "/pokemon", emoji: "⚡", color: "from-teal-900/40 to-cyan-700/20" },
-  { name: "LiveTV", sub: "DAMI TV", href: "/livetv", emoji: "📺", color: "from-yellow-900/40 to-amber-700/20" },
+  { name: "Multimedia", sub: "CheRoba", href: "https://multimedia.vercel.app", emoji: "🎬", color: "from-blue-900/40 to-blue-700/20" },
+  { name: "Cosmetica", sub: "GlowAI", href: "https://cosmetica.vercel.app", emoji: "💄", color: "from-pink-900/40 to-purple-700/20" },
+  { name: "LibriFree", sub: "Libreria free", href: "https://libri.vercel.app", emoji: "📚", color: "from-green-900/40 to-green-700/20" },
+  { name: "LunaStar", sub: "Game Hub", href: "https://lunastar.vercel.app", emoji: "🎮", color: "from-purple-900/40 to-indigo-700/20" },
+  { name: "Manga", sub: "Mangaflow", href: "https://manga.vercel.app", emoji: "📖", color: "from-red-900/40 to-orange-700/20" },
+  { name: "Pokémon", sub: "Veneto", href: "https://pokemon.vercel.app", emoji: "⚡", color: "from-teal-900/40 to-cyan-700/20" },
+  { name: "LiveTV", sub: "DAMI TV", href: "https://livetv.vercel.app", emoji: "📺", color: "from-yellow-900/40 to-amber-700/20" },
 ];
 
 export default function HomePage() {
@@ -18,8 +18,10 @@ export default function HomePage() {
       <div className="flex flex-wrap justify-center gap-8 max-w-[900px]">
         {sections.map((s) => (
           <a
-            key={s.href}
+            key={s.name}
             href={s.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex flex-col items-center no-underline text-[#808080] hover:text-white transition-colors w-[120px] md:w-[120px] sm:w-[90px] group"
           >
             <div

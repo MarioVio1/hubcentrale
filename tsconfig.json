@@ -24,30 +24,7 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@multimedia/*": [
-        "./src/app/(sections)/multimedia/*"
-      ],
-      "@cosmetica/*": [
-        "./src/app/(sections)/cosmetica/*"
-      ],
-      "@libri/*": [
-        "./src/app/(sections)/libri/*"
-      ],
-      "@lunastar/*": [
-        "./src/app/(sections)/lunastar/*"
-      ],
-      "@manga/*": [
-        "./src/app/(sections)/manga/*"
-      ],
-      "@pokemon/*": [
-        "./src/app/(sections)/pokemon/*"
-      ],
-      "@livetv/*": [
-        "./src/app/(sections)/livetv/*"
-      ]
+      "@/*": ["./src/*"]
     }
   },
   "include": [

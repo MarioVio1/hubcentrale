@@ -1,0 +1,228 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String             @id @default(cuid())
+  email         String             @unique
+  name          String?
+  password      String
+  avatar        String?
+  skinType      String?
+  skinConcerns  String?
+  hairType      String?
+  hairConcerns  String?
+  age           Int?
+  climate       String?
+  country       String?
+  createdAt     DateTime           @default(now())
+  updatedAt     DateTime           @updatedAt
+  comments      CommunityComment[]
+  posts         CommunityPost[]
+  favorites     Favorite[]
+  reviews       Review[]
+  routines      Routine[]
+  searchHistory SearchHistory[]
+  usedProducts  UsedProduct[]
+}
+
+model Product {
+  id              String        @id @default(cuid())
+  productId       String        @unique // Unique product identifier (e.g., "COSRX-SNAIL-96-ESSENCE")
+  name            String
+  brand           String
+  brandCountry    String?
+  category        String        @default("skincare") // skincare, haircare, bodycare, makeup
+  productType     String        // serum, cleanser, toner, cream, spf, etc.
+  description     String?
+  ingredients     String        // Full ingredient list (comma-separated)
+  keyIngredients  String?       // Key active ingredients
+  skinTypes       String?       // Compatible skin types (comma-separated)
+  skinConcerns    String?       // Targeted concerns (comma-separated)
+  hairTypes       String?
+  hairConcerns    String?
+  price           Float?
+  currency        String        @default("EUR")
+  size            String?
+  imageUrl        String?       // Main product image URL
+  imageUrlAlt     String?       // Alternative image URL
+  rating          Float         @default(0)
+  reviewCount     Int           @default(0)
+  isKorean        Boolean       @default(false)
+  isVegan         Boolean       @default(false)
+  isCrueltyFree   Boolean       @default(false)
+  // Shop links
+  officialUrl     String?
+  redcareUrl      String?
+  dfarmaUrl       String?
+  sephoraUrl      String?
+  amazonUrl       String?
+  yesStyleUrl     String?
+  shopUrls        String?       // JSON string with additional shop links
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  favorites       Favorite[]
+  reviews         Review[]
+  routineItems    RoutineItem[]
+  usedProducts    UsedProduct[]
+
+  @@index([productId])
+  @@index([brand])
+  @@index([category])
+  @@index([productType])
+  @@index([isKorean])
+}
+
+model Review {
+  id             String   @id @default(cuid())
+  userId         String
+  productId      String
+  rating         Int
+  title          String?
+  content        String
+  skinType       String?
+  age            Int?
+  concernTreated String?
+  usageDuration  String?
+  beforeImage    String?
+  afterImage     String?
+  verified       Boolean  @default(false)
+  helpful        Int      @default(0)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  product        Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+  @@index([userId])
+}
+
+model Favorite {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  createdAt DateTime @default(now())
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+  @@index([userId])
+  @@index([productId])
+}
+
+model UsedProduct {
+  id        String   @id @default(cuid())
+  userId    String
+  productId String
+  usedAt    DateTime @default(now())
+  notes     String?
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, productId])
+}
+
+model Routine {
+  id          String        @id @default(cuid())
+  userId      String
+  name        String
+  description String?
+  skinType    String?
+  isPublic    Boolean       @default(false)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  items       RoutineItem[]
+
+  @@index([userId])
+}
+
+model RoutineItem {
+  id         String   @id @default(cuid())
+  routineId  String
+  productId  String?
+  customName String?
+  stepOrder  Int
+  timeOfDay  String
+  notes      String?
+  product    Product? @relation(fields: [productId], references: [id])
+  routine    Routine  @relation(fields: [routineId], references: [id], onDelete: Cascade)
+
+  @@index([routineId])
+}
+
+model SearchHistory {
+  id         String   @id @default(cuid())
+  userId     String
+  query      String
+  searchType String
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Ingredient {
+  id            String   @id @default(cuid())
+  name          String   @unique
+  inciName      String?
+  description   String?
+  benefits      String?
+  concerns      String?
+  suitableFor   String?
+  avoidWith     String?
+  safetyRating  Int?
+  isVegan       Boolean  @default(true)
+  pregnancySafe Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model CommunityPost {
+  id        String             @id @default(cuid())
+  userId    String
+  title     String
+  content   String
+  category  String
+  images    String?
+  likes     Int                @default(0)
+  views     Int                @default(0)
+  isPinned  Boolean            @default(false)
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+  comments  CommunityComment[]
+  user      User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([category])
+}
+
+model CommunityComment {
+  id        String        @id @default(cuid())
+  postId    String
+  userId    String
+  content   String
+  parentId  String?
+  likes     Int           @default(0)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post      CommunityPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@index([postId])
+  @@index([userId])
+}
+
+model ChatSession {
+  id        String   @id @default(cuid())
+  userId    String?
+  messages  String
+  context   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

@@ -1,0 +1,809 @@
+{
+  "code": 200,
+  "data": {
+    "description": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.",
+    "external": {
+      "canonical": {
+        "https://huggingface.co/spaces/Prendilo/EasyFlix/tree/main": {}
+      },
+      "modulepreload": {
+        "https://huggingface.co/front/build/kube-486f880/AddPaymentMethodModal-BxKhVi0n.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Badge-snwezZzF.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/BillingPrepaidCreditsModal-ajCFoaqI.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/BillingProducts-DZ733IX7.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/CloneInstructions-DbRaM4zg.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/CollectionModal-CAaH6o2w.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/CollectionOverview-CD5Ci6QU.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/CommitTabs-AiGszHgt.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Contributors-_BOz9JJK.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/CopyButton-m-HNLSq2.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/DatasetOverview-DRhg8aB1.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/DescriptionTooltip-D_v9lrNy.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/DeviceProvider-D8ZCwo4v.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/DiscussionBadge-DV4m-EM-.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/DiscussionLogo-q4ADwzWL.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/EmojiAutocompleteMenu-B0oHDDw0.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/FileInfo-CWFIWifL.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/FileInfoTable-CPOXQ79U.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/FollowButton-5ytcc-lu.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconArrowTopRight-C6NFjMV9.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconAws-DtG4sFXh.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconBarChart-CADugtvQ.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconBellWatching-oGXfZpG9.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconCaretDown-BtWkbrku.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconCaretLeft-SJMEVWDc.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconCaretRight-6uPPEpkG.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconCaretV2-CWVNKTWs.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconCheckmark-Dy9mRAHm.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconCheckmarkFilled-ttSfB31p.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconClock-M8ufI27G.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconClone-CJqm0fmx.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconCode-C1WqZEWA.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconCogFlat-CZPadrBt.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconConversational-BTteARn6.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconCreditCard-BHT3HiXV.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconCursor-DikjEP56.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconDataTable-CTcorzwg.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconDelete-VGBCTO6c.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconDevMode-C5ZRyFAL.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconDir-DCIcPNSq.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconDiscussion-C0kipzbv.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconDocker-J1l23cAf.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconDownload-Bm7UQF0E.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconDuplicate-Bw-M1FA0.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconEdit-vn_Bmu1h.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconEmbed-GAzSjRw8.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconEnterprisePlus-D_3p5tf4.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconEye-_wbbQO2I.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconFan-C8UdmEBP.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconFast-Drq1GsmA.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconFile-Dy5gHOe7.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconFlag-wPpMkfTO.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconForbidden-Dh8eUroa.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconGit-BqmXwea4.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconHeart-lqHm8K5d.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconHeartFilled-pQz7I0ks.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconHuggingFace-CNKq5Dsy.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconImageFilled-COcR2sid.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconImageTextToVideo-Dw_Kexki.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconInferenceNvidia-PQSsne1F.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconInfo-ldVTTvRS.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconJs-zM4doI5L.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconKebabMenu-CRf1CiEp.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconKey-CU8tDRwF.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconLfs-Dw6b1INu.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconLightning-DLh400hv.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconLinkExternal-CSOopyNp.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconLinked-CrQbinEX.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconList-CiE_wUtj.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconLmStudio-ptq3DoV9.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconMcp-CLkGhtc2.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconMerge-BUWfywNx.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconMergeDraft-C0i79u87.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconModalityDocument-XV-FIKZz.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconMonitorQuantized-DlKRD81j.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconMute-BK1SlqH-.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconNotForAllEyes-DeMZ-TRd.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconOrgPlan-n1d90meg.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconPaperClip-BRH8iTmZ.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconParameters-BN4ZMRqQ.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconParquet-B2efGWfk.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconPeopleFilled-f9CxtS7X.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconPickle-Cf4L5nT1.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconPython-jyQbev7r.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconReinforcementLearning-CVh8UN4p.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconRestart-B_u4l8bx.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconRouting-DyyppdzP.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconRows-C8Lv1Q6g.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconRunLocally-dg884cRF.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconSafetensorsExpanded-1J_L4wq3.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconScanQueued-LGVTodmi.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconSettings-DXjgd8_S.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconSleeping-Cc72jkTd.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconSpace-DBphlm_W.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconSpin-R-nABNSv.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconStarFilled-D2GX2P7T.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconStop-BYjp23Cq.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconSunFull-DTH4SSJX.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconTeam-CqECYTpT.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconTensorflow-BtDv2joq.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconTool-HDsUdLY_.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconTrophy-BVXY-tQT.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconUnlockOutline-Cplc_pKt.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconUpvote-DbYnaFB6.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconUpvoteFilled-CrOKGong.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconVariable-BeT3bzEg.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconVirusTotal-DUOidZ3N.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconVllm-BJlSWUwU.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconVscode-B-nqURNI.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconWarning-CPqerG8b.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconWarningFilled-Bhp5pCgN.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/IconXet-CiPeKUXP.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Image-CgfuzZcL.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/InferenceModal-X11JQIXk.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/LabelPro-B5C5h-VD.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/LabelVerifiedCommit-DIQrkF3s.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/LastCommit-D095tviC.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/LfsTag-DzaNDIH7.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/LibraryIcon-pWBmi3hf.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/LocalAppIcon-B4SpVbIp.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/MarkdownContent-C9k0EYX_.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/MarkdownEditor-BGgyXdeu.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Media-DHp7jJPz.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/MediaViewer-DjsXdiH-.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/ModalBody-DNWAUzjP.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/ModalQuickLinks-BIe9cph1.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/ModelLibrary-4mDO4COS.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/ModelOverview-XUULioq7.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/NewPullRequestModal-B6riXnoz.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/NfaaConstants-D65mkckf.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/OrgMention-CuL4V31g.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/OrgPopover-q4sHWVps.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Overlay-PdzimV63.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/PDFViewer-BWuEZvsG.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Pickle-BShVzEqg.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/PipelineIcon-DSQb4lQh.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Popover-CbZ9IBCT.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/PrivateStorageLimitBanner-Cxg9dKxl.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/PrivateTag-DonlLmgQ.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/RepoCloning-BtGk-ym2.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/RepoOverview-Bngo42JJ.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/RepoTitle-B308wZ0X.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/ResourceGroupTag-C6sFwrsw.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/RichTextContent-pWPcXLLB.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/ScanStatusBadge-mJG7ruXj.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/SideBar-DN3tF6iY.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Snippet-CVof1Q1J.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/SocialPostCode-C7ycJ-F4.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/SpaceDevModeControls-CRJqbQi3.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/SpaceHardwareBadgeInner-C24ltS7f.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/SpaceHardwareFlavor-BNxAauGU.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/SpaceHeader-3ikRv0X0.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/SpaceSecretSelector-tt403RTV.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Spaces-D592YL4v.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Spinner-BqeITmVY.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/StripeCardUpdateForm-BeykkKHx.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/StripePaymentIntent-Db9W1i9d.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Tabs-BjKR70Uy.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/ThemeSwitcher-BQ14dcr3.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Types-BEhC9kaL.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/Types-DXp9LPRt.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/UnsafeBanner-DabQNsqW.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/UserMention-DKEklNCW.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/UserPopover-BbI7b5vP.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/UserRateAlert-C6Pia0iV.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/UsersListModal-D9UZ2TVm.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/ViewerHeader-gXJpyruy.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/ViewerIndexTreeList-D0lL5twt.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/XetTag-JP-nb6aQ.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/analytics-D0eotfFI.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/consts-BmPlmX0_.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/consts-D2i3bVN_.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/getInferenceSnippets-Cnb_G-Is.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/gguf-k1usR-rS.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/globals-D0QH3NT1.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/handlers-W3f76n2r.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/index-CUKyHKLV.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/index-CllowBK2.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/index-Cvkwj7eH.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/index-DjcvJXXz.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/index-Dxd6ECcE.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/index-hvVFQitp.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/index.browser-vcSNLBTf.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/interceptImages-nKuGr649.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/local-apps-ez2Bne3R.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/noBodyScroll-Ccd6tOhn.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/outclick-iHM0AKcC.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/portal-DK-tC1Zz.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/position-DJ_9pNgS.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/providers-BDva6D08.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/tooltip-BWdhpEp4.js": {
+          "as": "script",
+          "crossorigin": ""
+        },
+        "https://huggingface.co/front/build/kube-486f880/urlWatcher-BUgkpKLK.js": {
+          "as": "script",
+          "crossorigin": ""
+        }
+      },
+      "preconnect": {
+        "https://fonts.gstatic.com/": {}
+      }
+    },
+    "html": "<html class=\"\"><head>\n\t\t<meta charset=\"utf-8\">\n\n\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n\n\t\t<meta name=\"description\" content=\"We’re on a journey to advance and democratize artificial intelligence through open source and open science.\">\n\n\t\t<meta property=\"fb:app_id\" content=\"1321688464574422\">\n\n\t\t<meta name=\"twitter:card\" content=\"summary_large_image\">\n\n\t\t<meta name=\"twitter:site\" content=\"@huggingface\">\n\n\t\t<meta name=\"twitter:image\" content=\"https://cdn-thumbnails.huggingface.co/social-thumbnails/spaces/Prendilo/EasyFlix.png\">\n\n\t\t<meta property=\"og:title\" content=\"Prendilo/EasyFlix at main\">\n\n\t\t<meta property=\"og:description\" content=\"We’re on a journey to advance and democratize artificial intelligence through open source and open science.\">\n\n\t\t<meta property=\"og:type\" content=\"website\">\n\n\t\t<meta property=\"og:url\" content=\"https://huggingface.co/spaces/Prendilo/EasyFlix/tree/main\">\n\n\t\t<meta property=\"og:image\" content=\"https://cdn-thumbnails.huggingface.co/social-thumbnails/spaces/Prendilo/EasyFlix.png\">\n\n\t\t<link rel=\"stylesheet\" href=\"/front/build/kube-486f880/style.css\">\n\n\t\t<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\">\n\n\t\t<link href=\"https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&amp;display=swap\" rel=\"stylesheet\">\n\n\t\t<link href=\"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&amp;display=swap\" rel=\"stylesheet\">\n\n\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css\" as=\"style\" onload=\"\n\t\t\t\tthis.onload = null;\n\t\t\t\tthis.rel = 'stylesheet';\n\t\t\t\">\n\n\t\t<noscript>\n\t\t\t<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css\" />\n\t\t</noscript>\n\t\t<script>const guestTheme = document.cookie.match(/theme=(\\w+)/)?.[1]; document.documentElement.classList.toggle('dark', guestTheme === 'dark' || ( (!guestTheme || guestTheme === 'system') && window.matchMedia('(prefers-color-scheme: dark)').matches));</script>\n<link rel=\"canonical\" href=\"https://huggingface.co/spaces/Prendilo/EasyFlix/tree/main\">  \n\t\t<title>Prendilo/EasyFlix at main</title>\n\n\t\t<script defer=\"\" src=\"/js/script.js\"></script>\n\n\t\t<script>\n\t\t\t((window.plausible =\n\t\t\t\twindow.plausible\n\t\t\t\t|| function () {\n\t\t\t\t\t(plausible.q = plausible.q || []).push(arguments);\n\t\t\t\t}),\n\t\t\t\t(plausible.init =\n\t\t\t\t\tplausible.init\n\t\t\t\t\t|| function (i) {\n\t\t\t\t\t\tplausible.o = i || {};\n\t\t\t\t\t}));\n\t\t\tplausible.init({\n\t\t\t\tcustomProperties: {\n\t\t\t\t\tloggedIn: \"false\",\n\t\t\t\t},\n\t\t\t\tendpoint: \"/api/event\",\n\t\t\t});\n\t\t</script>\n\n\t\t<script>\n\t\t\twindow.hubConfig = {\"features\":{\"signupDisabled\":false},\"sshGitUrl\":\"git@hf.co\",\"moonHttpUrl\":\"https:\\/\\/huggingface.co\",\"captchaApiKey\":\"bd5f2066-93dc-4bdd-a64b-a24646ca3859\",\"datasetViewerPublicUrl\":\"https:\\/\\/datasets-server.huggingface.co\",\"stripePublicKey\":\"pk_live_x2tdjFXBCvXo2FFmMybezpeM00J6gPCAAc\",\"environment\":\"production\",\"userAgent\":\"HuggingFace (production)\",\"spacesIframeDomain\":\"hf.space\",\"spacesApiUrl\":\"https:\\/\\/api.hf.space\",\"logoDev\":{\"apiUrl\":\"https:\\/\\/img.logo.dev\\/\",\"apiKey\":\"pk_UHS2HZOeRnaSOdDp7jbd5w\"}};\n\t\t\twindow.requestId = \"Root=1-69a2dec0-7008febb0c77d39d138d9e2a\";\n\t\t\twindow.featureFlags = {\"buckets\":false};\n\t\t</script>\n\t\t<script type=\"text/javascript\" src=\"https://de5282c3ca0c.edge.sdk.awswaf.com/de5282c3ca0c/526cf06acb0d/challenge.js\" defer=\"\"></script> \n\t<script src=\"https://js.stripe.com/v3/\" async=\"\"></script><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/SpaceHeader-3ikRv0X0.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/globals-D0QH3NT1.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconCogFlat-CZPadrBt.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconMcp-CLkGhtc2.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconList-CiE_wUtj.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconSpace-DBphlm_W.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconRunLocally-dg884cRF.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Popover-CbZ9IBCT.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/index-DjcvJXXz.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/index-CllowBK2.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/portal-DK-tC1Zz.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/outclick-iHM0AKcC.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/position-DJ_9pNgS.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/SpaceHardwareBadgeInner-C24ltS7f.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Spaces-D592YL4v.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconFan-C8UdmEBP.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconSleeping-Cc72jkTd.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconStop-BYjp23Cq.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/index-hvVFQitp.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconFlag-wPpMkfTO.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/PrivateTag-DonlLmgQ.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/PrivateStorageLimitBanner-Cxg9dKxl.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconHeart-lqHm8K5d.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconHeartFilled-pQz7I0ks.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/UsersListModal-D9UZ2TVm.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/ModalBody-DNWAUzjP.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/urlWatcher-BUgkpKLK.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/noBodyScroll-Ccd6tOhn.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/FollowButton-5ytcc-lu.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconBellWatching-oGXfZpG9.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconMerge-BUWfywNx.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/UserPopover-BbI7b5vP.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconUpvoteFilled-CrOKGong.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/LabelPro-B5C5h-VD.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/OrgPopover-q4sHWVps.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconOrgPlan-n1d90meg.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconEnterprisePlus-D_3p5tf4.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconTeam-CqECYTpT.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconPeopleFilled-f9CxtS7X.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/RepoTitle-B308wZ0X.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/CopyButton-m-HNLSq2.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/tooltip-BWdhpEp4.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconDuplicate-Bw-M1FA0.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Tabs-BjKR70Uy.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconXet-CiPeKUXP.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconWarning-CPqerG8b.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconClone-CJqm0fmx.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconEmbed-GAzSjRw8.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/ModelOverview-XUULioq7.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/gguf-k1usR-rS.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/RepoOverview-Bngo42JJ.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconDownload-Bm7UQF0E.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/ResourceGroupTag-C6sFwrsw.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Image-CgfuzZcL.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/PipelineIcon-DSQb4lQh.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconImageTextToVideo-Dw_Kexki.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconConversational-BTteARn6.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconReinforcementLearning-CVh8UN4p.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconLightning-DLh400hv.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconParameters-BN4ZMRqQ.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/DatasetOverview-DRhg8aB1.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconEye-_wbbQO2I.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconRows-C8Lv1Q6g.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconDataTable-CTcorzwg.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconTrophy-BVXY-tQT.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconKebabMenu-CRf1CiEp.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconLinked-CrQbinEX.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconUnlockOutline-Cplc_pKt.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconMute-BK1SlqH-.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/CollectionOverview-CD5Ci6QU.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconUpvote-DbYnaFB6.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconRestart-B_u4l8bx.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconDevMode-C5ZRyFAL.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconForbidden-Dh8eUroa.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/handlers-W3f76n2r.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconLinkExternal-CSOopyNp.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/MarkdownEditor-BGgyXdeu.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/CommitTabs-AiGszHgt.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/ThemeSwitcher-BQ14dcr3.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconSunFull-DTH4SSJX.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconImageFilled-COcR2sid.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/EmojiAutocompleteMenu-B0oHDDw0.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/MarkdownContent-C9k0EYX_.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/interceptImages-nKuGr649.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/MediaViewer-DjsXdiH-.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconCaretDown-BtWkbrku.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconCaretLeft-SJMEVWDc.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconCaretRight-6uPPEpkG.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Overlay-PdzimV63.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/PDFViewer-BWuEZvsG.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconModalityDocument-XV-FIKZz.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconInfo-ldVTTvRS.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Media-DHp7jJPz.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/CloneInstructions-DbRaM4zg.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/RepoCloning-BtGk-ym2.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/SpaceHardwareFlavor-BNxAauGU.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/RichTextContent-pWPcXLLB.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/OrgMention-CuL4V31g.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconDiscussion-C0kipzbv.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/SocialPostCode-C7ycJ-F4.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/UserMention-DKEklNCW.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconCheckmarkFilled-ttSfB31p.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/SpaceSecretSelector-tt403RTV.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/BillingProducts-DZ733IX7.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/DescriptionTooltip-D_v9lrNy.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconKey-CU8tDRwF.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconVariable-BeT3bzEg.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/AddPaymentMethodModal-BxKhVi0n.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconCreditCard-BHT3HiXV.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/StripeCardUpdateForm-BeykkKHx.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Spinner-BqeITmVY.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/BillingPrepaidCreditsModal-ajCFoaqI.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/StripePaymentIntent-Db9W1i9d.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconAws-DtG4sFXh.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconSettings-DXjgd8_S.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/consts-BmPlmX0_.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/NfaaConstants-D65mkckf.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconNotForAllEyes-DeMZ-TRd.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/ModalQuickLinks-BIe9cph1.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconPaperClip-BRH8iTmZ.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconWarningFilled-Bhp5pCgN.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/CollectionModal-CAaH6o2w.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/SpaceDevModeControls-CRJqbQi3.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconCheckmark-Dy9mRAHm.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconVscode-B-nqURNI.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconCursor-DikjEP56.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/index.browser-vcSNLBTf.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconCaretV2-CWVNKTWs.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconCode-C1WqZEWA.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconHuggingFace-CNKq5Dsy.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/analytics-D0eotfFI.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/DeviceProvider-D8ZCwo4v.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/ViewerHeader-gXJpyruy.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/NewPullRequestModal-B6riXnoz.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/DiscussionBadge-DV4m-EM-.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/DiscussionLogo-q4ADwzWL.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconMergeDraft-C0i79u87.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/UserRateAlert-C6Pia0iV.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconEdit-vn_Bmu1h.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconGit-BqmXwea4.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconClock-M8ufI27G.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconDelete-VGBCTO6c.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Contributors-_BOz9JJK.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconFile-Dy5gHOe7.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconDir-DCIcPNSq.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconSpin-R-nABNSv.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/UnsafeBanner-DabQNsqW.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Types-DXp9LPRt.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconVirusTotal-DUOidZ3N.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/LastCommit-D095tviC.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/LabelVerifiedCommit-DIQrkF3s.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Badge-snwezZzF.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/ViewerIndexTreeList-D0lL5twt.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/index-Dxd6ECcE.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/index-Cvkwj7eH.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/LfsTag-DzaNDIH7.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconLfs-Dw6b1INu.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/ModelLibrary-4mDO4COS.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/local-apps-ez2Bne3R.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/LibraryIcon-pWBmi3hf.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconTensorflow-BtDv2joq.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconJs-zM4doI5L.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconMonitorQuantized-DlKRD81j.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconVllm-BJlSWUwU.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconLmStudio-ptq3DoV9.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconPython-jyQbev7r.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/InferenceModal-X11JQIXk.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/getInferenceSnippets-Cnb_G-Is.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/index-CUKyHKLV.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Snippet-CVof1Q1J.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconRouting-DyyppdzP.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconTool-HDsUdLY_.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconBarChart-CADugtvQ.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/providers-BDva6D08.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconInferenceNvidia-PQSsne1F.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconStarFilled-D2GX2P7T.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconFast-Drq1GsmA.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Types-BEhC9kaL.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/consts-D2i3bVN_.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/LocalAppIcon-B4SpVbIp.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconDocker-J1l23cAf.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconParquet-B2efGWfk.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconArrowTopRight-C6NFjMV9.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/FileInfoTable-CPOXQ79U.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/SideBar-DN3tF6iY.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/FileInfo-CWFIWifL.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconSafetensorsExpanded-1J_L4wq3.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/XetTag-JP-nb6aQ.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/ScanStatusBadge-mJG7ruXj.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconScanQueued-LGVTodmi.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/Pickle-BShVzEqg.js\"><link rel=\"modulepreload\" as=\"script\" crossorigin=\"\" href=\"/front/build/kube-486f880/IconPickle-Cf4L5nT1.js\"></head>\n\t<body class=\"flex flex-col min-h-dvh bg-white dark:bg-gray-950 text-black ViewerIndexTreePage\">\n\t\t<div class=\"flex min-h-dvh flex-col\"><div class=\"SVELTE_HYDRATER contents\" data-target=\"DeviceProvider\" data-props=\"{}\"></div> <div class=\"SVELTE_HYDRATER contents\" data-target=\"SystemThemeMonitor\" data-props=\"{&quot;isLoggedIn&quot;:false}\"></div> <div class=\"SVELTE_HYDRATER contents\" data-target=\"MainHeader\" data-props=\"{&quot;classNames&quot;:&quot;&quot;,&quot;isWide&quot;:false,&quot;isZh&quot;:false,&quot;isPro&quot;:false}\"><header class=\"border-b border-gray-100 \"><div class=\"w-full px-4 container flex h-16 items-center\"><div class=\"flex flex-1 items-center\"><a class=\"mr-5 flex flex-none items-center lg:mr-6\" href=\"/\" data-svelte-h=\"svelte-1otezr5\"><img alt=\"Hugging Face's logo\" class=\"w-7 md:mr-2\" src=\"/front/assets/huggingface_logo-noborder.svg\"> <span class=\"hidden whitespace-nowrap text-lg font-bold md:block\">Hugging Face</span></a> <div class=\"relative flex-1 lg:max-w-sm mr-2 sm:mr-4 md:mr-3 xl:mr-6\"><input autocomplete=\"off\" class=\"w-full dark:bg-gray-950 pl-8 form-input-alt h-9 pr-3 focus:shadow-xl \" name=\"\" placeholder=\"Search models, datasets, users...\" spellcheck=\"false\" type=\"text\"> <svg class=\"absolute left-2.5 text-gray-400 top-1/2 transform -translate-y-1/2\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M30 28.59L22.45 21A11 11 0 1 0 21 22.45L28.59 30zM5 14a9 9 0 1 1 9 9a9 9 0 0 1-9-9z\" fill=\"currentColor\"></path></svg> </div> <div class=\"flex flex-none items-center justify-center p-0.5 place-self-stretch lg:hidden\"><button class=\"relative z-40 flex h-6 w-8 items-center justify-center\" type=\"button\"><svg width=\"1em\" height=\"1em\" viewBox=\"0 0 10 10\" class=\"text-xl\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" preserveAspectRatio=\"xMidYMid meet\" fill=\"currentColor\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.65039 2.9999C1.65039 2.8066 1.80709 2.6499 2.00039 2.6499H8.00039C8.19369 2.6499 8.35039 2.8066 8.35039 2.9999C8.35039 3.1932 8.19369 3.3499 8.00039 3.3499H2.00039C1.80709 3.3499 1.65039 3.1932 1.65039 2.9999ZM1.65039 4.9999C1.65039 4.8066 1.80709 4.6499 2.00039 4.6499H8.00039C8.19369 4.6499 8.35039 4.8066 8.35039 4.9999C8.35039 5.1932 8.19369 5.3499 8.00039 5.3499H2.00039C1.80709 5.3499 1.65039 5.1932 1.65039 4.9999ZM2.00039 6.6499C1.80709 6.6499 1.65039 6.8066 1.65039 6.9999C1.65039 7.1932 1.80709 7.3499 2.00039 7.3499H8.00039C8.19369 7.3499 8.35039 7.1932 8.35039 6.9999C8.35039 6.8066 8.19369 6.6499 8.00039 6.6499H2.00039Z\"></path></svg> </button> </div></div> <nav aria-label=\"Main\" class=\"ml-auto hidden lg:block\"><ul class=\"flex items-center gap-x-1 2xl:gap-x-2\"><li class=\"hover:text-indigo-700\"><a class=\"group flex items-center px-2 py-0.5 dark:text-gray-300 dark:hover:text-gray-100\" href=\"/models\"><svg class=\"mr-1.5 text-gray-400 group-hover:text-indigo-500\" style=\"\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 24 24\"><path class=\"uim-quaternary\" d=\"M20.23 7.24L12 12L3.77 7.24a1.98 1.98 0 0 1 .7-.71L11 2.76c.62-.35 1.38-.35 2 0l6.53 3.77c.29.173.531.418.7.71z\" opacity=\".25\" fill=\"currentColor\"></path><path class=\"uim-tertiary\" d=\"M12 12v9.5a2.09 2.09 0 0 1-.91-.21L4.5 17.48a2.003 2.003 0 0 1-1-1.73v-7.5a2.06 2.06 0 0 1 .27-1.01L12 12z\" opacity=\".5\" fill=\"currentColor\"></path><path class=\"uim-primary\" d=\"M20.5 8.25v7.5a2.003 2.003 0 0 1-1 1.73l-6.62 3.82c-.275.13-.576.198-.88.2V12l8.23-4.76c.175.308.268.656.27 1.01z\" fill=\"currentColor\"></path></svg> Models</a></li><li class=\"hover:text-red-700\"><a class=\"group flex items-center px-2 py-0.5 dark:text-gray-300 dark:hover:text-gray-100\" href=\"/datasets\"><svg class=\"mr-1.5 text-gray-400 group-hover:text-red-500\" style=\"\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 25 25\"><ellipse cx=\"12.5\" cy=\"5\" fill=\"currentColor\" fill-opacity=\"0.25\" rx=\"7.5\" ry=\"2\"></ellipse><path d=\"M12.5 15C16.6421 15 20 14.1046 20 13V20C20 21.1046 16.6421 22 12.5 22C8.35786 22 5 21.1046 5 20V13C5 14.1046 8.35786 15 12.5 15Z\" fill=\"currentColor\" opacity=\"0.5\"></path><path d=\"M12.5 7C16.6421 7 20 6.10457 20 5V11.5C20 12.6046 16.6421 13.5 12.5 13.5C8.35786 13.5 5 12.6046 5 11.5V5C5 6.10457 8.35786 7 12.5 7Z\" fill=\"currentColor\" opacity=\"0.5\"></path><path d=\"M5.23628 12C5.08204 12.1598 5 12.8273 5 13C5 14.1046 8.35786 15 12.5 15C16.6421 15 20 14.1046 20 13C20 12.8273 19.918 12.1598 19.7637 12C18.9311 12.8626 15.9947 13.5 12.5 13.5C9.0053 13.5 6.06886 12.8626 5.23628 12Z\" fill=\"currentColor\"></path></svg> Datasets</a></li><li class=\"hover:text-blue-700\"><a class=\"group flex items-center px-2 py-0.5 dark:text-gray-300 dark:hover:text-gray-100\" href=\"/spaces\"><svg class=\"mr-1.5 text-gray-400 group-hover:text-blue-500\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" viewBox=\"0 0 25 25\"><path opacity=\".5\" d=\"M6.016 14.674v4.31h4.31v-4.31h-4.31ZM14.674 14.674v4.31h4.31v-4.31h-4.31ZM6.016 6.016v4.31h4.31v-4.31h-4.31Z\" fill=\"currentColor\"></path><path opacity=\".75\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M3 4.914C3 3.857 3.857 3 4.914 3h6.514c.884 0 1.628.6 1.848 1.414a5.171 5.171 0 0 1 7.31 7.31c.815.22 1.414.964 1.414 1.848v6.514A1.914 1.914 0 0 1 20.086 22H4.914A1.914 1.914 0 0 1 3 20.086V4.914Zm3.016 1.102v4.31h4.31v-4.31h-4.31Zm0 12.968v-4.31h4.31v4.31h-4.31Zm8.658 0v-4.31h4.31v4.31h-4.31Zm0-10.813a2.155 2.155 0 1 1 4.31 0 2.155 2.155 0 0 1-4.31 0Z\" fill=\"currentColor\"></path><path opacity=\".25\" d=\"M16.829 6.016a2.155 2.155 0 1 0 0 4.31 2.155 2.155 0 0 0 0-4.31Z\" fill=\"currentColor\"></path></svg> Spaces</a></li><li class=\"max-xl:hidden relative\"><div class=\"relative \"><button class=\"group flex items-center px-2 py-0.5 dark:text-gray-300 hover:text-yellow-700 dark:hover:text-gray-100 \" type=\"button\"><svg class=\"mr-1.5 mr-1.5 text-gray-400 text-yellow-500! group-hover:text-yellow-500\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M20.6081 3C21.7684 3 22.8053 3.49196 23.5284 4.38415C23.9756 4.93678 24.4428 5.82749 24.4808 7.16133C24.9674 7.01707 25.4353 6.93643 25.8725 6.93643C26.9833 6.93643 27.9865 7.37587 28.696 8.17411C29.6075 9.19872 30.0124 10.4579 29.8361 11.7177C29.7523 12.3177 29.5581 12.8555 29.2678 13.3534C29.8798 13.8646 30.3306 14.5763 30.5485 15.4322C30.719 16.1032 30.8939 17.5006 29.9808 18.9403C30.0389 19.0342 30.0934 19.1319 30.1442 19.2318C30.6932 20.3074 30.7283 21.5229 30.2439 22.6548C29.5093 24.3704 27.6841 25.7219 24.1397 27.1727C21.9347 28.0753 19.9174 28.6523 19.8994 28.6575C16.9842 29.4379 14.3477 29.8345 12.0653 29.8345C7.87017 29.8345 4.8668 28.508 3.13831 25.8921C0.356375 21.6797 0.754104 17.8269 4.35369 14.1131C6.34591 12.058 7.67023 9.02782 7.94613 8.36275C8.50224 6.39343 9.97271 4.20438 12.4172 4.20438H12.4179C12.6236 4.20438 12.8314 4.2214 13.0364 4.25468C14.107 4.42854 15.0428 5.06476 15.7115 6.02205C16.4331 5.09583 17.134 4.359 17.7682 3.94323C18.7242 3.31737 19.6794 3 20.6081 3ZM20.6081 5.95917C20.2427 5.95917 19.7963 6.1197 19.3039 6.44225C17.7754 7.44319 14.8258 12.6772 13.7458 14.7131C13.3839 15.3952 12.7655 15.6837 12.2086 15.6837C11.1036 15.6837 10.2408 14.5497 12.1076 13.1085C14.9146 10.9402 13.9299 7.39584 12.5898 7.1776C12.5311 7.16799 12.4731 7.16355 12.4172 7.16355C11.1989 7.16355 10.6615 9.33114 10.6615 9.33114C10.6615 9.33114 9.0863 13.4148 6.38031 16.206C3.67434 18.998 3.5346 21.2388 5.50675 24.2246C6.85185 26.2606 9.42666 26.8753 12.0653 26.8753C14.8021 26.8753 17.6077 26.2139 19.1799 25.793C19.2574 25.7723 28.8193 22.984 27.6081 20.6107C27.4046 20.212 27.0693 20.0522 26.6471 20.0522C24.9416 20.0522 21.8393 22.6726 20.5057 22.6726C20.2076 22.6726 19.9976 22.5416 19.9116 22.222C19.3433 20.1173 28.552 19.2325 27.7758 16.1839C27.639 15.6445 27.2677 15.4256 26.746 15.4263C24.4923 15.4263 19.4358 19.5181 18.3759 19.5181C18.2949 19.5181 18.2368 19.4937 18.2053 19.4419C17.6743 18.557 17.9653 17.9394 21.7082 15.6009C25.4511 13.2617 28.0783 11.8545 26.5841 10.1752C26.4121 9.98141 26.1684 9.8956 25.8725 9.8956C23.6001 9.89634 18.2311 14.9403 18.2311 14.9403C18.2311 14.9403 16.7821 16.496 15.9057 16.496C15.7043 16.496 15.533 16.4139 15.4169 16.2112C14.7956 15.1296 21.1879 10.1286 21.5484 8.06535C21.7928 6.66715 21.3771 5.95917 20.6081 5.95917Z\" fill=\"#FF9D00\"></path><path d=\"M5.50686 24.2246C3.53472 21.2387 3.67446 18.9979 6.38043 16.206C9.08641 13.4147 10.6615 9.33111 10.6615 9.33111C10.6615 9.33111 11.2499 6.95933 12.59 7.17757C13.93 7.39581 14.9139 10.9401 12.1069 13.1084C9.29997 15.276 12.6659 16.7489 13.7459 14.713C14.8258 12.6772 17.7747 7.44316 19.304 6.44221C20.8326 5.44128 21.9089 6.00204 21.5484 8.06532C21.188 10.1286 14.795 15.1295 15.4171 16.2118C16.0391 17.2934 18.2312 14.9402 18.2312 14.9402C18.2312 14.9402 25.0907 8.49588 26.5842 10.1752C28.0776 11.8545 25.4512 13.2616 21.7082 15.6008C17.9646 17.9393 17.6744 18.557 18.2054 19.4418C18.7372 20.3266 26.9998 13.1351 27.7759 16.1838C28.5513 19.2324 19.3434 20.1173 19.9117 22.2219C20.48 24.3274 26.3979 18.2382 27.6082 20.6107C28.8193 22.9839 19.2574 25.7722 19.18 25.7929C16.0914 26.62 8.24723 28.3726 5.50686 24.2246Z\" fill=\"#FFD21E\"></path></svg> Community </button> </div></li><li class=\"hover:text-yellow-700\"><a class=\"group flex items-center px-2 py-0.5 dark:text-gray-300 dark:hover:text-gray-100\" href=\"/docs\"><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" role=\"img\" class=\"mr-1.5 text-gray-400 group-hover:text-yellow-500\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 16 16\"><path d=\"m2.28 3.7-.3.16a.67.67 0 0 0-.34.58v8.73l.01.04.02.07.01.04.03.06.02.04.02.03.04.06.05.05.04.04.06.04.06.04.08.04.08.02h.05l.07.02h.11l.04-.01.07-.02.03-.01.07-.03.22-.12a5.33 5.33 0 0 1 5.15.1.67.67 0 0 0 .66 0 5.33 5.33 0 0 1 5.33 0 .67.67 0 0 0 1-.58V4.36a.67.67 0 0 0-.34-.5l-.3-.17v7.78a.63.63 0 0 1-.87.59 4.9 4.9 0 0 0-4.35.35l-.65.39a.29.29 0 0 1-.15.04.29.29 0 0 1-.16-.04l-.65-.4a4.9 4.9 0 0 0-4.34-.34.63.63 0 0 1-.87-.59V3.7Z\" fill=\"currentColor\" class=\"dark:opacity-40\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M8 3.1a5.99 5.99 0 0 0-5.3-.43.66.66 0 0 0-.42.62v8.18c0 .45.46.76.87.59a4.9 4.9 0 0 1 4.34.35l.65.39c.05.03.1.04.16.04.05 0 .1-.01.15-.04l.65-.4a4.9 4.9 0 0 1 4.35-.34.63.63 0 0 0 .86-.59V3.3a.67.67 0 0 0-.41-.62 5.99 5.99 0 0 0-5.3.43l-.3.17L8 3.1Zm.73 1.87a.43.43 0 1 0-.86 0v5.48a.43.43 0 0 0 .86 0V4.97Z\" fill=\"currentColor\" class=\"opacity-40 dark:opacity-100\"></path><path d=\"M8.73 4.97a.43.43 0 1 0-.86 0v5.48a.43.43 0 1 0 .86 0V4.96Z\" fill=\"currentColor\" class=\"dark:opacity-40\"></path></svg> Docs</a></li><li class=\"hover:text-black dark:hover:text-white max-2xl:hidden\"><a class=\"group flex items-center px-2 py-0.5 dark:text-gray-300 dark:hover:text-gray-100\" href=\"/enterprise\"><svg class=\"mr-1.5 text-gray-400 group-hover:text-black dark:group-hover:text-white\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 12 12\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M4.9 1.35a3.16 3.16 0 0 0-2.8 2.07L.37 8.58C0 9.71.7 10.65 1.86 10.65H7.3a3.2 3.2 0 0 0 2.84-2.07l1.67-5.16c.36-1.13-.3-2.07-1.46-2.07H4.91Zm.4 2.07L3.57 8.47h3.57l.36-1.12H5.4l.28-.91h1.75l.4-1.1H6.07l.3-.83h2l.36-1.1H5.27h.04Z\" fill=\"currentColor\"></path></svg> Enterprise</a></li> <li data-svelte-h=\"svelte-1gnwgit\"><a class=\"group flex items-center px-2 py-0.5 dark:text-gray-300 dark:hover:text-gray-100\" href=\"/pricing\">Pricing</a></li> <li><div class=\"relative group\"><button class=\"px-2 py-0.5 hover:text-gray-500 dark:hover:text-gray-600 flex items-center \" type=\"button\"><svg class=\" text-gray-500 w-5 group-hover:text-gray-400 dark:text-gray-300 dark:group-hover:text-gray-100\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" viewBox=\"0 0 32 18\" preserveAspectRatio=\"xMidYMid meet\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M14.4504 3.30221C14.4504 2.836 14.8284 2.45807 15.2946 2.45807H28.4933C28.9595 2.45807 29.3374 2.836 29.3374 3.30221C29.3374 3.76842 28.9595 4.14635 28.4933 4.14635H15.2946C14.8284 4.14635 14.4504 3.76842 14.4504 3.30221Z\" fill=\"currentColor\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M14.4504 9.00002C14.4504 8.53382 14.8284 8.15588 15.2946 8.15588H28.4933C28.9595 8.15588 29.3374 8.53382 29.3374 9.00002C29.3374 9.46623 28.9595 9.84417 28.4933 9.84417H15.2946C14.8284 9.84417 14.4504 9.46623 14.4504 9.00002Z\" fill=\"currentColor\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M14.4504 14.6978C14.4504 14.2316 14.8284 13.8537 15.2946 13.8537H28.4933C28.9595 13.8537 29.3374 14.2316 29.3374 14.6978C29.3374 15.164 28.9595 15.542 28.4933 15.542H15.2946C14.8284 15.542 14.4504 15.164 14.4504 14.6978Z\" fill=\"currentColor\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M1.94549 6.87377C2.27514 6.54411 2.80962 6.54411 3.13928 6.87377L6.23458 9.96907L9.32988 6.87377C9.65954 6.54411 10.194 6.54411 10.5237 6.87377C10.8533 7.20343 10.8533 7.73791 10.5237 8.06756L6.23458 12.3567L1.94549 8.06756C1.61583 7.73791 1.61583 7.20343 1.94549 6.87377Z\" fill=\"currentColor\"></path></svg>  </button> </div></li> <li data-svelte-h=\"svelte-vattrg\"><hr class=\"h-5 w-0.5 border-none bg-gray-100 dark:bg-gray-800\"></li> <li data-svelte-h=\"svelte-8rorfs\"><a class=\"block cursor-pointer whitespace-nowrap px-2 py-0.5 hover:text-gray-500 dark:text-gray-300 dark:hover:text-gray-100\" href=\"/login\">Log In</a></li> <li data-svelte-h=\"svelte-3jq805\"><a class=\"whitespace-nowrap rounded-full border border-transparent bg-gray-900 px-3 py-1 leading-none text-white hover:border-black hover:bg-white hover:text-black\" href=\"/join\">Sign Up</a></li></ul></nav></div></header></div>    <div class=\"SVELTE_HYDRATER contents\" data-target=\"SSOBanner\" data-props=\"{}\"></div>  <main class=\"flex flex-1 flex-col\"><div class=\"SVELTE_HYDRATER contents\" data-target=\"SpaceHeader\" data-props=\"{&quot;activeTab&quot;:&quot;files&quot;,&quot;author&quot;:{&quot;_id&quot;:&quot;692629f0cc9283fe3dbf47dd&quot;,&quot;avatarUrl&quot;:&quot;/avatars/08f008e562b477b7ad33935bcd855df6.svg&quot;,&quot;fullname&quot;:&quot;Duro&quot;,&quot;name&quot;:&quot;Prendilo&quot;,&quot;type&quot;:&quot;user&quot;,&quot;isPro&quot;:false,&quot;isHf&quot;:false,&quot;isHfAdmin&quot;:false,&quot;isMod&quot;:false,&quot;isUserFollowing&quot;:false},&quot;canDisable&quot;:false,&quot;canReadRepoSettings&quot;:false,&quot;canWriteRepoSettings&quot;:false,&quot;discussionsStats&quot;:{&quot;closed&quot;:0,&quot;open&quot;:0,&quot;total&quot;:0},&quot;query&quot;:{},&quot;space&quot;:{&quot;author&quot;:&quot;Prendilo&quot;,&quot;colorFrom&quot;:&quot;blue&quot;,&quot;colorTo&quot;:&quot;green&quot;,&quot;cardData&quot;:{&quot;title&quot;:&quot;EasyFlix&quot;,&quot;emoji&quot;:&quot;🏢&quot;,&quot;colorFrom&quot;:&quot;blue&quot;,&quot;colorTo&quot;:&quot;green&quot;,&quot;sdk&quot;:&quot;docker&quot;,&quot;pinned&quot;:false},&quot;createdAt&quot;:&quot;2025-12-20T18:26:52.000Z&quot;,&quot;emoji&quot;:&quot;🏢&quot;,&quot;discussionsDisabled&quot;:false,&quot;discussionsSorting&quot;:&quot;recently-created&quot;,&quot;duplicationDisabled&quot;:true,&quot;id&quot;:&quot;Prendilo/EasyFlix&quot;,&quot;isLikedByUser&quot;:false,&quot;lastModified&quot;:&quot;2026-01-29T10:10:17.000Z&quot;,&quot;likes&quot;:0,&quot;pinned&quot;:false,&quot;private&quot;:false,&quot;gated&quot;:false,&quot;repoType&quot;:&quot;space&quot;,&quot;subdomain&quot;:&quot;prendilo-easyflix&quot;,&quot;sdk&quot;:&quot;docker&quot;,&quot;title&quot;:&quot;EasyFlix&quot;,&quot;runtime&quot;:{&quot;stage&quot;:&quot;PAUSED&quot;,&quot;hardware&quot;:{&quot;current&quot;:null,&quot;requested&quot;:&quot;cpu-basic&quot;},&quot;storage&quot;:null,&quot;gcTimeout&quot;:172800,&quot;errorMessage&quot;:&quot;Flagged as abusive&quot;,&quot;replicas&quot;:{&quot;requested&quot;:1},&quot;devMode&quot;:false,&quot;domains&quot;:[{&quot;domain&quot;:&quot;prendilo-easyflix.hf.space&quot;,&quot;stage&quot;:&quot;READY&quot;}]},&quot;iframe&quot;:{&quot;embedSrc&quot;:&quot;https://prendilo-easyflix.hf.space&quot;,&quot;src&quot;:&quot;https://prendilo-easyflix.hf.space&quot;},&quot;sse&quot;:{&quot;status&quot;:{&quot;url&quot;:&quot;https://huggingface.co/api/spaces/Prendilo/EasyFlix/events&quot;},&quot;liveMetrics&quot;:{&quot;url&quot;:&quot;https://huggingface.co/api/spaces/Prendilo/EasyFlix/metrics&quot;}},&quot;dockerJwt&quot;:&quot;eyJhbGciOiJFZERTQSJ9.eyJyZWFkIjp0cnVlLCJwZXJtaXNzaW9ucyI6eyJyZXBvLmNvbnRlbnQucmVhZCI6dHJ1ZX0sImlhdCI6MTc3MjI4MTUzNywic3ViIjoiL3NwYWNlcy9QcmVuZGlsby9FYXN5RmxpeCIsImV4cCI6MTc3MjM2NzkzNywiaXNzIjoiaHR0cHM6Ly9odWdnaW5nZmFjZS5jbyJ9.JgFU0tIo1fsVsKkOMfpQY2Lytg9xhBx9SFPn4ZFBOuDSk5rn7xVisUeVdijtdRylyQW8TLPhWdNim0WPIecpDA&quot;,&quot;linkedModels&quot;:[],&quot;linkedDatasets&quot;:[],&quot;linkedCollections&quot;:[],&quot;sha&quot;:&quot;93fa0c786125a2815c490dbbba2d08df1a3a03d6&quot;,&quot;hasBlockedOids&quot;:false,&quot;region&quot;:&quot;us&quot;,&quot;tags&quot;:[&quot;docker&quot;,&quot;region:us&quot;]},&quot;sessionUuid&quot;:&quot;2ZF6hsHRS2EpFENLZgFtL&quot;}\"> <header class=\"bg-linear-to-t border-b border-gray-100 pt-4 xl:pt-0 from-gray-50-to-white via-white dark:via-gray-950\"><div class=\"container relative flex flex-col xl:flex-row\"><h1 class=\"flex flex-wrap items-center max-md:leading-tight gap-y-1 text-lg xl:flex-none\"><a href=\"/spaces\" class=\"group flex items-center\"><svg class=\"sm:mr-1 false text-gray-400\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M7.80914 18.7462V24.1907H13.2536V18.7462H7.80914Z\" fill=\"#FF3270\"></path><path d=\"M18.7458 18.7462V24.1907H24.1903V18.7462H18.7458Z\" fill=\"#861FFF\"></path><path d=\"M7.80914 7.80982V13.2543H13.2536V7.80982H7.80914Z\" fill=\"#097EFF\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M4 6.41775C4 5.08246 5.08246 4 6.41775 4H14.6457C15.7626 4 16.7026 4.75724 16.9802 5.78629C18.1505 4.67902 19.7302 4 21.4685 4C25.0758 4 28.0003 6.92436 28.0003 10.5317C28.0003 12.27 27.3212 13.8497 26.2139 15.02C27.243 15.2977 28.0003 16.2376 28.0003 17.3545V25.5824C28.0003 26.9177 26.9177 28.0003 25.5824 28.0003H17.0635H14.9367H6.41775C5.08246 28.0003 4 26.9177 4 25.5824V15.1587V14.9367V6.41775ZM7.80952 7.80952V13.254H13.254V7.80952H7.80952ZM7.80952 24.1907V18.7462H13.254V24.1907H7.80952ZM18.7462 24.1907V18.7462H24.1907V24.1907H18.7462ZM18.7462 10.5317C18.7462 9.0283 19.9651 7.80952 21.4685 7.80952C22.9719 7.80952 24.1907 9.0283 24.1907 10.5317C24.1907 12.0352 22.9719 13.254 21.4685 13.254C19.9651 13.254 18.7462 12.0352 18.7462 10.5317Z\" fill=\"black\"></path><path d=\"M21.4681 7.80982C19.9647 7.80982 18.7458 9.02861 18.7458 10.5321C18.7458 12.0355 19.9647 13.2543 21.4681 13.2543C22.9715 13.2543 24.1903 12.0355 24.1903 10.5321C24.1903 9.02861 22.9715 7.80982 21.4681 7.80982Z\" fill=\"#FFD702\"></path></svg> <span class=\"mr-2.5 font-semibold text-gray-400 group-hover:text-gray-500 max-sm:hidden\">Spaces:</span></a> <hr class=\"mx-1.5 h-2 translate-y-px rounded-sm border-r dark:border-gray-600 sm:hidden\"> <div class=\"group flex flex-none items-center\"><div class=\"relative mr-1 flex items-center\"> <span class=\"inline-block \"><span class=\"contents\"><a href=\"/Prendilo\" class=\"text-gray-400 hover:text-blue-600\"><div class=\"flex-none  \"><img alt=\"\" class=\"size-3.5 rounded-full  flex-none select-none \" src=\"/avatars/08f008e562b477b7ad33935bcd855df6.svg\" crossorigin=\"anonymous\"> </div></a></span> </span></div> <span class=\"inline-block \"><span class=\"contents\"><a href=\"/Prendilo\" class=\"text-gray-400 hover:text-blue-600\">Prendilo</a></span> </span> <div class=\"mx-0.5 text-gray-300\" data-svelte-h=\"svelte-1rbrfr2\">/</div></div> <div class=\"max-w-full xl:flex xl:min-w-0 xl:flex-nowrap xl:items-center xl:gap-x-1\"><a class=\"break-words font-mono font-semibold hover:text-blue-600 text-[1.07rem] xl:truncate\" href=\"/spaces/Prendilo/EasyFlix\">EasyFlix</a> <button class=\"text-xs mr-3  focus:outline-hidden inline-flex cursor-pointer items-center text-sm  mx-0.5   text-gray-600 \" title=\"Copy space name to clipboard\" type=\"button\"><svg class=\"\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" fill=\"currentColor\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M28,10V28H10V10H28m0-2H10a2,2,0,0,0-2,2V28a2,2,0,0,0,2,2H28a2,2,0,0,0,2-2V10a2,2,0,0,0-2-2Z\" transform=\"translate(0)\"></path><path d=\"M4,18H2V4A2,2,0,0,1,4,2H18V4H4Z\" transform=\"translate(0)\"></path><rect fill=\"none\" width=\"32\" height=\"32\"></rect></svg> </button></div> <div class=\"inline-flex items-center overflow-hidden whitespace-nowrap rounded-md border bg-white text-sm leading-none text-gray-500  mr-2\"><button class=\"relative flex items-center overflow-hidden from-red-50 to-transparent dark:from-red-900 px-1.5 py-1 hover:bg-linear-to-t focus:outline-hidden\" title=\"Like\"><svg class=\"left-1.5 absolute\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\" fill=\"currentColor\"><path d=\"M22.45,6a5.47,5.47,0,0,1,3.91,1.64,5.7,5.7,0,0,1,0,8L16,26.13,5.64,15.64a5.7,5.7,0,0,1,0-8,5.48,5.48,0,0,1,7.82,0L16,10.24l2.53-2.58A5.44,5.44,0,0,1,22.45,6m0-2a7.47,7.47,0,0,0-5.34,2.24L16,7.36,14.89,6.24a7.49,7.49,0,0,0-10.68,0,7.72,7.72,0,0,0,0,10.82L16,29,27.79,17.06a7.72,7.72,0,0,0,0-10.82A7.49,7.49,0,0,0,22.45,4Z\"></path></svg> <svg class=\"absolute text-red-500 origin-center transform transition-transform ease-in\n\t\t\t\t\t\ttranslate-y-10 scale-0\n\t\t\t\t\t\tleft-1.5 \" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\" fill=\"currentColor\"><path d=\"M22.5,4c-2,0-3.9,0.8-5.3,2.2L16,7.4l-1.1-1.1C12,3.3,7.2,3.3,4.3,6.2c0,0-0.1,0.1-0.1,0.1c-3,3-3,7.8,0,10.8L16,29l11.8-11.9c3-3,3-7.8,0-10.8C26.4,4.8,24.5,4,22.5,4z\"></path></svg> <span class=\"ml-4 pl-0.5 \">like</span></button> <button class=\"focus:outline-hidden flex items-center border-l px-1.5 py-1 text-gray-400 hover:bg-gray-50 focus:bg-gray-100 dark:hover:bg-gray-900 dark:focus:bg-gray-800\" title=\"See users who liked this repository\">0</button></div>    <span class=\"inline-block \"><span class=\"contents\"><div class=\"cursor-pointer select-none overflow-hidden font-mono text-xs shrink-0 mr-2 flex items-center rounded-lg border leading-none dark:bg-gray-900\n\t\t\t\t\tborder-yellow-100\n\t\t\t\t\ttext-yellow-700 dark:text-yellow-500\"><div class=\"inline-flex items-center whitespace-nowrap px-2 py-[0.32rem] dark:bg-gray-900  border-yellow-100 bg-yellow-50 hover:bg-yellow-100/70 hover:text-yellow-800 dark:hover:text-yellow-400\"><svg class=\"mr-1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"1em\" height=\"1em\" viewBox=\"0 0 16 16\"><path fill=\"currentColor\" d=\"M8 2.71A5.29 5.29 0 1 0 8 13.3 5.29 5.29 0 0 0 8 2.7Zm0 9.68a4.4 4.4 0 0 1-3.4-7.16l6.17 6.17c-.78.64-1.76 1-2.77 1Zm3.4-1.62L5.23 4.6a4.4 4.4 0 0 1 6.17 6.17\"></path></svg> Paused </div> </div></span> </span>    <div class=\"sm:hidden\"><div class=\"relative \"><button class=\"btn px-1 py-1 text-sm translate-y-0 \" type=\"button\"><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" role=\"img\" class=\"p-px\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><circle cx=\"16\" cy=\"7\" r=\"3\" fill=\"currentColor\"></circle><circle cx=\"16\" cy=\"16\" r=\"3\" fill=\"currentColor\"></circle><circle cx=\"16\" cy=\"25\" r=\"3\" fill=\"currentColor\"></circle></svg>  </button> </div></div>  </h1>  <div class=\"flex flex-col-reverse gap-x-2 sm:flex-row sm:items-center sm:justify-between xl:ml-auto\"><div class=\"-mb-px flex h-12 items-center overflow-x-auto overflow-y-hidden sm:h-[3.25rem]\"> <a class=\"tab-alternate\" href=\"/spaces/Prendilo/EasyFlix\"><svg class=\"mr-1.5 text-gray-400 flex-none\" style=\"\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 24 24\"><path class=\"uim-quaternary\" d=\"M20.23 7.24L12 12L3.77 7.24a1.98 1.98 0 0 1 .7-.71L11 2.76c.62-.35 1.38-.35 2 0l6.53 3.77c.29.173.531.418.7.71z\" opacity=\".25\" fill=\"currentColor\"></path><path class=\"uim-tertiary\" d=\"M12 12v9.5a2.09 2.09 0 0 1-.91-.21L4.5 17.48a2.003 2.003 0 0 1-1-1.73v-7.5a2.06 2.06 0 0 1 .27-1.01L12 12z\" opacity=\".5\" fill=\"currentColor\"></path><path class=\"uim-primary\" d=\"M20.5 8.25v7.5a2.003 2.003 0 0 1-1 1.73l-6.62 3.82c-.275.13-.576.198-.88.2V12l8.23-4.76c.175.308.268.656.27 1.01z\" fill=\"currentColor\"></path></svg> App   </a><a class=\"tab-alternate active\" href=\"/spaces/Prendilo/EasyFlix/tree/main\"><svg class=\"mr-1.5 text-gray-400 flex-none\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 24 24\"><path class=\"uim-tertiary\" d=\"M21 19h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2zm0-4h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2zm0-8h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2zm0 4h-8a1 1 0 0 1 0-2h8a1 1 0 0 1 0 2z\" opacity=\".5\" fill=\"currentColor\"></path><path class=\"uim-primary\" d=\"M9 19a1 1 0 0 1-1-1V6a1 1 0 0 1 2 0v12a1 1 0 0 1-1 1zm-6-4.333a1 1 0 0 1-.64-1.769L3.438 12l-1.078-.898a1 1 0 0 1 1.28-1.538l2 1.667a1 1 0 0 1 0 1.538l-2 1.667a.999.999 0 0 1-.64.231z\" fill=\"currentColor\"></path></svg> <span class=\"xl:hidden\">Files</span> <span class=\"hidden xl:inline\">Files</span>   </a><a class=\"tab-alternate\" href=\"/spaces/Prendilo/EasyFlix/discussions\"><svg class=\"mr-1.5 text-gray-400 flex-none\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M20.6081 3C21.7684 3 22.8053 3.49196 23.5284 4.38415C23.9756 4.93678 24.4428 5.82749 24.4808 7.16133C24.9674 7.01707 25.4353 6.93643 25.8725 6.93643C26.9833 6.93643 27.9865 7.37587 28.696 8.17411C29.6075 9.19872 30.0124 10.4579 29.8361 11.7177C29.7523 12.3177 29.5581 12.8555 29.2678 13.3534C29.8798 13.8646 30.3306 14.5763 30.5485 15.4322C30.719 16.1032 30.8939 17.5006 29.9808 18.9403C30.0389 19.0342 30.0934 19.1319 30.1442 19.2318C30.6932 20.3074 30.7283 21.5229 30.2439 22.6548C29.5093 24.3704 27.6841 25.7219 24.1397 27.1727C21.9347 28.0753 19.9174 28.6523 19.8994 28.6575C16.9842 29.4379 14.3477 29.8345 12.0653 29.8345C7.87017 29.8345 4.8668 28.508 3.13831 25.8921C0.356375 21.6797 0.754104 17.8269 4.35369 14.1131C6.34591 12.058 7.67023 9.02782 7.94613 8.36275C8.50224 6.39343 9.97271 4.20438 12.4172 4.20438H12.4179C12.6236 4.20438 12.8314 4.2214 13.0364 4.25468C14.107 4.42854 15.0428 5.06476 15.7115 6.02205C16.4331 5.09583 17.134 4.359 17.7682 3.94323C18.7242 3.31737 19.6794 3 20.6081 3ZM20.6081 5.95917C20.2427 5.95917 19.7963 6.1197 19.3039 6.44225C17.7754 7.44319 14.8258 12.6772 13.7458 14.7131C13.3839 15.3952 12.7655 15.6837 12.2086 15.6837C11.1036 15.6837 10.2408 14.5497 12.1076 13.1085C14.9146 10.9402 13.9299 7.39584 12.5898 7.1776C12.5311 7.16799 12.4731 7.16355 12.4172 7.16355C11.1989 7.16355 10.6615 9.33114 10.6615 9.33114C10.6615 9.33114 9.0863 13.4148 6.38031 16.206C3.67434 18.998 3.5346 21.2388 5.50675 24.2246C6.85185 26.2606 9.42666 26.8753 12.0653 26.8753C14.8021 26.8753 17.6077 26.2139 19.1799 25.793C19.2574 25.7723 28.8193 22.984 27.6081 20.6107C27.4046 20.212 27.0693 20.0522 26.6471 20.0522C24.9416 20.0522 21.8393 22.6726 20.5057 22.6726C20.2076 22.6726 19.9976 22.5416 19.9116 22.222C19.3433 20.1173 28.552 19.2325 27.7758 16.1839C27.639 15.6445 27.2677 15.4256 26.746 15.4263C24.4923 15.4263 19.4358 19.5181 18.3759 19.5181C18.2949 19.5181 18.2368 19.4937 18.2053 19.4419C17.6743 18.557 17.9653 17.9394 21.7082 15.6009C25.4511 13.2617 28.0783 11.8545 26.5841 10.1752C26.4121 9.98141 26.1684 9.8956 25.8725 9.8956C23.6001 9.89634 18.2311 14.9403 18.2311 14.9403C18.2311 14.9403 16.7821 16.496 15.9057 16.496C15.7043 16.496 15.533 16.4139 15.4169 16.2112C14.7956 15.1296 21.1879 10.1286 21.5484 8.06535C21.7928 6.66715 21.3771 5.95917 20.6081 5.95917Z\" fill=\"#FF9D00\"></path><path d=\"M5.50686 24.2246C3.53472 21.2387 3.67446 18.9979 6.38043 16.206C9.08641 13.4147 10.6615 9.33111 10.6615 9.33111C10.6615 9.33111 11.2499 6.95933 12.59 7.17757C13.93 7.39581 14.9139 10.9401 12.1069 13.1084C9.29997 15.276 12.6659 16.7489 13.7459 14.713C14.8258 12.6772 17.7747 7.44316 19.304 6.44221C20.8326 5.44128 21.9089 6.00204 21.5484 8.06532C21.188 10.1286 14.795 15.1295 15.4171 16.2118C16.0391 17.2934 18.2312 14.9402 18.2312 14.9402C18.2312 14.9402 25.0907 8.49588 26.5842 10.1752C28.0776 11.8545 25.4512 13.2616 21.7082 15.6008C17.9646 17.9393 17.6744 18.557 18.2054 19.4418C18.7372 20.3266 26.9998 13.1351 27.7759 16.1838C28.5513 19.2324 19.3434 20.1173 19.9117 22.2219C20.48 24.3274 26.3979 18.2382 27.6082 20.6107C28.8193 22.9839 19.2574 25.7722 19.18 25.7929C16.0914 26.62 8.24723 28.3726 5.50686 24.2246Z\" fill=\"#FFD21E\"></path></svg> Community   </a></div> <div class=\"hidden sm:block mt-2 lg:mt-0\"><div class=\"relative \"><button class=\"btn px-1 py-1 text-base translate-y-px \" type=\"button\"><svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" role=\"img\" class=\"p-0.5\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><circle cx=\"16\" cy=\"7\" r=\"3\" fill=\"currentColor\"></circle><circle cx=\"16\" cy=\"16\" r=\"3\" fill=\"currentColor\"></circle><circle cx=\"16\" cy=\"25\" r=\"3\" fill=\"currentColor\"></circle></svg>  </button> </div></div>  </div></div></header>  <dialog class=\"shadow-alternate z-40 mx-4 my-auto h-fit select-text overflow-hidden rounded-xl bg-white max-sm:max-w-[calc(100dvw-2rem)] sm:mx-auto lg:mt-26 md:portrait:mt-30 xl:mt-30 2xl:mt-32 w-full lg:w-10/12 xl:w-8/12 2xl:w-7/12 max-w-[calc(100%-4rem)] lg:max-w-4xl \"><div tabindex=\"-1\" class=\"outline-none focus:ring-0 focus-visible:ring-0\"></div></dialog> <div class=\"spinner-overlay fixed inset-0 z-50 flex h-full w-full items-center justify-center overflow-y-auto bg-gray-500 text-white opacity-80 hidden\"><svg class=\"animate-spin -ml-1 mr-3 h-5 w-5 text-white\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" fill=\"none\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 24 24\"><circle class=\"opacity-25\" cx=\"12\" cy=\"12\" r=\"10\" stroke=\"currentColor\" stroke-width=\"4\"></circle><path class=\"opacity-75\" fill=\"currentColor\" d=\"M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z\"></path></svg> <span>Fetching metadata from the HF Docker repository...</span></div> <dialog class=\"shadow-alternate z-40 mx-4 my-auto h-fit select-text overflow-hidden rounded-xl bg-white max-sm:max-w-[calc(100dvw-2rem)] sm:mx-auto lg:mt-26 md:portrait:mt-30 xl:mt-30 2xl:mt-32 w-full lg:w-10/12 xl:w-8/12 2xl:w-7/12 max-w-[calc(100%-4rem)] lg:max-w-4xl \"><div tabindex=\"-1\" class=\"outline-none focus:ring-0 focus-visible:ring-0\"></div></dialog>  <dialog class=\"shadow-alternate z-40 mx-4 my-auto h-fit select-text overflow-hidden rounded-xl bg-white max-sm:max-w-[calc(100dvw-2rem)] sm:mx-auto lg:mt-26 md:portrait:mt-30 xl:mt-30 2xl:mt-32 w-full lg:w-10/12 xl:w-8/12 2xl:w-7/12 max-w-[calc(100%-4rem)] lg:max-w-4xl \"><div tabindex=\"-1\" class=\"outline-none focus:ring-0 focus-visible:ring-0\"></div></dialog>   <dialog class=\"shadow-alternate z-40 mx-4 my-auto h-fit select-text overflow-hidden rounded-xl bg-white max-sm:max-w-[calc(100dvw-2rem)] sm:mx-auto lg:mt-26 md:portrait:mt-30 xl:mt-30 2xl:mt-32 w-full lg:w-7/12 max-w-[calc(100%-4rem)] md:max-w-2xl max-w-md! max-h-none! m-auto!\"><div tabindex=\"-1\" class=\"outline-none focus:ring-0 focus-visible:ring-0\"></div></dialog></div>  <div class=\"container relative flex flex-col md:grid md:space-y-0 w-full md:grid-cols-12  space-y-4 md:gap-6 mb-16\"><section class=\"pt-8 border-gray-100 col-span-full\"><div class=\"SVELTE_HYDRATER contents\" data-target=\"ViewerHeader\" data-props=\"{&quot;canWrite&quot;:false,&quot;canCreateDiscussion&quot;:true,&quot;context&quot;:{&quot;repo&quot;:{&quot;name&quot;:&quot;Prendilo/EasyFlix&quot;,&quot;type&quot;:&quot;space&quot;},&quot;rev&quot;:&quot;main&quot;},&quot;contributors&quot;:[{&quot;_id&quot;:&quot;692629f0cc9283fe3dbf47dd&quot;,&quot;user&quot;:&quot;Prendilo&quot;,&quot;avatar&quot;:&quot;/avatars/08f008e562b477b7ad33935bcd855df6.svg&quot;}],&quot;numCommits&quot;:27,&quot;refs&quot;:{&quot;branches&quot;:[{&quot;name&quot;:&quot;main&quot;,&quot;ref&quot;:&quot;refs/heads/main&quot;,&quot;targetCommit&quot;:&quot;93fa0c786125a2815c490dbbba2d08df1a3a03d6&quot;}],&quot;tags&quot;:[],&quot;converts&quot;:[]},&quot;showCaptcha&quot;:true,&quot;view&quot;:&quot;tree&quot;,&quot;isMac&quot;:true,&quot;size&quot;:null}\"><header class=\"flex flex-wrap items-center justify-start pb-2 md:justify-end lg:flex-nowrap\"><div class=\"grow max-md:flex max-md:w-full max-md:items-start max-md:justify-between\"><div class=\"relative mr-4 flex min-w-0 basis-auto flex-wrap items-center gap-x-3 md:grow md:basis-full lg:basis-auto lg:flex-nowrap\"><div class=\"relative mb-2\"><button class=\"text-sm md:text-base btn w-full cursor-pointer text-sm\" type=\"button\"><svg class=\"mr-1.5 text-gray-700 dark:text-gray-400\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 24 24\" style=\"transform: rotate(360deg);\"><path d=\"M13 14c-3.36 0-4.46 1.35-4.82 2.24C9.25 16.7 10 17.76 10 19a3 3 0 0 1-3 3a3 3 0 0 1-3-3c0-1.31.83-2.42 2-2.83V7.83A2.99 2.99 0 0 1 4 5a3 3 0 0 1 3-3a3 3 0 0 1 3 3c0 1.31-.83 2.42-2 2.83v5.29c.88-.65 2.16-1.12 4-1.12c2.67 0 3.56-1.34 3.85-2.23A3.006 3.006 0 0 1 14 7a3 3 0 0 1 3-3a3 3 0 0 1 3 3c0 1.34-.88 2.5-2.09 2.86C17.65 11.29 16.68 14 13 14m-6 4a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1M7 4a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m10 2a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1z\" fill=\"currentColor\"></path></svg> main <svg class=\"-mr-1 text-gray-500 \" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 24 24\"><path d=\"M16.293 9.293L12 13.586L7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z\" fill=\"currentColor\"></path></svg></button> </div> <div class=\"relative mb-2 flex flex-wrap items-center\"><a class=\"truncate text-gray-800 hover:underline\" href=\"/spaces/Prendilo/EasyFlix/tree/main\">EasyFlix</a> </div> <div class=\"mb-2 cursor-default whitespace-nowrap rounded-md border bg-white px-1 py-[3px] font-mono text-xs leading-none text-gray-500 dark:border-gray-700/50 dark:bg-gray-850 dark:text-gray-400\">963 kB</div></div> <div class=\"md:relative md:hidden\"><div class=\"hidden md:flex \"><input autocomplete=\"off\" class=\"form-input-alt text-sm! h-8 w-full pl-8 pr-7 focus:shadow-xl dark:bg-gray-950 xl:w-48 [&amp;::-webkit-search-cancel-button]:hidden\" name=\"go-to-file\" placeholder=\"Go to file\" spellcheck=\"false\" type=\"search\"> <svg class=\"absolute left-2.5 text-gray-400 top-1/2 transform -translate-y-1/2\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M30 28.59L22.45 21A11 11 0 1 0 21 22.45L28.59 30zM5 14a9 9 0 1 1 9 9a9 9 0 0 1-9-9z\" fill=\"currentColor\"></path></svg> <kbd class=\"pointer-events-none absolute right-2.5 top-1/2 hidden -translate-y-1/2 rounded-sm border border-slate-200 bg-slate-50 px-1 text-[9px] font-medium text-slate-600 shadow-sm dark:border-slate-600 dark:bg-slate-700 dark:text-slate-200 sm:inline-block\">⌘ K</kbd></div> <button class=\"btn size-7 !p-0 md:hidden\"><svg class=\"text-xs\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M30 28.59L22.45 21A11 11 0 1 0 21 22.45L28.59 30zM5 14a9 9 0 1 1 9 9a9 9 0 0 1-9-9z\" fill=\"currentColor\"></path></svg></button> </div></div> <div class=\"mb-2 flex w-full items-center justify-between md:w-auto md:justify-end\"><div class=\"md:relative md:mr-4 max-md:hidden\"><div class=\"hidden md:flex \"><input autocomplete=\"off\" class=\"form-input-alt text-sm! h-8 w-full pl-8 pr-7 focus:shadow-xl dark:bg-gray-950 xl:w-48 [&amp;::-webkit-search-cancel-button]:hidden\" name=\"go-to-file\" placeholder=\"Go to file\" spellcheck=\"false\" type=\"search\"> <svg class=\"absolute left-2.5 text-gray-400 top-1/2 transform -translate-y-1/2\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M30 28.59L22.45 21A11 11 0 1 0 21 22.45L28.59 30zM5 14a9 9 0 1 1 9 9a9 9 0 0 1-9-9z\" fill=\"currentColor\"></path></svg> <kbd class=\"pointer-events-none absolute right-2.5 top-1/2 hidden -translate-y-1/2 rounded-sm border border-slate-200 bg-slate-50 px-1 text-[9px] font-medium text-slate-600 shadow-sm dark:border-slate-600 dark:bg-slate-700 dark:text-slate-200 sm:inline-block\">⌘ K</kbd></div> <button class=\"btn size-7 !p-0 md:hidden\"><svg class=\"text-xs\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M30 28.59L22.45 21A11 11 0 1 0 21 22.45L28.59 30zM5 14a9 9 0 1 1 9 9a9 9 0 0 1-9-9z\" fill=\"currentColor\"></path></svg></button> </div> <a class=\"mr-2 overflow-hidden md:mr-4 md:grow [&amp;_li]:last:truncate\" href=\"/spaces/Prendilo/EasyFlix/commits/main\"><ul class=\"flex items-center text-gray-600 overflow-hidden justify-start md:justify-end flex-row-reverse   text-sm  \"><li class=\"  -mr-2 h-4 w-4 md:h-5 md:w-5  bg-linear-to-br block flex-none rounded-full border-2 border-white from-gray-300 to-gray-100 dark:border-gray-900 dark:from-gray-600 dark:to-gray-800 \" title=\"Prendilo\" style=\"content-visibility:auto;\"><img class=\"overflow-hidden rounded-full\" alt=\"\" src=\"/avatars/08f008e562b477b7ad33935bcd855df6.svg\" loading=\"lazy\"></li> <li class=\"text-xs hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 order-first ml-3\"><span>1 contributor</span></li></ul></a> <a class=\"btn group mr-0 grow-0 cursor-pointer rounded-full text-sm md:px-4 md:text-base\" href=\"/spaces/Prendilo/EasyFlix/commits/main\"><svg class=\"mr-1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\" style=\"transform: rotate(360deg);\"><path d=\"M16 4C9.383 4 4 9.383 4 16s5.383 12 12 12s12-5.383 12-12S22.617 4 16 4zm0 2c5.535 0 10 4.465 10 10s-4.465 10-10 10S6 21.535 6 16S10.465 6 16 6zm-1 2v9h7v-2h-5V8z\" fill=\"currentColor\"></path></svg> <span class=\"mr-1 text-gray-600\" data-svelte-h=\"svelte-1tsco4e\">History:</span> <span class=\"group-hover:underline\">27 commits</span></a></div> </header></div> <div class=\"SVELTE_HYDRATER contents\" data-target=\"UnsafeBanner\" data-props=\"{&quot;classNames&quot;:&quot;mb-3&quot;,&quot;repoId&quot;:&quot;Prendilo/EasyFlix&quot;,&quot;repoType&quot;:&quot;space&quot;,&quot;revision&quot;:&quot;main&quot;,&quot;securityRepoStatus&quot;:{&quot;scansDone&quot;:false,&quot;filesWithIssues&quot;:[]}}\"></div> <div class=\"SVELTE_HYDRATER contents\" data-target=\"LastCommit\" data-props=\"{&quot;commitLast&quot;:{&quot;date&quot;:&quot;2026-01-29T10:10:17.000Z&quot;,&quot;verified&quot;:&quot;verified&quot;,&quot;subject&quot;:&quot;Upload 11 files&quot;,&quot;authors&quot;:[{&quot;_id&quot;:&quot;692629f0cc9283fe3dbf47dd&quot;,&quot;avatar&quot;:&quot;/avatars/08f008e562b477b7ad33935bcd855df6.svg&quot;,&quot;isHf&quot;:false,&quot;user&quot;:&quot;Prendilo&quot;}],&quot;commit&quot;:{&quot;id&quot;:&quot;93fa0c786125a2815c490dbbba2d08df1a3a03d6&quot;,&quot;parentIds&quot;:[&quot;1374d5f9eb2e09a3d25460d21ecefdff40ac053f&quot;]},&quot;title&quot;:&quot;Upload 11 files&quot;},&quot;repo&quot;:{&quot;name&quot;:&quot;Prendilo/EasyFlix&quot;,&quot;type&quot;:&quot;space&quot;}}\"><div class=\"from-gray-100-to-white bg-linear-to-t flex flex-wrap items-baseline gap-y-1 rounded-t-lg border border-b-0 px-3 py-2 dark:border-gray-800\"><img class=\"mr-2.5 mt-0.5 h-4 w-4 self-center rounded-full\" alt=\"Prendilo's picture\" src=\"/avatars/08f008e562b477b7ad33935bcd855df6.svg\"> <div class=\"mr-4 flex flex-none items-center truncate\"><a class=\"hover:underline\" href=\"/Prendilo\">Prendilo</a> </div> <div class=\"mr-4 truncate font-mono text-xs text-gray-500 hover:prose-a:underline sm:text-sm\"><a href=\"/spaces/Prendilo/EasyFlix/commit/93fa0c786125a2815c490dbbba2d08df1a3a03d6\">Upload 11 files</a></div> <a class=\"rounded-sm border bg-gray-50 px-1.5 text-sm hover:underline dark:border-gray-800 dark:bg-gray-900\" href=\"/spaces/Prendilo/EasyFlix/commit/93fa0c786125a2815c490dbbba2d08df1a3a03d6\">93fa0c7</a> <span class=\"mx-2 text-green-500 dark:text-green-600 px-1.5 border-green-100 dark:border-green-800 rounded-full border text-xs uppercase\" title=\"This commit is signed and the signature is verified\">verified</span> <time class=\"ml-auto hidden flex-none truncate pl-2 text-gray-500 dark:text-gray-400 lg:block\" datetime=\"2026-01-29T10:10:17\" title=\"Thu, 29 Jan 2026 10:10:17 GMT\">about 1 month ago</time></div></div> <div class=\"SVELTE_HYDRATER contents\" data-target=\"ViewerIndexTreeList\" data-props=\"{&quot;context&quot;:{&quot;repo&quot;:{&quot;name&quot;:&quot;Prendilo/EasyFlix&quot;,&quot;type&quot;:&quot;space&quot;},&quot;rev&quot;:&quot;main&quot;},&quot;entries&quot;:[{&quot;type&quot;:&quot;directory&quot;,&quot;oid&quot;:&quot;c1a224bd38957909518fda8a848c91b289330648&quot;,&quot;size&quot;:0,&quot;path&quot;:&quot;assets&quot;,&quot;lastCommit&quot;:{&quot;id&quot;:&quot;93fa0c786125a2815c490dbbba2d08df1a3a03d6&quot;,&quot;title&quot;:&quot;Upload 11 files&quot;,&quot;date&quot;:&quot;2026-01-29T10:10:17.000Z&quot;}},{&quot;type&quot;:&quot;file&quot;,&quot;oid&quot;:&quot;a6344aac8c09253b3b630fb776ae94478aa0275b&quot;,&quot;size&quot;:1519,&quot;path&quot;:&quot;.gitattributes&quot;,&quot;lastCommit&quot;:{&quot;id&quot;:&quot;721a515118557223b3bf7e906def77415a484f73&quot;,&quot;title&quot;:&quot;initial commit&quot;,&quot;date&quot;:&quot;2025-12-20T18:26:52.000Z&quot;},&quot;securityFileStatus&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;protectAiScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;},&quot;avScan&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;message&quot;:&quot;No security issues detected&quot;,&quot;reportLink&quot;:&quot;https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface&quot;,&quot;reportLabel&quot;:&quot;Learn more at Cisco Foundation AI&quot;},&quot;pickleImportScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;pickleImports&quot;:[],&quot;message&quot;:&quot;Unlikely to be a pickle file&quot;,&quot;version&quot;:&quot;0.0.0&quot;},&quot;virusTotalScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;message&quot;:&quot;Not a large file&quot;,&quot;reportLink&quot;:&quot;&quot;,&quot;reportLabel&quot;:&quot;&quot;}}},{&quot;type&quot;:&quot;file&quot;,&quot;oid&quot;:&quot;c5f3d1cab0a912a6520663a5cb941fbcb8f1a624&quot;,&quot;size&quot;:452,&quot;path&quot;:&quot;Dockerfile&quot;,&quot;lastCommit&quot;:{&quot;id&quot;:&quot;09ac4163a87e49c16e4f9032c4f9fa45e8cc3246&quot;,&quot;title&quot;:&quot;Upload 11 files&quot;,&quot;date&quot;:&quot;2025-12-20T18:27:29.000Z&quot;},&quot;securityFileStatus&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;protectAiScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;},&quot;avScan&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;message&quot;:&quot;No security issues detected&quot;,&quot;reportLink&quot;:&quot;https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface&quot;,&quot;reportLabel&quot;:&quot;Learn more at Cisco Foundation AI&quot;},&quot;pickleImportScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;pickleImports&quot;:[],&quot;message&quot;:&quot;Unlikely to be a pickle file&quot;,&quot;version&quot;:&quot;0.0.0&quot;},&quot;virusTotalScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;message&quot;:&quot;Not a large file&quot;,&quot;reportLink&quot;:&quot;&quot;,&quot;reportLabel&quot;:&quot;&quot;}}},{&quot;type&quot;:&quot;file&quot;,&quot;oid&quot;:&quot;e37fdb7beec4f5ae607d4583f17075b33ffd6b32&quot;,&quot;size&quot;:191,&quot;path&quot;:&quot;README.md&quot;,&quot;lastCommit&quot;:{&quot;id&quot;:&quot;721a515118557223b3bf7e906def77415a484f73&quot;,&quot;title&quot;:&quot;initial commit&quot;,&quot;date&quot;:&quot;2025-12-20T18:26:52.000Z&quot;},&quot;securityFileStatus&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;protectAiScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;},&quot;avScan&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;version&quot;:&quot;1.5.1/27896&quot;},&quot;pickleImportScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;pickleImports&quot;:[],&quot;message&quot;:&quot;Unlikely to be a pickle file&quot;,&quot;version&quot;:&quot;0.0.0&quot;},&quot;virusTotalScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;message&quot;:&quot;Not a large file&quot;,&quot;reportLink&quot;:&quot;&quot;,&quot;reportLabel&quot;:&quot;&quot;}}},{&quot;type&quot;:&quot;file&quot;,&quot;oid&quot;:&quot;acc32686bbc15819669e0fdac846ecad47a64bf1&quot;,&quot;size&quot;:5691,&quot;path&quot;:&quot;index.html&quot;,&quot;lastCommit&quot;:{&quot;id&quot;:&quot;8e22893b2b7a6041feb0cd94bf915e1ce9da35dd&quot;,&quot;title&quot;:&quot;Upload 11 files&quot;,&quot;date&quot;:&quot;2025-12-26T13:36:26.000Z&quot;},&quot;securityFileStatus&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;protectAiScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;},&quot;avScan&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;message&quot;:&quot;No security issues detected&quot;,&quot;reportLink&quot;:&quot;https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface&quot;,&quot;reportLabel&quot;:&quot;Learn more at Cisco Foundation AI&quot;},&quot;pickleImportScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;pickleImports&quot;:[],&quot;message&quot;:&quot;Unlikely to be a pickle file&quot;,&quot;version&quot;:&quot;0.0.0&quot;},&quot;virusTotalScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;message&quot;:&quot;Not a large file&quot;,&quot;reportLink&quot;:&quot;&quot;,&quot;reportLabel&quot;:&quot;&quot;}}},{&quot;type&quot;:&quot;file&quot;,&quot;oid&quot;:&quot;dedd282f6b3bdcc9f1c847fbfe6c643597bbacdd&quot;,&quot;size&quot;:89882,&quot;path&quot;:&quot;logo.png&quot;,&quot;lastCommit&quot;:{&quot;id&quot;:&quot;09ac4163a87e49c16e4f9032c4f9fa45e8cc3246&quot;,&quot;title&quot;:&quot;Upload 11 files&quot;,&quot;date&quot;:&quot;2025-12-20T18:27:29.000Z&quot;},&quot;securityFileStatus&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;protectAiScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;},&quot;avScan&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;message&quot;:&quot;No security issues detected&quot;,&quot;reportLink&quot;:&quot;https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface&quot;,&quot;reportLabel&quot;:&quot;Learn more at Cisco Foundation AI&quot;},&quot;pickleImportScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;pickleImports&quot;:[],&quot;message&quot;:&quot;Unlikely to be a pickle file&quot;,&quot;version&quot;:&quot;0.0.0&quot;},&quot;virusTotalScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;message&quot;:&quot;Not a large file&quot;,&quot;reportLink&quot;:&quot;&quot;,&quot;reportLabel&quot;:&quot;&quot;}}},{&quot;type&quot;:&quot;file&quot;,&quot;oid&quot;:&quot;d9e1e0b983555db11c5bc507e9943a2f9f530bf3&quot;,&quot;size&quot;:588,&quot;path&quot;:&quot;manifest.json&quot;,&quot;lastCommit&quot;:{&quot;id&quot;:&quot;09ac4163a87e49c16e4f9032c4f9fa45e8cc3246&quot;,&quot;title&quot;:&quot;Upload 11 files&quot;,&quot;date&quot;:&quot;2025-12-20T18:27:29.000Z&quot;},&quot;securityFileStatus&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;protectAiScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;},&quot;avScan&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;message&quot;:&quot;No security issues detected&quot;,&quot;reportLink&quot;:&quot;https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface&quot;,&quot;reportLabel&quot;:&quot;Learn more at Cisco Foundation AI&quot;},&quot;pickleImportScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;pickleImports&quot;:[],&quot;message&quot;:&quot;Unlikely to be a pickle file&quot;,&quot;version&quot;:&quot;0.0.0&quot;},&quot;virusTotalScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;message&quot;:&quot;Not a large file&quot;,&quot;reportLink&quot;:&quot;&quot;,&quot;reportLabel&quot;:&quot;&quot;}}},{&quot;type&quot;:&quot;file&quot;,&quot;oid&quot;:&quot;0f6998da3265615b7875ab681dd5d548875dd3d3&quot;,&quot;size&quot;:63,&quot;path&quot;:&quot;requirements.txt&quot;,&quot;lastCommit&quot;:{&quot;id&quot;:&quot;09ac4163a87e49c16e4f9032c4f9fa45e8cc3246&quot;,&quot;title&quot;:&quot;Upload 11 files&quot;,&quot;date&quot;:&quot;2025-12-20T18:27:29.000Z&quot;},&quot;securityFileStatus&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;protectAiScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;},&quot;avScan&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;message&quot;:&quot;No security issues detected&quot;,&quot;reportLink&quot;:&quot;https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface&quot;,&quot;reportLabel&quot;:&quot;Learn more at Cisco Foundation AI&quot;},&quot;pickleImportScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;pickleImports&quot;:[],&quot;message&quot;:&quot;Unlikely to be a pickle file&quot;,&quot;version&quot;:&quot;0.0.0&quot;},&quot;virusTotalScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;message&quot;:&quot;Not a large file&quot;,&quot;reportLink&quot;:&quot;&quot;,&quot;reportLabel&quot;:&quot;&quot;}}},{&quot;type&quot;:&quot;file&quot;,&quot;oid&quot;:&quot;c949488ffcccb58646a5800751b9535976d2ccd7&quot;,&quot;size&quot;:6609,&quot;path&quot;:&quot;server.py&quot;,&quot;lastCommit&quot;:{&quot;id&quot;:&quot;09ac4163a87e49c16e4f9032c4f9fa45e8cc3246&quot;,&quot;title&quot;:&quot;Upload 11 files&quot;,&quot;date&quot;:&quot;2025-12-20T18:27:29.000Z&quot;},&quot;securityFileStatus&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;protectAiScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;},&quot;avScan&quot;:{&quot;status&quot;:&quot;safe&quot;,&quot;message&quot;:&quot;No security issues detected&quot;,&quot;reportLink&quot;:&quot;https://fdtn.ai/ai-supply-chain/hugging-face?utm_source=huggingface&quot;,&quot;reportLabel&quot;:&quot;Learn more at Cisco Foundation AI&quot;},&quot;pickleImportScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;pickleImports&quot;:[],&quot;message&quot;:&quot;Unlikely to be a pickle file&quot;,&quot;version&quot;:&quot;0.0.0&quot;},&quot;virusTotalScan&quot;:{&quot;status&quot;:&quot;unscanned&quot;,&quot;message&quot;:&quot;Not a large file&quot;,&quot;reportLink&quot;:&quot;&quot;,&quot;reportLabel&quot;:&quot;&quot;}}}],&quot;nextURL&quot;:null,&quot;query&quot;:{},&quot;objectInfo&quot;:{&quot;author&quot;:&quot;Prendilo&quot;,&quot;colorFrom&quot;:&quot;blue&quot;,&quot;colorTo&quot;:&quot;green&quot;,&quot;cardData&quot;:{&quot;title&quot;:&quot;EasyFlix&quot;,&quot;emoji&quot;:&quot;🏢&quot;,&quot;colorFrom&quot;:&quot;blue&quot;,&quot;colorTo&quot;:&quot;green&quot;,&quot;sdk&quot;:&quot;docker&quot;,&quot;pinned&quot;:false},&quot;createdAt&quot;:&quot;2025-12-20T18:26:52.000Z&quot;,&quot;emoji&quot;:&quot;🏢&quot;,&quot;discussionsDisabled&quot;:false,&quot;discussionsSorting&quot;:&quot;recently-created&quot;,&quot;duplicationDisabled&quot;:true,&quot;id&quot;:&quot;Prendilo/EasyFlix&quot;,&quot;isLikedByUser&quot;:false,&quot;lastModified&quot;:&quot;2026-01-29T10:10:17.000Z&quot;,&quot;likes&quot;:0,&quot;pinned&quot;:false,&quot;private&quot;:false,&quot;gated&quot;:false,&quot;repoType&quot;:&quot;space&quot;,&quot;subdomain&quot;:&quot;prendilo-easyflix&quot;,&quot;sdk&quot;:&quot;docker&quot;,&quot;title&quot;:&quot;EasyFlix&quot;,&quot;runtime&quot;:{&quot;stage&quot;:&quot;PAUSED&quot;,&quot;hardware&quot;:{&quot;current&quot;:null,&quot;requested&quot;:&quot;cpu-basic&quot;},&quot;storage&quot;:null,&quot;gcTimeout&quot;:172800,&quot;errorMessage&quot;:&quot;Flagged as abusive&quot;,&quot;replicas&quot;:{&quot;requested&quot;:1},&quot;devMode&quot;:false,&quot;domains&quot;:[{&quot;domain&quot;:&quot;prendilo-easyflix.hf.space&quot;,&quot;stage&quot;:&quot;READY&quot;}]},&quot;iframe&quot;:{&quot;embedSrc&quot;:&quot;https://prendilo-easyflix.hf.space&quot;,&quot;src&quot;:&quot;https://prendilo-easyflix.hf.space&quot;},&quot;sse&quot;:{&quot;status&quot;:{&quot;url&quot;:&quot;https://huggingface.co/api/spaces/Prendilo/EasyFlix/events&quot;},&quot;liveMetrics&quot;:{&quot;url&quot;:&quot;https://huggingface.co/api/spaces/Prendilo/EasyFlix/metrics&quot;}},&quot;dockerJwt&quot;:&quot;eyJhbGciOiJFZERTQSJ9.eyJyZWFkIjp0cnVlLCJwZXJtaXNzaW9ucyI6eyJyZXBvLmNvbnRlbnQucmVhZCI6dHJ1ZX0sImlhdCI6MTc3MjI4MTUzNywic3ViIjoiL3NwYWNlcy9QcmVuZGlsby9FYXN5RmxpeCIsImV4cCI6MTc3MjM2NzkzNywiaXNzIjoiaHR0cHM6Ly9odWdnaW5nZmFjZS5jbyJ9.JgFU0tIo1fsVsKkOMfpQY2Lytg9xhBx9SFPn4ZFBOuDSk5rn7xVisUeVdijtdRylyQW8TLPhWdNim0WPIecpDA&quot;,&quot;linkedModels&quot;:[],&quot;linkedDatasets&quot;:[],&quot;linkedCollections&quot;:[],&quot;sha&quot;:&quot;93fa0c786125a2815c490dbbba2d08df1a3a03d6&quot;,&quot;hasBlockedOids&quot;:false,&quot;region&quot;:&quot;us&quot;,&quot;tags&quot;:[&quot;docker&quot;,&quot;region:us&quot;]},&quot;hasGatedAccess&quot;:true}\"> <ul class=\"mb-8 rounded-b-lg border border-t-0 dark:border-gray-800 dark:bg-gray-900\"><li class=\"grid-cols-24 grid h-10 place-content-center gap-x-3 border-t px-3 dark:border-gray-800\"><a class=\"col-span-16 flex items-center hover:underline md:col-span-10\" href=\"/spaces/Prendilo/EasyFlix/tree/main/assets\"><svg class=\"flex-none mr-2 text-blue-400 fill-current\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 24 24\"><path d=\"M10 4H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8l-2-2z\" fill=\"currentColor\"></path></svg> <span class=\"truncate\">assets</span></a> <div class=\"col-span-8 md:col-span-6 lg:col-span-4\"></div> <a class=\"col-span-8 hidden font-mono text-sm text-gray-400 hover:underline md:col-span-5 md:flex lg:col-span-7\" href=\"/spaces/Prendilo/EasyFlix/commit/93fa0c786125a2815c490dbbba2d08df1a3a03d6\"><span class=\"truncate\">Upload 11 files</span></a> <a class=\"col-span-4 hidden truncate text-right text-gray-400 md:col-span-3 md:block\" href=\"/spaces/Prendilo/EasyFlix/commit/93fa0c786125a2815c490dbbba2d08df1a3a03d6\"><time datetime=\"2026-01-29T10:10:17\" title=\"Thu, 29 Jan 2026 10:10:17 GMT\">about 1 month ago</time></a></li> <li class=\"grid-cols-24 relative grid h-10 place-content-center gap-x-3 border-t px-3 dark:border-gray-800\"><div class=\"col-span-15 flex items-center md:col-span-10\"><a class=\"group flex items-center truncate\" href=\"/spaces/Prendilo/EasyFlix/blob/main/.gitattributes\"><svg class=\"flex-none mr-2 text-gray-300 fill-current\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M25.7 9.3l-7-7A.908.908 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.908.908 0 0 0-.3-.7zM18 4.4l5.6 5.6H18zM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6z\" fill=\"currentColor\"></path></svg> <span class=\"truncate group-hover:underline\">.gitattributes</span></a> <div class=\"sm:relative ml-1.5\"><button class=\"flex h-[1.125rem] select-none items-center gap-0.5 rounded border pl-0.5 pr-0.5 text-xs leading-tight text-gray-400 hover:cursor-pointer text-gray-400 hover:border-gray-200 hover:bg-gray-50 hover:text-gray-500 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200 translate-y-px\"><svg class=\"flex-none\" width=\"1em\" height=\"1em\" viewBox=\"0 0 22 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M15.3634 10.3639C15.8486 10.8491 15.8486 11.6357 15.3634 12.1209L10.9292 16.5551C10.6058 16.8785 10.0814 16.8785 9.7579 16.5551L7.03051 13.8277C6.54532 13.3425 6.54532 12.5558 7.03051 12.0707C7.51569 11.5855 8.30234 11.5855 8.78752 12.0707L9.7579 13.041C10.0814 13.3645 10.6058 13.3645 10.9292 13.041L13.6064 10.3639C14.0916 9.8787 14.8782 9.8787 15.3634 10.3639Z\" fill=\"currentColor\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.6666 27.12C4.93329 25.28 0 19.2267 0 12.7867V6.52001C0 5.40001 0.693334 4.41334 1.73333 4.01334L9.73333 1.01334C10.3333 0.786673 11 0.786673 11.6 1.02667L19.6 4.02667C20.1083 4.21658 20.5465 4.55701 20.8562 5.00252C21.1659 5.44803 21.3324 5.97742 21.3333 6.52001V12.7867C21.3333 19.24 16.4 25.28 10.6666 27.12Z\" fill=\"currentColor\" fill-opacity=\"0.22\"></path><path d=\"M10.0845 1.94967L10.0867 1.94881C10.4587 1.8083 10.8666 1.81036 11.2286 1.95515L11.2387 1.95919L11.2489 1.963L19.2489 4.963L19.25 4.96342C19.5677 5.08211 19.8416 5.29488 20.0351 5.57333C20.2285 5.85151 20.3326 6.18203 20.3333 6.52082C20.3333 6.52113 20.3333 6.52144 20.3333 6.52176L20.3333 12.7867C20.3333 18.6535 15.8922 24.2319 10.6666 26.0652C5.44153 24.2316 1 18.6409 1 12.7867V6.52001C1 5.82357 1.42893 5.20343 2.08883 4.94803L10.0845 1.94967Z\" stroke=\"currentColor\" stroke-opacity=\"0.30\" stroke-width=\"2\"></path></svg> <span class=\"mr-0.5 max-sm:hidden\" data-svelte-h=\"svelte-r20lj4\">Safe</span></button> </div>  </div> <a class=\"group col-span-9 flex items-center justify-self-end truncate text-right font-mono text-[0.8rem] leading-6 text-gray-400 md:col-span-6 lg:col-span-4 xl:pr-10\" title=\"Download file\" download=\"\" href=\"/spaces/Prendilo/EasyFlix/resolve/main/.gitattributes?download=true\"><span class=\"truncate max-sm:text-xs\">1.52 kB</span>  <div class=\"group-hover:shadow-xs ml-2 flex h-5 w-5 items-center justify-center rounded-sm border text-gray-500 group-hover:bg-gray-50 group-hover:text-gray-800 dark:border-gray-800 dark:group-hover:bg-gray-800 dark:group-hover:text-gray-300 xl:ml-4\"><svg class=\"\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" viewBox=\"0 0 32 32\"><path fill=\"currentColor\" d=\"M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10l10-10z\"></path></svg></div></a> <a class=\"col-span-8 hidden items-center font-mono text-sm text-gray-400 hover:underline md:col-span-5 md:flex lg:col-span-7\" href=\"/spaces/Prendilo/EasyFlix/commit/721a515118557223b3bf7e906def77415a484f73\"><span class=\"truncate\">initial commit</span></a> <a class=\"col-span-4 hidden truncate text-right text-gray-400 md:col-span-3 md:block\" href=\"/spaces/Prendilo/EasyFlix/commit/721a515118557223b3bf7e906def77415a484f73\"><time datetime=\"2025-12-20T18:26:52\" title=\"Sat, 20 Dec 2025 18:26:52 GMT\">2 months ago</time></a></li><li class=\"grid-cols-24 relative grid h-10 place-content-center gap-x-3 border-t px-3 dark:border-gray-800\"><div class=\"col-span-15 flex items-center md:col-span-10\"><a class=\"group flex items-center truncate\" href=\"/spaces/Prendilo/EasyFlix/blob/main/Dockerfile\"><svg class=\"flex-none mr-2 text-gray-300 fill-current\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M25.7 9.3l-7-7A.908.908 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.908.908 0 0 0-.3-.7zM18 4.4l5.6 5.6H18zM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6z\" fill=\"currentColor\"></path></svg> <span class=\"truncate group-hover:underline\">Dockerfile</span></a> <div class=\"sm:relative ml-1.5\"><button class=\"flex h-[1.125rem] select-none items-center gap-0.5 rounded border pl-0.5 pr-0.5 text-xs leading-tight text-gray-400 hover:cursor-pointer text-gray-400 hover:border-gray-200 hover:bg-gray-50 hover:text-gray-500 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200 translate-y-px\"><svg class=\"flex-none\" width=\"1em\" height=\"1em\" viewBox=\"0 0 22 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M15.3634 10.3639C15.8486 10.8491 15.8486 11.6357 15.3634 12.1209L10.9292 16.5551C10.6058 16.8785 10.0814 16.8785 9.7579 16.5551L7.03051 13.8277C6.54532 13.3425 6.54532 12.5558 7.03051 12.0707C7.51569 11.5855 8.30234 11.5855 8.78752 12.0707L9.7579 13.041C10.0814 13.3645 10.6058 13.3645 10.9292 13.041L13.6064 10.3639C14.0916 9.8787 14.8782 9.8787 15.3634 10.3639Z\" fill=\"currentColor\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.6666 27.12C4.93329 25.28 0 19.2267 0 12.7867V6.52001C0 5.40001 0.693334 4.41334 1.73333 4.01334L9.73333 1.01334C10.3333 0.786673 11 0.786673 11.6 1.02667L19.6 4.02667C20.1083 4.21658 20.5465 4.55701 20.8562 5.00252C21.1659 5.44803 21.3324 5.97742 21.3333 6.52001V12.7867C21.3333 19.24 16.4 25.28 10.6666 27.12Z\" fill=\"currentColor\" fill-opacity=\"0.22\"></path><path d=\"M10.0845 1.94967L10.0867 1.94881C10.4587 1.8083 10.8666 1.81036 11.2286 1.95515L11.2387 1.95919L11.2489 1.963L19.2489 4.963L19.25 4.96342C19.5677 5.08211 19.8416 5.29488 20.0351 5.57333C20.2285 5.85151 20.3326 6.18203 20.3333 6.52082C20.3333 6.52113 20.3333 6.52144 20.3333 6.52176L20.3333 12.7867C20.3333 18.6535 15.8922 24.2319 10.6666 26.0652C5.44153 24.2316 1 18.6409 1 12.7867V6.52001C1 5.82357 1.42893 5.20343 2.08883 4.94803L10.0845 1.94967Z\" stroke=\"currentColor\" stroke-opacity=\"0.30\" stroke-width=\"2\"></path></svg> <span class=\"mr-0.5 max-sm:hidden\" data-svelte-h=\"svelte-r20lj4\">Safe</span></button> </div>  </div> <a class=\"group col-span-9 flex items-center justify-self-end truncate text-right font-mono text-[0.8rem] leading-6 text-gray-400 md:col-span-6 lg:col-span-4 xl:pr-10\" title=\"Download file\" download=\"\" href=\"/spaces/Prendilo/EasyFlix/resolve/main/Dockerfile?download=true\"><span class=\"truncate max-sm:text-xs\">452 Bytes</span>  <div class=\"group-hover:shadow-xs ml-2 flex h-5 w-5 items-center justify-center rounded-sm border text-gray-500 group-hover:bg-gray-50 group-hover:text-gray-800 dark:border-gray-800 dark:group-hover:bg-gray-800 dark:group-hover:text-gray-300 xl:ml-4\"><svg class=\"\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" viewBox=\"0 0 32 32\"><path fill=\"currentColor\" d=\"M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10l10-10z\"></path></svg></div></a> <a class=\"col-span-8 hidden items-center font-mono text-sm text-gray-400 hover:underline md:col-span-5 md:flex lg:col-span-7\" href=\"/spaces/Prendilo/EasyFlix/commit/09ac4163a87e49c16e4f9032c4f9fa45e8cc3246\"><span class=\"truncate\">Upload 11 files</span></a> <a class=\"col-span-4 hidden truncate text-right text-gray-400 md:col-span-3 md:block\" href=\"/spaces/Prendilo/EasyFlix/commit/09ac4163a87e49c16e4f9032c4f9fa45e8cc3246\"><time datetime=\"2025-12-20T18:27:29\" title=\"Sat, 20 Dec 2025 18:27:29 GMT\">2 months ago</time></a></li><li class=\"grid-cols-24 relative grid h-10 place-content-center gap-x-3 border-t px-3 dark:border-gray-800\"><div class=\"col-span-15 flex items-center md:col-span-10\"><a class=\"group flex items-center truncate\" href=\"/spaces/Prendilo/EasyFlix/blob/main/README.md\"><svg class=\"flex-none mr-2 text-gray-300 fill-current\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M25.7 9.3l-7-7A.908.908 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.908.908 0 0 0-.3-.7zM18 4.4l5.6 5.6H18zM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6z\" fill=\"currentColor\"></path></svg> <span class=\"truncate group-hover:underline\">README.md</span></a> <div class=\"sm:relative ml-1.5\"><button class=\"flex h-[1.125rem] select-none items-center gap-0.5 rounded border pl-0.5 pr-0.5 text-xs leading-tight text-gray-400 hover:cursor-pointer text-gray-400 hover:border-gray-200 hover:bg-gray-50 hover:text-gray-500 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200 translate-y-px\"><svg class=\"flex-none\" width=\"1em\" height=\"1em\" viewBox=\"0 0 22 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M15.3634 10.3639C15.8486 10.8491 15.8486 11.6357 15.3634 12.1209L10.9292 16.5551C10.6058 16.8785 10.0814 16.8785 9.7579 16.5551L7.03051 13.8277C6.54532 13.3425 6.54532 12.5558 7.03051 12.0707C7.51569 11.5855 8.30234 11.5855 8.78752 12.0707L9.7579 13.041C10.0814 13.3645 10.6058 13.3645 10.9292 13.041L13.6064 10.3639C14.0916 9.8787 14.8782 9.8787 15.3634 10.3639Z\" fill=\"currentColor\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.6666 27.12C4.93329 25.28 0 19.2267 0 12.7867V6.52001C0 5.40001 0.693334 4.41334 1.73333 4.01334L9.73333 1.01334C10.3333 0.786673 11 0.786673 11.6 1.02667L19.6 4.02667C20.1083 4.21658 20.5465 4.55701 20.8562 5.00252C21.1659 5.44803 21.3324 5.97742 21.3333 6.52001V12.7867C21.3333 19.24 16.4 25.28 10.6666 27.12Z\" fill=\"currentColor\" fill-opacity=\"0.22\"></path><path d=\"M10.0845 1.94967L10.0867 1.94881C10.4587 1.8083 10.8666 1.81036 11.2286 1.95515L11.2387 1.95919L11.2489 1.963L19.2489 4.963L19.25 4.96342C19.5677 5.08211 19.8416 5.29488 20.0351 5.57333C20.2285 5.85151 20.3326 6.18203 20.3333 6.52082C20.3333 6.52113 20.3333 6.52144 20.3333 6.52176L20.3333 12.7867C20.3333 18.6535 15.8922 24.2319 10.6666 26.0652C5.44153 24.2316 1 18.6409 1 12.7867V6.52001C1 5.82357 1.42893 5.20343 2.08883 4.94803L10.0845 1.94967Z\" stroke=\"currentColor\" stroke-opacity=\"0.30\" stroke-width=\"2\"></path></svg> <span class=\"mr-0.5 max-sm:hidden\" data-svelte-h=\"svelte-r20lj4\">Safe</span></button> </div>  </div> <a class=\"group col-span-9 flex items-center justify-self-end truncate text-right font-mono text-[0.8rem] leading-6 text-gray-400 md:col-span-6 lg:col-span-4 xl:pr-10\" title=\"Download file\" download=\"\" href=\"/spaces/Prendilo/EasyFlix/resolve/main/README.md?download=true\"><span class=\"truncate max-sm:text-xs\">191 Bytes</span>  <div class=\"group-hover:shadow-xs ml-2 flex h-5 w-5 items-center justify-center rounded-sm border text-gray-500 group-hover:bg-gray-50 group-hover:text-gray-800 dark:border-gray-800 dark:group-hover:bg-gray-800 dark:group-hover:text-gray-300 xl:ml-4\"><svg class=\"\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" viewBox=\"0 0 32 32\"><path fill=\"currentColor\" d=\"M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10l10-10z\"></path></svg></div></a> <a class=\"col-span-8 hidden items-center font-mono text-sm text-gray-400 hover:underline md:col-span-5 md:flex lg:col-span-7\" href=\"/spaces/Prendilo/EasyFlix/commit/721a515118557223b3bf7e906def77415a484f73\"><span class=\"truncate\">initial commit</span></a> <a class=\"col-span-4 hidden truncate text-right text-gray-400 md:col-span-3 md:block\" href=\"/spaces/Prendilo/EasyFlix/commit/721a515118557223b3bf7e906def77415a484f73\"><time datetime=\"2025-12-20T18:26:52\" title=\"Sat, 20 Dec 2025 18:26:52 GMT\">2 months ago</time></a></li><li class=\"grid-cols-24 relative grid h-10 place-content-center gap-x-3 border-t px-3 dark:border-gray-800\"><div class=\"col-span-15 flex items-center md:col-span-10\"><a class=\"group flex items-center truncate\" href=\"/spaces/Prendilo/EasyFlix/blob/main/index.html\"><svg class=\"flex-none mr-2 text-gray-300 fill-current\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M25.7 9.3l-7-7A.908.908 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.908.908 0 0 0-.3-.7zM18 4.4l5.6 5.6H18zM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6z\" fill=\"currentColor\"></path></svg> <span class=\"truncate group-hover:underline\">index.html</span></a> <div class=\"sm:relative ml-1.5\"><button class=\"flex h-[1.125rem] select-none items-center gap-0.5 rounded border pl-0.5 pr-0.5 text-xs leading-tight text-gray-400 hover:cursor-pointer text-gray-400 hover:border-gray-200 hover:bg-gray-50 hover:text-gray-500 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200 translate-y-px\"><svg class=\"flex-none\" width=\"1em\" height=\"1em\" viewBox=\"0 0 22 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M15.3634 10.3639C15.8486 10.8491 15.8486 11.6357 15.3634 12.1209L10.9292 16.5551C10.6058 16.8785 10.0814 16.8785 9.7579 16.5551L7.03051 13.8277C6.54532 13.3425 6.54532 12.5558 7.03051 12.0707C7.51569 11.5855 8.30234 11.5855 8.78752 12.0707L9.7579 13.041C10.0814 13.3645 10.6058 13.3645 10.9292 13.041L13.6064 10.3639C14.0916 9.8787 14.8782 9.8787 15.3634 10.3639Z\" fill=\"currentColor\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.6666 27.12C4.93329 25.28 0 19.2267 0 12.7867V6.52001C0 5.40001 0.693334 4.41334 1.73333 4.01334L9.73333 1.01334C10.3333 0.786673 11 0.786673 11.6 1.02667L19.6 4.02667C20.1083 4.21658 20.5465 4.55701 20.8562 5.00252C21.1659 5.44803 21.3324 5.97742 21.3333 6.52001V12.7867C21.3333 19.24 16.4 25.28 10.6666 27.12Z\" fill=\"currentColor\" fill-opacity=\"0.22\"></path><path d=\"M10.0845 1.94967L10.0867 1.94881C10.4587 1.8083 10.8666 1.81036 11.2286 1.95515L11.2387 1.95919L11.2489 1.963L19.2489 4.963L19.25 4.96342C19.5677 5.08211 19.8416 5.29488 20.0351 5.57333C20.2285 5.85151 20.3326 6.18203 20.3333 6.52082C20.3333 6.52113 20.3333 6.52144 20.3333 6.52176L20.3333 12.7867C20.3333 18.6535 15.8922 24.2319 10.6666 26.0652C5.44153 24.2316 1 18.6409 1 12.7867V6.52001C1 5.82357 1.42893 5.20343 2.08883 4.94803L10.0845 1.94967Z\" stroke=\"currentColor\" stroke-opacity=\"0.30\" stroke-width=\"2\"></path></svg> <span class=\"mr-0.5 max-sm:hidden\" data-svelte-h=\"svelte-r20lj4\">Safe</span></button> </div>  </div> <a class=\"group col-span-9 flex items-center justify-self-end truncate text-right font-mono text-[0.8rem] leading-6 text-gray-400 md:col-span-6 lg:col-span-4 xl:pr-10\" title=\"Download file\" download=\"\" href=\"/spaces/Prendilo/EasyFlix/resolve/main/index.html?download=true\"><span class=\"truncate max-sm:text-xs\">5.69 kB</span>  <div class=\"group-hover:shadow-xs ml-2 flex h-5 w-5 items-center justify-center rounded-sm border text-gray-500 group-hover:bg-gray-50 group-hover:text-gray-800 dark:border-gray-800 dark:group-hover:bg-gray-800 dark:group-hover:text-gray-300 xl:ml-4\"><svg class=\"\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" viewBox=\"0 0 32 32\"><path fill=\"currentColor\" d=\"M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10l10-10z\"></path></svg></div></a> <a class=\"col-span-8 hidden items-center font-mono text-sm text-gray-400 hover:underline md:col-span-5 md:flex lg:col-span-7\" href=\"/spaces/Prendilo/EasyFlix/commit/8e22893b2b7a6041feb0cd94bf915e1ce9da35dd\"><span class=\"truncate\">Upload 11 files</span></a> <a class=\"col-span-4 hidden truncate text-right text-gray-400 md:col-span-3 md:block\" href=\"/spaces/Prendilo/EasyFlix/commit/8e22893b2b7a6041feb0cd94bf915e1ce9da35dd\"><time datetime=\"2025-12-26T13:36:26\" title=\"Fri, 26 Dec 2025 13:36:26 GMT\">2 months ago</time></a></li><li class=\"grid-cols-24 relative grid h-10 place-content-center gap-x-3 border-t px-3 dark:border-gray-800\"><div class=\"col-span-15 flex items-center md:col-span-10\"><a class=\"group flex items-center truncate\" href=\"/spaces/Prendilo/EasyFlix/blob/main/logo.png\"><svg class=\"flex-none mr-2 text-gray-300 fill-current\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M25.7 9.3l-7-7A.908.908 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.908.908 0 0 0-.3-.7zM18 4.4l5.6 5.6H18zM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6z\" fill=\"currentColor\"></path></svg> <span class=\"truncate group-hover:underline\">logo.png</span></a> <div class=\"sm:relative ml-1.5\"><button class=\"flex h-[1.125rem] select-none items-center gap-0.5 rounded border pl-0.5 pr-0.5 text-xs leading-tight text-gray-400 hover:cursor-pointer text-gray-400 hover:border-gray-200 hover:bg-gray-50 hover:text-gray-500 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200 translate-y-px\"><svg class=\"flex-none\" width=\"1em\" height=\"1em\" viewBox=\"0 0 22 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M15.3634 10.3639C15.8486 10.8491 15.8486 11.6357 15.3634 12.1209L10.9292 16.5551C10.6058 16.8785 10.0814 16.8785 9.7579 16.5551L7.03051 13.8277C6.54532 13.3425 6.54532 12.5558 7.03051 12.0707C7.51569 11.5855 8.30234 11.5855 8.78752 12.0707L9.7579 13.041C10.0814 13.3645 10.6058 13.3645 10.9292 13.041L13.6064 10.3639C14.0916 9.8787 14.8782 9.8787 15.3634 10.3639Z\" fill=\"currentColor\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.6666 27.12C4.93329 25.28 0 19.2267 0 12.7867V6.52001C0 5.40001 0.693334 4.41334 1.73333 4.01334L9.73333 1.01334C10.3333 0.786673 11 0.786673 11.6 1.02667L19.6 4.02667C20.1083 4.21658 20.5465 4.55701 20.8562 5.00252C21.1659 5.44803 21.3324 5.97742 21.3333 6.52001V12.7867C21.3333 19.24 16.4 25.28 10.6666 27.12Z\" fill=\"currentColor\" fill-opacity=\"0.22\"></path><path d=\"M10.0845 1.94967L10.0867 1.94881C10.4587 1.8083 10.8666 1.81036 11.2286 1.95515L11.2387 1.95919L11.2489 1.963L19.2489 4.963L19.25 4.96342C19.5677 5.08211 19.8416 5.29488 20.0351 5.57333C20.2285 5.85151 20.3326 6.18203 20.3333 6.52082C20.3333 6.52113 20.3333 6.52144 20.3333 6.52176L20.3333 12.7867C20.3333 18.6535 15.8922 24.2319 10.6666 26.0652C5.44153 24.2316 1 18.6409 1 12.7867V6.52001C1 5.82357 1.42893 5.20343 2.08883 4.94803L10.0845 1.94967Z\" stroke=\"currentColor\" stroke-opacity=\"0.30\" stroke-width=\"2\"></path></svg> <span class=\"mr-0.5 max-sm:hidden\" data-svelte-h=\"svelte-r20lj4\">Safe</span></button> </div>  </div> <a class=\"group col-span-9 flex items-center justify-self-end truncate text-right font-mono text-[0.8rem] leading-6 text-gray-400 md:col-span-6 lg:col-span-4 xl:pr-10\" title=\"Download file\" download=\"\" href=\"/spaces/Prendilo/EasyFlix/resolve/main/logo.png?download=true\"><span class=\"truncate max-sm:text-xs\">89.9 kB</span>  <div class=\"group-hover:shadow-xs ml-2 flex h-5 w-5 items-center justify-center rounded-sm border text-gray-500 group-hover:bg-gray-50 group-hover:text-gray-800 dark:border-gray-800 dark:group-hover:bg-gray-800 dark:group-hover:text-gray-300 xl:ml-4\"><svg class=\"\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" viewBox=\"0 0 32 32\"><path fill=\"currentColor\" d=\"M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10l10-10z\"></path></svg></div></a> <a class=\"col-span-8 hidden items-center font-mono text-sm text-gray-400 hover:underline md:col-span-5 md:flex lg:col-span-7\" href=\"/spaces/Prendilo/EasyFlix/commit/09ac4163a87e49c16e4f9032c4f9fa45e8cc3246\"><span class=\"truncate\">Upload 11 files</span></a> <a class=\"col-span-4 hidden truncate text-right text-gray-400 md:col-span-3 md:block\" href=\"/spaces/Prendilo/EasyFlix/commit/09ac4163a87e49c16e4f9032c4f9fa45e8cc3246\"><time datetime=\"2025-12-20T18:27:29\" title=\"Sat, 20 Dec 2025 18:27:29 GMT\">2 months ago</time></a></li><li class=\"grid-cols-24 relative grid h-10 place-content-center gap-x-3 border-t px-3 dark:border-gray-800\"><div class=\"col-span-15 flex items-center md:col-span-10\"><a class=\"group flex items-center truncate\" href=\"/spaces/Prendilo/EasyFlix/blob/main/manifest.json\"><svg class=\"flex-none mr-2 text-gray-300 fill-current\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M25.7 9.3l-7-7A.908.908 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.908.908 0 0 0-.3-.7zM18 4.4l5.6 5.6H18zM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6z\" fill=\"currentColor\"></path></svg> <span class=\"truncate group-hover:underline\">manifest.json</span></a> <div class=\"sm:relative ml-1.5\"><button class=\"flex h-[1.125rem] select-none items-center gap-0.5 rounded border pl-0.5 pr-0.5 text-xs leading-tight text-gray-400 hover:cursor-pointer text-gray-400 hover:border-gray-200 hover:bg-gray-50 hover:text-gray-500 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200 translate-y-px\"><svg class=\"flex-none\" width=\"1em\" height=\"1em\" viewBox=\"0 0 22 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M15.3634 10.3639C15.8486 10.8491 15.8486 11.6357 15.3634 12.1209L10.9292 16.5551C10.6058 16.8785 10.0814 16.8785 9.7579 16.5551L7.03051 13.8277C6.54532 13.3425 6.54532 12.5558 7.03051 12.0707C7.51569 11.5855 8.30234 11.5855 8.78752 12.0707L9.7579 13.041C10.0814 13.3645 10.6058 13.3645 10.9292 13.041L13.6064 10.3639C14.0916 9.8787 14.8782 9.8787 15.3634 10.3639Z\" fill=\"currentColor\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.6666 27.12C4.93329 25.28 0 19.2267 0 12.7867V6.52001C0 5.40001 0.693334 4.41334 1.73333 4.01334L9.73333 1.01334C10.3333 0.786673 11 0.786673 11.6 1.02667L19.6 4.02667C20.1083 4.21658 20.5465 4.55701 20.8562 5.00252C21.1659 5.44803 21.3324 5.97742 21.3333 6.52001V12.7867C21.3333 19.24 16.4 25.28 10.6666 27.12Z\" fill=\"currentColor\" fill-opacity=\"0.22\"></path><path d=\"M10.0845 1.94967L10.0867 1.94881C10.4587 1.8083 10.8666 1.81036 11.2286 1.95515L11.2387 1.95919L11.2489 1.963L19.2489 4.963L19.25 4.96342C19.5677 5.08211 19.8416 5.29488 20.0351 5.57333C20.2285 5.85151 20.3326 6.18203 20.3333 6.52082C20.3333 6.52113 20.3333 6.52144 20.3333 6.52176L20.3333 12.7867C20.3333 18.6535 15.8922 24.2319 10.6666 26.0652C5.44153 24.2316 1 18.6409 1 12.7867V6.52001C1 5.82357 1.42893 5.20343 2.08883 4.94803L10.0845 1.94967Z\" stroke=\"currentColor\" stroke-opacity=\"0.30\" stroke-width=\"2\"></path></svg> <span class=\"mr-0.5 max-sm:hidden\" data-svelte-h=\"svelte-r20lj4\">Safe</span></button> </div>  </div> <a class=\"group col-span-9 flex items-center justify-self-end truncate text-right font-mono text-[0.8rem] leading-6 text-gray-400 md:col-span-6 lg:col-span-4 xl:pr-10\" title=\"Download file\" download=\"\" href=\"/spaces/Prendilo/EasyFlix/resolve/main/manifest.json?download=true\"><span class=\"truncate max-sm:text-xs\">588 Bytes</span>  <div class=\"group-hover:shadow-xs ml-2 flex h-5 w-5 items-center justify-center rounded-sm border text-gray-500 group-hover:bg-gray-50 group-hover:text-gray-800 dark:border-gray-800 dark:group-hover:bg-gray-800 dark:group-hover:text-gray-300 xl:ml-4\"><svg class=\"\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" viewBox=\"0 0 32 32\"><path fill=\"currentColor\" d=\"M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10l10-10z\"></path></svg></div></a> <a class=\"col-span-8 hidden items-center font-mono text-sm text-gray-400 hover:underline md:col-span-5 md:flex lg:col-span-7\" href=\"/spaces/Prendilo/EasyFlix/commit/09ac4163a87e49c16e4f9032c4f9fa45e8cc3246\"><span class=\"truncate\">Upload 11 files</span></a> <a class=\"col-span-4 hidden truncate text-right text-gray-400 md:col-span-3 md:block\" href=\"/spaces/Prendilo/EasyFlix/commit/09ac4163a87e49c16e4f9032c4f9fa45e8cc3246\"><time datetime=\"2025-12-20T18:27:29\" title=\"Sat, 20 Dec 2025 18:27:29 GMT\">2 months ago</time></a></li><li class=\"grid-cols-24 relative grid h-10 place-content-center gap-x-3 border-t px-3 dark:border-gray-800\"><div class=\"col-span-15 flex items-center md:col-span-10\"><a class=\"group flex items-center truncate\" href=\"/spaces/Prendilo/EasyFlix/blob/main/requirements.txt\"><svg class=\"flex-none mr-2 text-gray-300 fill-current\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M25.7 9.3l-7-7A.908.908 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.908.908 0 0 0-.3-.7zM18 4.4l5.6 5.6H18zM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6z\" fill=\"currentColor\"></path></svg> <span class=\"truncate group-hover:underline\">requirements.txt</span></a> <div class=\"sm:relative ml-1.5\"><button class=\"flex h-[1.125rem] select-none items-center gap-0.5 rounded border pl-0.5 pr-0.5 text-xs leading-tight text-gray-400 hover:cursor-pointer text-gray-400 hover:border-gray-200 hover:bg-gray-50 hover:text-gray-500 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200 translate-y-px\"><svg class=\"flex-none\" width=\"1em\" height=\"1em\" viewBox=\"0 0 22 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M15.3634 10.3639C15.8486 10.8491 15.8486 11.6357 15.3634 12.1209L10.9292 16.5551C10.6058 16.8785 10.0814 16.8785 9.7579 16.5551L7.03051 13.8277C6.54532 13.3425 6.54532 12.5558 7.03051 12.0707C7.51569 11.5855 8.30234 11.5855 8.78752 12.0707L9.7579 13.041C10.0814 13.3645 10.6058 13.3645 10.9292 13.041L13.6064 10.3639C14.0916 9.8787 14.8782 9.8787 15.3634 10.3639Z\" fill=\"currentColor\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.6666 27.12C4.93329 25.28 0 19.2267 0 12.7867V6.52001C0 5.40001 0.693334 4.41334 1.73333 4.01334L9.73333 1.01334C10.3333 0.786673 11 0.786673 11.6 1.02667L19.6 4.02667C20.1083 4.21658 20.5465 4.55701 20.8562 5.00252C21.1659 5.44803 21.3324 5.97742 21.3333 6.52001V12.7867C21.3333 19.24 16.4 25.28 10.6666 27.12Z\" fill=\"currentColor\" fill-opacity=\"0.22\"></path><path d=\"M10.0845 1.94967L10.0867 1.94881C10.4587 1.8083 10.8666 1.81036 11.2286 1.95515L11.2387 1.95919L11.2489 1.963L19.2489 4.963L19.25 4.96342C19.5677 5.08211 19.8416 5.29488 20.0351 5.57333C20.2285 5.85151 20.3326 6.18203 20.3333 6.52082C20.3333 6.52113 20.3333 6.52144 20.3333 6.52176L20.3333 12.7867C20.3333 18.6535 15.8922 24.2319 10.6666 26.0652C5.44153 24.2316 1 18.6409 1 12.7867V6.52001C1 5.82357 1.42893 5.20343 2.08883 4.94803L10.0845 1.94967Z\" stroke=\"currentColor\" stroke-opacity=\"0.30\" stroke-width=\"2\"></path></svg> <span class=\"mr-0.5 max-sm:hidden\" data-svelte-h=\"svelte-r20lj4\">Safe</span></button> </div>  </div> <a class=\"group col-span-9 flex items-center justify-self-end truncate text-right font-mono text-[0.8rem] leading-6 text-gray-400 md:col-span-6 lg:col-span-4 xl:pr-10\" title=\"Download file\" download=\"\" href=\"/spaces/Prendilo/EasyFlix/resolve/main/requirements.txt?download=true\"><span class=\"truncate max-sm:text-xs\">63 Bytes</span>  <div class=\"group-hover:shadow-xs ml-2 flex h-5 w-5 items-center justify-center rounded-sm border text-gray-500 group-hover:bg-gray-50 group-hover:text-gray-800 dark:border-gray-800 dark:group-hover:bg-gray-800 dark:group-hover:text-gray-300 xl:ml-4\"><svg class=\"\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" viewBox=\"0 0 32 32\"><path fill=\"currentColor\" d=\"M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10l10-10z\"></path></svg></div></a> <a class=\"col-span-8 hidden items-center font-mono text-sm text-gray-400 hover:underline md:col-span-5 md:flex lg:col-span-7\" href=\"/spaces/Prendilo/EasyFlix/commit/09ac4163a87e49c16e4f9032c4f9fa45e8cc3246\"><span class=\"truncate\">Upload 11 files</span></a> <a class=\"col-span-4 hidden truncate text-right text-gray-400 md:col-span-3 md:block\" href=\"/spaces/Prendilo/EasyFlix/commit/09ac4163a87e49c16e4f9032c4f9fa45e8cc3246\"><time datetime=\"2025-12-20T18:27:29\" title=\"Sat, 20 Dec 2025 18:27:29 GMT\">2 months ago</time></a></li><li class=\"grid-cols-24 relative grid h-10 place-content-center gap-x-3 border-t px-3 dark:border-gray-800\"><div class=\"col-span-15 flex items-center md:col-span-10\"><a class=\"group flex items-center truncate\" href=\"/spaces/Prendilo/EasyFlix/blob/main/server.py\"><svg class=\"flex-none mr-2 text-gray-300 fill-current\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" preserveAspectRatio=\"xMidYMid meet\" viewBox=\"0 0 32 32\"><path d=\"M25.7 9.3l-7-7A.908.908 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.908.908 0 0 0-.3-.7zM18 4.4l5.6 5.6H18zM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6z\" fill=\"currentColor\"></path></svg> <span class=\"truncate group-hover:underline\">server.py</span></a> <div class=\"sm:relative ml-1.5\"><button class=\"flex h-[1.125rem] select-none items-center gap-0.5 rounded border pl-0.5 pr-0.5 text-xs leading-tight text-gray-400 hover:cursor-pointer text-gray-400 hover:border-gray-200 hover:bg-gray-50 hover:text-gray-500 dark:border-gray-800 dark:hover:bg-gray-800 dark:hover:text-gray-200 translate-y-px\"><svg class=\"flex-none\" width=\"1em\" height=\"1em\" viewBox=\"0 0 22 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M15.3634 10.3639C15.8486 10.8491 15.8486 11.6357 15.3634 12.1209L10.9292 16.5551C10.6058 16.8785 10.0814 16.8785 9.7579 16.5551L7.03051 13.8277C6.54532 13.3425 6.54532 12.5558 7.03051 12.0707C7.51569 11.5855 8.30234 11.5855 8.78752 12.0707L9.7579 13.041C10.0814 13.3645 10.6058 13.3645 10.9292 13.041L13.6064 10.3639C14.0916 9.8787 14.8782 9.8787 15.3634 10.3639Z\" fill=\"currentColor\"></path><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M10.6666 27.12C4.93329 25.28 0 19.2267 0 12.7867V6.52001C0 5.40001 0.693334 4.41334 1.73333 4.01334L9.73333 1.01334C10.3333 0.786673 11 0.786673 11.6 1.02667L19.6 4.02667C20.1083 4.21658 20.5465 4.55701 20.8562 5.00252C21.1659 5.44803 21.3324 5.97742 21.3333 6.52001V12.7867C21.3333 19.24 16.4 25.28 10.6666 27.12Z\" fill=\"currentColor\" fill-opacity=\"0.22\"></path><path d=\"M10.0845 1.94967L10.0867 1.94881C10.4587 1.8083 10.8666 1.81036 11.2286 1.95515L11.2387 1.95919L11.2489 1.963L19.2489 4.963L19.25 4.96342C19.5677 5.08211 19.8416 5.29488 20.0351 5.57333C20.2285 5.85151 20.3326 6.18203 20.3333 6.52082C20.3333 6.52113 20.3333 6.52144 20.3333 6.52176L20.3333 12.7867C20.3333 18.6535 15.8922 24.2319 10.6666 26.0652C5.44153 24.2316 1 18.6409 1 12.7867V6.52001C1 5.82357 1.42893 5.20343 2.08883 4.94803L10.0845 1.94967Z\" stroke=\"currentColor\" stroke-opacity=\"0.30\" stroke-width=\"2\"></path></svg> <span class=\"mr-0.5 max-sm:hidden\" data-svelte-h=\"svelte-r20lj4\">Safe</span></button> </div>  </div> <a class=\"group col-span-9 flex items-center justify-self-end truncate text-right font-mono text-[0.8rem] leading-6 text-gray-400 md:col-span-6 lg:col-span-4 xl:pr-10\" title=\"Download file\" download=\"\" href=\"/spaces/Prendilo/EasyFlix/resolve/main/server.py?download=true\"><span class=\"truncate max-sm:text-xs\">6.61 kB</span>  <div class=\"group-hover:shadow-xs ml-2 flex h-5 w-5 items-center justify-center rounded-sm border text-gray-500 group-hover:bg-gray-50 group-hover:text-gray-800 dark:border-gray-800 dark:group-hover:bg-gray-800 dark:group-hover:text-gray-300 xl:ml-4\"><svg class=\"\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" aria-hidden=\"true\" focusable=\"false\" role=\"img\" width=\"1em\" height=\"1em\" viewBox=\"0 0 32 32\"><path fill=\"currentColor\" d=\"M26 24v4H6v-4H4v4a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-4zm0-10l-1.41-1.41L17 20.17V2h-2v18.17l-7.59-7.58L6 14l10 10l10-10z\"></path></svg></div></a> <a class=\"col-span-8 hidden items-center font-mono text-sm text-gray-400 hover:underline md:col-span-5 md:flex lg:col-span-7\" href=\"/spaces/Prendilo/EasyFlix/commit/09ac4163a87e49c16e4f9032c4f9fa45e8cc3246\"><span class=\"truncate\">Upload 11 files</span></a> <a class=\"col-span-4 hidden truncate text-right text-gray-400 md:col-span-3 md:block\" href=\"/spaces/Prendilo/EasyFlix/commit/09ac4163a87e49c16e4f9032c4f9fa45e8cc3246\"><time datetime=\"2025-12-20T18:27:29\" title=\"Sat, 20 Dec 2025 18:27:29 GMT\">2 months ago</time></a></li> </ul></div></section></div></main> </div>\n\t\t<script>\n\t\t\t import(\"\\/front\\/build\\/kube-486f880\\/index.js\"); window.moonSha = \"kube-486f880\\/\"; window.__hf_deferred =\n\t\t\t{\"size\":963026};\n\t\t</script>\n\t\t<!-- Stripe -->\n\t\t<script>\n\t\t\tif ([\"hf.co\", \"huggingface.co\"].includes(window.location.hostname)) {\n\t\t\t\tconst script = document.createElement(\"script\");\n\t\t\t\tscript.src = \"https://js.stripe.com/v3/\";\n\t\t\t\tscript.async = true;\n\t\t\t\tdocument.head.appendChild(script);\n\t\t\t}\n\t\t</script>\n\t\n\n<div class=\"tooltip-mask hidden\"><div class=\"tooltip\" role=\"tooltip\" style=\"white-space: pre-line;\"><div class=\"tooltip-arrow\"></div>Total file size</div></div><iframe name=\"__privateStripeMetricsController7460\" frameborder=\"0\" allowtransparency=\"true\" scrolling=\"no\" role=\"presentation\" allow=\"payment *\" src=\"https://js.stripe.com/v3/m-outer-3437aaddcdf6922d623e172c2d6f9278.html#url=https%3A%2F%2Fhuggingface.co%2Fspaces%2FPrendilo%2FEasyFlix%2Ftree%2Fmain&amp;title=Prendilo%2FEasyFlix%20at%20main&amp;referrer=&amp;muid=NA&amp;sid=NA&amp;version=6&amp;preview=false&amp;__shared_params__[version]=v3\" aria-hidden=\"true\" tabindex=\"-1\" style=\"border: none !important; margin: 0px !important; padding: 0px !important; width: 1px !important; min-width: 100% !important; overflow: hidden !important; display: block !important; visibility: hidden !important; position: fixed !important; height: 1px !important; pointer-events: none !important; user-select: none !important;\"></iframe></body></html>",
+    "metadata": {
+      "description": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.",
+      "fb:app_id": "1321688464574422",
+      "og:description": "We’re on a journey to advance and democratize artificial intelligence through open source and open science.",
+      "og:image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/spaces/Prendilo/EasyFlix.png",
+      "og:title": "Prendilo/EasyFlix at main",
+      "og:type": "website",
+      "og:url": "https://huggingface.co/spaces/Prendilo/EasyFlix/tree/main",
+      "twitter:card": "summary_large_image",
+      "twitter:image": "https://cdn-thumbnails.huggingface.co/social-thumbnails/spaces/Prendilo/EasyFlix.png",
+      "twitter:site": "@huggingface",
+      "viewport": "width=device-width, initial-scale=1.0, user-scalable=no"
+    },
+    "title": "Prendilo/EasyFlix at main",
+    "url": "https://huggingface.co/spaces/Prendilo/EasyFlix/tree/main",
+    "usage": {
+      "tokens": 46775
+    }
+  },
+  "meta": {
+    "usage": {
+      "tokens": 46775
+    }
+  },
+  "status": 20000
+}

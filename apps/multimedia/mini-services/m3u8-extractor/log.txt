@@ -1,0 +1,22 @@
+$ bun --hot index.ts
+[Extractor] Server running on http://localhost:3002
+[Extractor] Extracting from: https://example.com
+[Extractor] Launching browser...
+[Extractor] Browser launched
+[Extractor] Navigating to page...
+[Extractor] Error: 75 |       }
+76 |     });
+77 | 
+78 |     console.log('[Extractor] Navigating to page...');
+79 | 
+80 |     await page.goto(embedUrl, {
+                    ^
+error: goto: net::ERR_TUNNEL_CONNECTION_FAILED at https://example.com/
+Call log:
+  - navigating to "https://example.com/", waiting until "domcontentloaded"
+
+      at extractM3U8 (/home/z/my-project/mini-services/m3u8-extractor/index.ts:80:16)
+      at fetch (/home/z/my-project/mini-services/m3u8-extractor/index.ts:157:31)
+      at processTicksAndRejections (native:7:39)
+
+[Extractor] Found 0 streams

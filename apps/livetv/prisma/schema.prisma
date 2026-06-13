@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id        String    @id @default(cuid())
+  name      String    @unique
+  slug      String    @unique
+  icon      String
+  color     String
+  sortOrder Int       @default(0)
+  isVisible Boolean   @default(true)
+  channels  Channel[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Channel {
+  id           String   @id @default(cuid())
+  title        String
+  category     Category @relation(fields: [categoryId], references: [id])
+  categoryId   String
+  mpdUrl       String?
+  drmType      String?  @default("none")
+  drmKeyId     String?
+  drmKey       String?
+  isLive       Boolean  @default(true)
+  useProxy     Boolean  @default(false)
+  proxyUrl     String?
+  userAgent    String?
+  thumbnailUrl String?
+  sport        String?
+  eventDate    DateTime?
+  description  String?
+  btcPrice     Float?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([categoryId])
+}
