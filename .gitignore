@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SQLite databases (local dev only)
+**/prisma/data.db
+**/prisma/dev.db
+**/prisma/*.db-journal
+
+# Logs
+*.log
+dev.log
+server.log
+
+# Uploads (local)
+**/public/uploads/

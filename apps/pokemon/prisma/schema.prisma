@@ -1,0 +1,132 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model - Account utente
+model User {
+  id            String         @id @default(cuid())
+  email         String         @unique
+  username      String         @unique
+  password      String
+  avatar        String?
+  role          String         @default("user") // user, admin
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  // Relations
+  gameSessions  GameSession[]
+  scores        Score[]
+  roomPlayers   RoomPlayer[]
+  devices       Device[]
+}
+
+// Game model - Videogioco
+model Game {
+  id            String         @id @default(cuid())
+  title         String
+  description   String
+  category      String         // action, puzzle, racing, arcade, etc.
+  thumbnail     String
+  gamePath      String         // path to game folder
+  isActive      Boolean        @default(true)
+  isMultiplayer Boolean        @default(false)
+  maxPlayers    Int            @default(4)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  // Relations
+  scores        Score[]
+  rooms         Room[]
+  gameSessions  GameSession[]
+}
+
+// Room model - Stanza multiplayer
+model Room {
+  id            String         @id @default(cuid())
+  code          String         @unique // codice stanza
+  gameId        String
+  hostId        String
+  status        String         @default("waiting") // waiting, playing, finished
+  maxPlayers    Int            @default(4)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  // Relations
+  game          Game           @relation(fields: [gameId], references: [id])
+  players       RoomPlayer[]
+  gameSessions  GameSession[]
+}
+
+// RoomPlayer model - Giocatori in stanza
+model RoomPlayer {
+  id            String         @id @default(cuid())
+  roomId        String
+  userId        String
+  isHost        Boolean        @default(false)
+  isReady       Boolean        @default(false)
+  joinedAt      DateTime       @default(now())
+  
+  // Relations
+  room          Room           @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  user          User           @relation(fields: [userId], references: [id])
+  
+  @@unique([roomId, userId])
+}
+
+// Score model - Punteggi
+model Score {
+  id            String         @id @default(cuid())
+  userId        String
+  gameId        String
+  score         Int
+  data         String?         // JSON data for additional info
+  createdAt     DateTime       @default(now())
+  
+  // Relations
+  user          User           @relation(fields: [userId], references: [id])
+  game          Game           @relation(fields: [gameId], references: [id])
+  
+  @@index([gameId, score])
+  @@index([userId, gameId])
+}
+
+// GameSession model - Cronologia partite
+model GameSession {
+  id            String         @id @default(cuid())
+  userId        String
+  gameId        String
+  roomId        String?
+  score         Int?
+  duration      Int?           // in seconds
+  completed     Boolean        @default(false)
+  createdAt     DateTime       @default(now())
+  
+  // Relations
+  user          User           @relation(fields: [userId], references: [id])
+  game          Game           @relation(fields: [gameId], references: [id])
+  room          Room?          @relation(fields: [roomId], references: [id])
+}
+
+// Device model - Dispositivi collegati
+model Device {
+  id            String         @id @default(cuid())
+  userId        String
+  deviceType    String         // phone, tablet, tv, pc
+  deviceName    String?
+  pairingCode   String         @unique
+  isController  Boolean        @default(false)
+  isActive      Boolean        @default(true)
+  lastSeen      DateTime       @default(now())
+  createdAt     DateTime       @default(now())
+  
+  // Relations
+  user          User           @relation(fields: [userId], references: [id])
+}

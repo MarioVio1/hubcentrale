@@ -1,0 +1,16 @@
+{
+  "slug": "spritzino",
+  "name": "Spritzino",
+  "type": [
+    "water",
+    "fire"
+  ],
+  "description": "Creatura frizzante ispirata allo spritz.",
+  "base_stats": {
+    "hp": 40,
+    "attack": 50,
+    "defense": 35,
+    "speed": 65
+  },
+  "evolution": "spritzilla"
+}

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450" viewBox="0 0 300 450">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0f;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00a88a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="300" height="450" fill="url(#bg-grad)"/>
+
+  <!-- Border -->
+  <rect x="2" y="2" width="296" height="446" fill="none" stroke="url(#accent-grad)" stroke-width="2" rx="8"/>
+
+  <!-- Book icon -->
+  <g transform="translate(100, 150)">
+    <!-- Left page -->
+    <path d="M 0,20 Q 25,10 50,20 L 50,80 Q 25,70 0,80 Z" fill="#2a2a3e" stroke="url(#accent-grad)" stroke-width="2"/>
+    <!-- Right page -->
+    <path d="M 50,20 Q 75,10 100,20 L 100,80 Q 75,70 50,80 Z" fill="#3a3a4e" stroke="url(#accent-grad)" stroke-width="2"/>
+    <!-- Spine -->
+    <line x1="50" y1="20" x2="50" y2="80" stroke="url(#accent-grad)" stroke-width="2"/>
+  </g>
+
+  <!-- Text -->
+  <text x="150" y="280" text-anchor="middle" fill="#4a4a6a" font-size="24" font-family="Arial, sans-serif" font-weight="bold">No Cover</text>
+  <text x="150" y="320" text-anchor="middle" fill="#3a3a4e" font-size="14" font-family="Arial, sans-serif">Image not available</text>
+
+  <!-- MangaFlow logo text -->
+  <text x="150" y="400" text-anchor="middle" fill="#00d4aa" font-size="20" font-family="Arial, sans-serif" font-weight="bold">MangaFlow</text>
+</svg>
