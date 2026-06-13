@@ -33,3 +33,4 @@ server.log
 
 # Uploads (local)
 **/public/uploads/
+.vercel
