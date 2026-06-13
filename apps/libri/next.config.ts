@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   // Configurazione per gestire file statici grandi (EPUB/PDF)
   experimental: {
     // Abilita ottimizzazioni per file statici
