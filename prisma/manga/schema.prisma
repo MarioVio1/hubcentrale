@@ -1,0 +1,145 @@
+// MangaFlow Database Schema - Tachiyomi-style manga reader
+// This schema supports repository-based extensions like Tachiyomi/Mihon
+
+generator client {
+  output = "../../node_modules/@prisma/manga-client"
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL_MANGA")
+}
+
+// Repository for extensions (like Tachiyomi repo system)
+model Repo {
+  id          String   @id @default(cuid())
+  name        String
+  url         String   @unique
+  description String?
+  icon        String?
+  enabled     Boolean  @default(true)
+  version     String?
+  lastChecked DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  extensions  Extension[]
+}
+
+// Extension loaded from repository
+model Extension {
+  id          String   @id @default(cuid())
+  repoId      String
+  name        String
+  pkgName     String   // Package name (e.g., eu.kanade.tachiyomi.extension.it.mangaworld)
+  versionName String
+  versionCode Int
+  lang        String   // Language code (it, en, etc.)
+  nsfw        Int      // 0 = safe, 1 = questionable, 2 = explicit
+  iconUrl     String?
+  sources     Json?    // Sources defined in extension
+  enabled     Boolean  @default(true)
+  repo        Repo     @relation(fields: [repoId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  mangas      Manga[]
+}
+
+// Manga metadata
+model Manga {
+  id           String    @id @default(cuid())
+  extensionId  String
+  sourceId     String    // Source ID from extension
+  url          String    // Unique URL from source
+  title        String
+  altTitle     String?
+  description  String?
+  author       String?
+  artist       String?
+  genre        String?   // JSON array of genres
+  status       String?   // ongoing, completed, hiatus, cancelled
+  coverUrl     String?
+  thumbnailUrl String?
+  rating       Float?
+  inLibrary    Boolean   @default(false)
+  category     String?
+  extension    Extension @relation(fields: [extensionId], references: [id], onDelete: Cascade)
+
+  chapters     Chapter[]
+  libraryEntry LibraryEntry?
+  history      ReadingHistory[]
+
+  updatedAt    DateTime  @updatedAt
+  createdAt    DateTime  @default(now())
+
+  @@unique([extensionId, sourceId, url])
+  @@index([extensionId])
+  @@index([inLibrary])
+  @@index([category])
+}
+
+// Chapter information
+model Chapter {
+  id          String   @id @default(cuid())
+  mangaId     String
+  chapterNum  Float?
+  name        String?
+  url         String
+  scanlator   String?
+  uploadedAt  DateTime?
+  read        Boolean  @default(false)
+  lastPageRead Int     @default(0)
+  manga       Manga    @relation(fields: [mangaId], references: [id], onDelete: Cascade)
+  progress    ReadingProgress?
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([mangaId, url])
+  @@index([mangaId])
+  @@index([read])
+}
+
+// User's library
+model LibraryEntry {
+  id          String   @id @default(cuid())
+  mangaId     String   @unique
+  category    String?  // Reading, Completed, Plan to Read, etc.
+  favorite    Boolean  @default(false)
+  addedAt     DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  manga       Manga    @relation(fields: [mangaId], references: [id], onDelete: Cascade)
+}
+
+// Reading history
+model ReadingHistory {
+  id          String   @id @default(cuid())
+  mangaId     String
+  chapterId   String?
+  chapterNum  Float?
+  readAt      DateTime @default(now())
+  manga       Manga    @relation(fields: [mangaId], references: [id], onDelete: Cascade)
+
+  @@index([mangaId])
+  @@index([readAt])
+}
+
+// Reading progress per chapter
+model ReadingProgress {
+  id          String   @id @default(cuid())
+  chapterId   String   @unique
+  currentPage Int      @default(0)
+  totalPages  Int?
+  lastReadAt  DateTime @default(now())
+  chapter     Chapter  @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+}
+
+// Settings
+model AppSettings {
+  id          String   @id @default(cuid())
+  key         String   @unique
+  value       String
+  updatedAt   DateTime @updatedAt
+}

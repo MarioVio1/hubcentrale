@@ -1,2 +1,0 @@
-$ bun --hot index.ts
-🎮 Game WebSocket server running on port 3003
