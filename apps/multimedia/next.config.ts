@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: "/multimedia",
   typescript: {
     ignoreBuildErrors: true,
   },

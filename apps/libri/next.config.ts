@@ -1,7 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  basePath: "/libri",
   // Configurazione per gestire file statici grandi (EPUB/PDF)
   experimental: {
     // Abilita ottimizzazioni per file statici
