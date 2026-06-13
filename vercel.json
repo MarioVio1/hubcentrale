@@ -1,0 +1,23 @@
+{
+  "builds": [
+    { "src": "apps/multimedia/package.json", "use": "@vercel/next" },
+    { "src": "apps/cosmetica/package.json", "use": "@vercel/next" },
+    { "src": "apps/libri/package.json", "use": "@vercel/next" },
+    { "src": "apps/lunastar/package.json", "use": "@vercel/next" },
+    { "src": "apps/manga/package.json", "use": "@vercel/next" },
+    { "src": "apps/pokemon/package.json", "use": "@vercel/next" },
+    { "src": "apps/livetv/package.json", "use": "@vercel/next" }
+  ],
+  "routes": [
+    { "src": "/multimedia(.*)", "dest": "apps/multimedia$1" },
+    { "src": "/cosmetica(.*)", "dest": "apps/cosmetica$1" },
+    { "src": "/libri(.*)", "dest": "apps/libri$1" },
+    { "src": "/lunastar(.*)", "dest": "apps/lunastar$1" },
+    { "src": "/manga(.*)", "dest": "apps/manga$1" },
+    { "src": "/pokemon(.*)", "dest": "apps/pokemon$1" },
+    { "src": "/livetv(.*)", "dest": "apps/livetv$1" }
+  ],
+  "github": {
+    "silent": true
+  }
+}
