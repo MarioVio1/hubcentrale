@@ -1019,14 +1019,14 @@ export default function LiveTVPage() {
                 {renderPlayer()}
               </div>
             )}
-            <div className="p-4 lg:p-6">
-              {!hasActivePlayer && (
+            {!hasActivePlayer && (
+              <div className="p-4 lg:p-6">
                 <h2 className="text-2xl font-bold text-white mb-4">
                   {tabs.find(t => t.id === activeTab)?.label || 'Canali'}
                 </h2>
-              )}
-              {renderChannelGrid()}
-            </div>
+                {renderChannelGrid()}
+              </div>
+            )}
           </div>
           {hasActivePlayer && (
             <aside className="w-80 border-l border-white/10 bg-[#0a0f1c] flex flex-col h-[calc(100vh-57px)] sticky top-[57px] flex-shrink-0">
