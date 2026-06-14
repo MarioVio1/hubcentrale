@@ -36,7 +36,6 @@ interface ProductCardProps {
     skinTypes?: string;
     skinConcerns?: string;
     imageUrl?: string;
-    imageUrlAlt?: string;
     isKorean?: boolean;
     isVegan?: boolean;
     isCrueltyFree?: boolean;
@@ -47,7 +46,7 @@ interface ProductCardProps {
     dfarmaUrl?: string;
     sephoraUrl?: string;
     amazonUrl?: string;
-    yesStyleUrl?: string;
+    miinUrl?: string;
   };
   isFavorite?: boolean;
   onFavoriteToggle?: () => void;
@@ -103,8 +102,8 @@ export default function ProductCard({ product, isFavorite, onFavoriteToggle }: P
   const getAvailableShops = () => {
     const shops: Array<{ key: string; url: string; label: string; color: string }> = [];
     
-    if (product.yesStyleUrl) {
-      shops.push({ key: "yesstyle", url: product.yesStyleUrl, label: "YesStyle", color: "bg-purple-500 hover:bg-purple-600" });
+    if (product.miinUrl) {
+      shops.push({ key: "miin", url: product.miinUrl, label: "Miin Cosmetics", color: "bg-pink-500 hover:bg-pink-600" });
     }
     if (product.officialUrl) {
       shops.push({ key: "official", url: product.officialUrl, label: "Sito Ufficiale", color: "bg-pink-500 hover:bg-pink-600" });
@@ -149,26 +148,11 @@ export default function ProductCard({ product, isFavorite, onFavoriteToggle }: P
                 loading="lazy"
                 onLoad={() => setImageLoading(false)}
                 onError={() => {
-                  // Try alt image first
-                  if (product.imageUrlAlt && !imageError) {
-                    // Will try alt image on next render
-                  }
                   setImageError(true);
                   setImageLoading(false);
                 }}
               />
             </>
-          ) : product.imageUrlAlt && !imageError ? (
-            <img 
-              src={product.imageUrlAlt} 
-              alt={product.name}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-              onError={() => {
-                setImageError(true);
-                setImageLoading(false);
-              }}
-            />
           ) : (
             <div className="w-full h-full flex flex-col items-center justify-center p-4">
               <Package className="h-16 w-16 text-pink-300 mb-2" />

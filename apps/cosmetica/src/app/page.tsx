@@ -63,7 +63,6 @@ interface Product {
   isVegan?: boolean;
   isCrueltyFree?: boolean;
   imageUrl?: string;
-  imageUrlAlt?: string;
   keyIngredients?: string;
   description?: string;
   // Shop links
@@ -72,7 +71,7 @@ interface Product {
   dfarmaUrl?: string;
   sephoraUrl?: string;
   amazonUrl?: string;
-  yesStyleUrl?: string;
+  miinUrl?: string;
 }
 
 interface RecommendedProduct {
@@ -81,7 +80,6 @@ interface RecommendedProduct {
   name: string;
   brand: string;
   imageUrl: string | null;
-  imageUrlAlt?: string | null;
   price: number | null;
   description: string | null;
   // Shop links - matching API response
@@ -90,7 +88,7 @@ interface RecommendedProduct {
   dfarmaUrl?: string | null;
   sephoraUrl?: string | null;
   amazonUrl?: string | null;
-  yesStyleUrl?: string | null;
+  miinUrl?: string | null;
 }
 
 interface Message {
@@ -878,8 +876,8 @@ export default function Home() {
                         {message.products.map((product) => {
                           // Get available shop links with proper labels
                           const shopLinks = [
-                            product.yesStyleUrl && { url: product.yesStyleUrl, label: "YesStyle", color: "from-purple-500 to-pink-500" },
-                            product.officialUrl && { url: product.officialUrl, label: "Sito Ufficiale", color: "from-pink-500 to-rose-500" },
+                            product.miinUrl && { url: product.miinUrl, label: "Miin Cosmetics", color: "from-pink-500 to-rose-500" },
+                            product.officialUrl && { url: product.officialUrl, label: "Sito Ufficiale", color: "from-purple-500 to-pink-500" },
                             product.sephoraUrl && { url: product.sephoraUrl, label: "Sephora", color: "from-black to-gray-700" },
                             product.amazonUrl && { url: product.amazonUrl, label: "Amazon", color: "from-yellow-500 to-orange-500" },
                             product.redcareUrl && { url: product.redcareUrl, label: "Redcare", color: "from-red-500 to-orange-500" },
@@ -887,7 +885,7 @@ export default function Home() {
                           ].filter(Boolean) as Array<{ url: string; label: string; color: string }>;
                           
                           // Image with fallback
-                          const imageSrc = product.imageUrl || product.imageUrlAlt;
+                          const imageSrc = product.imageUrl;
                           
                           return (
                           <motion.div
@@ -904,13 +902,7 @@ export default function Home() {
                                     alt={product.name}
                                     className="w-full h-full object-cover"
                                     onError={(e) => {
-                                      // Try alt image first
-                                      if (product.imageUrlAlt && (e.target as HTMLImageElement).src !== product.imageUrlAlt) {
-                                        (e.target as HTMLImageElement).src = product.imageUrlAlt;
-                                      } else {
-                                        // Use placeholder
-                                        (e.target as HTMLImageElement).src = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56"><rect fill="#fce7f3" width="56" height="56"/><text x="28" y="32" text-anchor="middle" fill="#ec4899" font-family="Arial" font-size="8">Skincare</text></svg>');
-                                      }
+                                      (e.target as HTMLImageElement).src = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56"><rect fill="#fce7f3" width="56" height="56"/><text x="28" y="32" text-anchor="middle" fill="#ec4899" font-family="Arial" font-size="8">Skincare</text></svg>');
                                     }}
                                   />
                                 ) : (

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Search, Tv, Grid3X3, List, Play, ExternalLink, Loader2, Zap, Star, Flag, Crown, Radio, MonitorPlay, Film, Sparkles, ChevronDown, X, Menu, Globe, Satellite } from 'lucide-react'
 import ShakaPlayer from '@/components/shaka-player'
-import { webtvNationalChannels, webtvExtraChannels, type WebTVChannel } from '@/lib/channels-data'
+import { webtvNationalChannels, webtvExtraChannels, webtvTvvooChannels, type WebTVChannel } from '@/lib/channels-data'
 
 interface Category { id: string; name: string; slug: string; icon: string; color: string; sortOrder: number; isVisible: boolean; _count: { channels: number } }
 interface DBChannel { id: string; title: string; categoryId: string; mpdUrl: string | null; drmType: string | null; drmKeyId: string | null; drmKey: string | null; isLive: boolean; useProxy: boolean; proxyUrl: string | null; category: Category }
@@ -13,7 +13,7 @@ interface FeedChannel { id: string; name: string; group: string; type: 'iframe' 
 interface SportsonlineEvent { time: string; name: string; url: string }
 interface Sportsonline247 { name: string; url: string; group: string }
 
-type TabType = 'db' | 'all' | 'sports' | 'cinema' | 'italian' | 'paytv' | 'franchino' | 'feedtv' | 'nazionali' | 'sport-extra' | 'damitv' | 'live-events' | 'sportsonline-247' | 'dirette'
+type TabType = 'db' | 'all' | 'sports' | 'cinema' | 'italian' | 'paytv' | 'franchino' | 'feedtv' | 'nazionali' | 'sport-extra' | 'tvvoo' | 'damitv' | 'live-events' | 'sportsonline-247' | 'dirette'
 
 declare global { interface Window { Hls: any; shaka: any } }
 
@@ -96,6 +96,8 @@ export default function LiveTVPage() {
         channelList = webtvNationalChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()) || ch.categoria.toLowerCase().includes(searchQuery.toLowerCase()))
       } else if (activeTab === 'sport-extra') {
         channelList = webtvExtraChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()) || ch.categoria.toLowerCase().includes(searchQuery.toLowerCase()))
+      } else if (activeTab === 'tvvoo') {
+        channelList = webtvTvvooChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()) || ch.categoria.toLowerCase().includes(searchQuery.toLowerCase()))
       } else if (activeTab === 'feedtv') {
         channelList = feedChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()))
       } else if (activeTab === 'damitv') {
@@ -121,7 +123,7 @@ export default function LiveTVPage() {
       } else if (e.key === 'Enter' && focusedIndex >= 0 && focusedIndex < channelList.length) {
         e.preventDefault()
         const ch = channelList[focusedIndex]
-        if (activeTab === 'nazionali' || activeTab === 'sport-extra') {
+        if (activeTab === 'nazionali' || activeTab === 'sport-extra' || activeTab === 'tvvoo') {
           playWebTVChannel(ch)
         } else if (activeTab === 'feedtv') {
           playFeedChannel(ch)
@@ -401,6 +403,7 @@ export default function LiveTVPage() {
     { id: 'feedtv' as TabType, label: 'Feed TV', icon: Tv, color: 'from-violet-500/20 to-violet-600/20' },
     { id: 'nazionali' as TabType, label: 'Nazionali', icon: Globe, color: 'from-sky-500/20 to-blue-600/20' },
     { id: 'sport-extra' as TabType, label: 'Sport Extra', icon: Satellite, color: 'from-amber-500/20 to-orange-600/20' },
+    { id: 'tvvoo' as TabType, label: 'Tvvoo', icon: Tv, color: 'from-emerald-500/20 to-emerald-600/20' },
     { id: 'damitv' as TabType, label: 'DAMI TV', icon: Tv, color: 'from-rose-500/20 to-pink-600/20' },
     { id: 'live-events' as TabType, label: 'Eventi Live', icon: Play, color: 'from-emerald-500/20 to-emerald-600/20' },
     { id: 'dirette' as TabType, label: 'Dirette', icon: Radio, color: 'from-cyan-500/20 to-cyan-600/20' },
@@ -914,6 +917,7 @@ export default function LiveTVPage() {
   const getFilteredChannels = () => {
     if (activeTab === 'nazionali') return webtvNationalChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()) || ch.categoria.toLowerCase().includes(searchQuery.toLowerCase()))
     if (activeTab === 'sport-extra') return webtvExtraChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()) || ch.categoria.toLowerCase().includes(searchQuery.toLowerCase()))
+    if (activeTab === 'tvvoo') return webtvTvvooChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()) || ch.categoria.toLowerCase().includes(searchQuery.toLowerCase()))
     if (activeTab === 'feedtv') return feedChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()))
     if (activeTab === 'damitv') return damiChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()))
     const filtered = m3uChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -922,7 +926,7 @@ export default function LiveTVPage() {
   }
 
   const handleChannelSelect = (ch: any) => {
-    if (activeTab === 'nazionali' || activeTab === 'sport-extra') playWebTVChannel(ch)
+    if (activeTab === 'nazionali' || activeTab === 'sport-extra' || activeTab === 'tvvoo') playWebTVChannel(ch)
     else if (activeTab === 'feedtv') playFeedChannel(ch)
     else if (activeTab === 'damitv') playDamiChannel(ch)
     else playM3UChannel(ch)

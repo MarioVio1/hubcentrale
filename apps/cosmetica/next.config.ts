@@ -19,6 +19,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'cdn.shopify.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'miin-cosmetics.com',
+      },
     ],
     unoptimized: true,
   },

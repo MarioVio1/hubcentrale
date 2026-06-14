@@ -20,7 +20,6 @@ interface RawProduct {
   currency: string;
   size: string | null;
   imageUrl: string | null;
-  imageUrlAlt: string | null;
   rating: number;
   reviewCount: number;
   isKorean: boolean;
@@ -31,7 +30,7 @@ interface RawProduct {
   dfarmaUrl: string | null;
   sephoraUrl: string | null;
   amazonUrl: string | null;
-  yesStyleUrl: string | null;
+  miinUrl: string | null;
 }
 
 function staticToRaw(s: typeof staticProducts[number]): RawProduct {
@@ -54,7 +53,6 @@ function staticToRaw(s: typeof staticProducts[number]): RawProduct {
     currency: 'EUR',
     size: s.size ?? null,
     imageUrl: s.imageUrl ?? null,
-    imageUrlAlt: (s as { imageUrlAlt?: string }).imageUrlAlt ?? null,
     rating: s.rating,
     reviewCount: s.reviewCount,
     isKorean: s.isKorean,
@@ -65,7 +63,7 @@ function staticToRaw(s: typeof staticProducts[number]): RawProduct {
     dfarmaUrl: null,
     sephoraUrl: (s as { sephoraUrl?: string }).sephoraUrl ?? null,
     amazonUrl: (s as { amazonUrl?: string }).amazonUrl ?? null,
-    yesStyleUrl: (s as { yesStyleUrl?: string }).yesStyleUrl ?? null,
+    miinUrl: (s as { miinUrl?: string }).miinUrl ?? null,
   };
 }
 
@@ -89,7 +87,6 @@ function formatProduct(p: RawProduct) {
     currency: p.currency,
     size: p.size,
     imageUrl: p.imageUrl,
-    imageUrlAlt: p.imageUrlAlt,
     rating: p.rating,
     reviewCount: p.reviewCount,
     isKorean: p.isKorean,
@@ -100,7 +97,7 @@ function formatProduct(p: RawProduct) {
     dfarmaUrl: p.dfarmaUrl,
     sephoraUrl: p.sephoraUrl,
     amazonUrl: p.amazonUrl,
-    yesStyleUrl: p.yesStyleUrl,
+    miinUrl: p.miinUrl,
   };
 }
 

@@ -23,6 +23,7 @@ export interface Product {
   officialUrl: string;
   amazonUrl?: string;
   sephoraUrl?: string;
+  miinUrl?: string;
 }
 
 export const products: Product[] = [
@@ -46,8 +47,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/6042-product_zoom/advanced-snail-96-mucin-power-essence.jpg",
       officialUrl: "https://cosrx.com/products/advanced-snail-96-mucin-power-essence",
+      miinUrl: "https://miin-cosmetics.com/advanced-snail-96-mucin-power-essence/63",
       amazonUrl: "https://www.amazon.it/dp/B00PBSZ9M0",
     },
     {
@@ -69,8 +71,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/6059-product_zoom/low-ph-good-morning-gel-cleanser.jpg",
       officialUrl: "https://cosrx.com/products/low-ph-good-morning-gel-cleanser",
+      miinUrl: "https://miin-cosmetics.com/low-ph-good-morning-gel-cleanser/71",
       amazonUrl: "https://www.amazon.it/dp/B01M0GB8CC",
     },
     {
@@ -92,8 +95,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/6044-product_zoom/aha-7-whitehead-power-liquid.jpg",
       officialUrl: "https://cosrx.com/products/aha-7-whitehead-power-liquid",
+      miinUrl: "https://miin-cosmetics.com/aha-7-whitehead-power-liquid/566",
     },
     {
       productId: "COSRX-BHA-BLACKHEAD",
@@ -114,8 +118,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/6048-product_zoom/bha-blackhead-power-liquid.jpg",
       officialUrl: "https://cosrx.com/products/bha-blackhead-power-liquid",
+      miinUrl: "https://miin-cosmetics.com/bha-blackhead-power-liquid/66",
     },
 
     // ==================== BEAUTY OF JOSEON - K-Beauty ====================
@@ -138,8 +143,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/10548-product_zoom/relief-sun-rice-probiotics-spf50-pa.jpg",
       officialUrl: "https://beautyofjoseon.com/product/relief-sun-rice-probiotics/",
+      miinUrl: "https://miin-cosmetics.com/relief-sun-rice-probiotics-spf50-pa/1286",
       amazonUrl: "https://www.amazon.it/dp/B09V1NKL7C",
     },
     {
@@ -161,8 +167,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/10532-product_zoom/ginseng-essence-water.jpg",
       officialUrl: "https://beautyofjoseon.com/product/ginseng-essence-water/",
+      miinUrl: "https://miin-cosmetics.com/ginseng-essence-water/1282",
     },
     {
       productId: "BOJ-GINSENG-SERUM",
@@ -183,8 +190,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/10555-product_zoom/revive-serum-ginseng-snail-mucin.jpg",
       officialUrl: "https://beautyofjoseon.com/product/revive-serum-ginseng-snail-mucin/",
+      miinUrl: "https://miin-cosmetics.com/revive-serum-ginseng-snail-mucin/1283",
     },
 
     // ==================== DEAR KLAIRS - K-Beauty ====================
@@ -207,8 +215,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/8941-product_zoom/freshly-juiced-vitamin-drop.jpg",
       officialUrl: "https://klairs.com/product/freshly-juiced-vitamin-drop/",
+      miinUrl: "https://miin-cosmetics.com/freshly-juiced-vitamin-drop/83",
       amazonUrl: "https://www.amazon.it/dp/B00H2BGJYQ",
     },
     {
@@ -230,8 +239,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/9043-product_zoom/supple-preparation-unscented-facial-toner.jpg",
       officialUrl: "https://klairs.com/product/supple-preparation-unscented-toner/",
+      miinUrl: "https://miin-cosmetics.com/supple-preparation-unscented-facial-toner/350",
     },
 
     // ==================== LANEIGE - K-Beauty ====================
@@ -286,26 +296,27 @@ export const products: Product[] = [
 
     // ==================== ROUND LAB - K-Beauty ====================
     {
-      productId: "ROUNDLAB-DOKDO-TONER",
-      name: "Dokdo Toner",
+      productId: "ROUNDLAB-BIRCH-TONER",
+      name: "Birch Juice Moisturizing Toner",
       brand: "Round Lab",
       brandCountry: "Corea del Sud",
       category: "skincare",
       productType: "toner",
-      description: "Tonico viso con acqua profonda dell'isola di Ulleungdo 72%. Delicato e idratante.",
-      ingredients: "Deep Sea Water 72%, Sodium Hyaluronate, Allantoin, Panthenol",
-      keyIngredients: "Deep Sea Water 72%, Hyaluronic Acid",
-      skinTypes: "sensitive, dry, normal",
-      skinConcerns: "idratazione, pH, sensibilità",
-      price: 16.00,
+      description: "Tonico idratante con linfa di betulla 73%. Idratazione profonda e lenitiva per pelli sensibili e disidratate.",
+      ingredients: "Betula Platyphylla Japonica Juice 73%, Butylene Glycol, Glycerin, Panthenol, Sodium Hyaluronate",
+      keyIngredients: "Birch Sap 73%, Panthenol, Hyaluronic Acid",
+      skinTypes: "sensitive, dry, normal, dehydrated",
+      skinConcerns: "idratazione, sensibilità, disidratazione",
+      price: 25.00,
       size: "200ml",
-      rating: 4.7,
-      reviewCount: 923,
+      rating: 4.6,
+      reviewCount: 1567,
       isKorean: true,
-      isVegan: false,
+      isVegan: true,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop",
-      officialUrl: "https://www.roundlab.com/product/dokdo-toner/2/",
+      imageUrl: "https://miin-cosmetics.com/6663-product_zoom/birch-juice-moisturizing-toner.jpg",
+      officialUrl: "https://roundlab.com/en/product/birch-juice-moisturizing-toner/",
+      miinUrl: "https://miin-cosmetics.com/birch-juice-moisturizing-toner/1360",
     },
 
     // ==================== PURITO - K-Beauty ====================
@@ -328,8 +339,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/11413-product_zoom/wonder-releaf-centella-serum-unscented.jpg",
       officialUrl: "https://www.purito.com/product/centella-green-level-buffet-serum",
+      miinUrl: "https://miin-cosmetics.com/2060-wonder-releaf-centella-serum-unscented.html",
     },
 
     // ==================== ISNTREE - K-Beauty ====================
@@ -376,8 +388,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/10775-product_zoom/low-molecular-hyaluronic-acid-serum.jpg",
       officialUrl: "https://torriden.com/product/dive-in-serum/",
+      miinUrl: "https://miin-cosmetics.com/1884-low-molecular-hyaluronic-acid-serum.html",
     },
 
     // ==================== ANUA - K-Beauty ====================
@@ -400,8 +413,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/11340-product_zoom/heartleaf-77-soothing-toner.jpg",
       officialUrl: "https://anua.com/product/heartleaf-77-soothing-toner/",
+      miinUrl: "https://miin-cosmetics.com/heartleaf-77-soothing-toner/1359",
     },
 
     // ==================== SOME BY MI - K-Beauty ====================
@@ -448,8 +462,9 @@ export const products: Product[] = [
       isKorean: true,
       isVegan: false,
       isCrueltyFree: true,
-      imageUrl: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop",
+      imageUrl: "https://miin-cosmetics.com/8926-product_zoom/rice-toner.jpg",
       officialUrl: "https://imfrom.com/product/rice-toner/",
+      miinUrl: "https://miin-cosmetics.com/rice-toner/1948",
     },
 
     // ==================== LA ROCHE-POSAY - Francia (SITO ITALIANO) ====================

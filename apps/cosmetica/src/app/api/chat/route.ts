@@ -447,11 +447,10 @@ async function findProductsByIds(productIds: string[]): Promise<Array<{
   description?: string | null;
   keyIngredients?: string | null;
   imageUrl: string | null;
-  imageUrlAlt: string | null;
   price: number | null;
   size?: string | null;
   officialUrl: string | null;
-  yesStyleUrl: string | null;
+  miinUrl: string | null;
   sephoraUrl: string | null;
   amazonUrl: string | null;
   redcareUrl: string | null;
@@ -474,11 +473,10 @@ async function findProductsByIds(productIds: string[]): Promise<Array<{
         description: dbProduct.description,
         keyIngredients: dbProduct.keyIngredients,
         imageUrl: dbProduct.imageUrl,
-        imageUrlAlt: dbProduct.imageUrlAlt,
         price: dbProduct.price,
         size: dbProduct.size,
         officialUrl: dbProduct.officialUrl,
-        yesStyleUrl: dbProduct.yesStyleUrl,
+        miinUrl: dbProduct.miinUrl,
         sephoraUrl: dbProduct.sephoraUrl,
         amazonUrl: dbProduct.amazonUrl,
         redcareUrl: dbProduct.redcareUrl,
@@ -497,11 +495,10 @@ async function searchProducts(query: string): Promise<Array<{
   name: string;
   brand: string;
   imageUrl: string | null;
-  imageUrlAlt: string | null;
   price: number | null;
   description: string | null;
   officialUrl: string | null;
-  yesStyleUrl: string | null;
+  miinUrl: string | null;
   sephoraUrl: string | null;
   amazonUrl: string | null;
   redcareUrl: string | null;
@@ -524,11 +521,10 @@ async function searchProducts(query: string): Promise<Array<{
           name: dbProduct.name,
           brand: dbProduct.brand,
           imageUrl: dbProduct.imageUrl,
-          imageUrlAlt: dbProduct.imageUrlAlt,
           price: dbProduct.price,
           description: dbProduct.description,
           officialUrl: dbProduct.officialUrl,
-          yesStyleUrl: dbProduct.yesStyleUrl,
+          miinUrl: dbProduct.miinUrl,
           sephoraUrl: dbProduct.sephoraUrl,
           amazonUrl: dbProduct.amazonUrl,
           redcareUrl: dbProduct.redcareUrl,
@@ -557,11 +553,10 @@ async function searchProducts(query: string): Promise<Array<{
         name: dbProduct.name,
         brand: dbProduct.brand,
         imageUrl: dbProduct.imageUrl,
-        imageUrlAlt: dbProduct.imageUrlAlt,
         price: dbProduct.price,
         description: dbProduct.description,
         officialUrl: dbProduct.officialUrl,
-        yesStyleUrl: dbProduct.yesStyleUrl,
+        miinUrl: dbProduct.miinUrl,
         sephoraUrl: dbProduct.sephoraUrl,
         amazonUrl: dbProduct.amazonUrl,
         redcareUrl: dbProduct.redcareUrl,

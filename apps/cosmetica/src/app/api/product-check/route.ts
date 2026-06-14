@@ -654,11 +654,10 @@ Rispondi in italiano in modo professionale ma accessibile. Massimo 150 parole.`;
       productName: dbProduct?.name || productName,
       brand: dbProduct?.brand,
       productImage: dbProduct?.imageUrl,
-      productImageAlt: dbProduct?.imageUrlAlt,
       productId: dbProduct?.productId,
       // Shop links
       officialUrl: dbProduct?.officialUrl,
-      yesStyleUrl: dbProduct?.yesStyleUrl,
+      miinUrl: dbProduct?.miinUrl,
       sephoraUrl: dbProduct?.sephoraUrl,
       amazonUrl: dbProduct?.amazonUrl,
       // Analysis
