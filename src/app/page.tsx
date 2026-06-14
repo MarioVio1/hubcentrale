@@ -4,7 +4,7 @@ const sections = [
   { name: "LibriFree", sub: "Libreria free", href: "https://hub-libri-murex.vercel.app", emoji: "📚", color: "from-green-900/40 to-green-700/20" },
   { name: "LunaStar", sub: "Game Hub", href: "https://hub-lunastar.vercel.app", emoji: "🎮", color: "from-purple-900/40 to-indigo-700/20" },
   { name: "Manga", sub: "Mangaflow", href: "https://hub-manga.vercel.app", emoji: "📖", color: "from-red-900/40 to-orange-700/20" },
-  { name: "Pokémon", sub: "Veneto", href: "https://hub-pokemon.vercel.app", emoji: "⚡", color: "from-teal-900/40 to-cyan-700/20" },
+  { name: "Pokémon", sub: "Veneto", href: "https://pokemona.vercel.app", emoji: "⚡", color: "from-teal-900/40 to-cyan-700/20" },
   { name: "LiveTV", sub: "DAMI TV", href: "https://hub-livetv.vercel.app", emoji: "📺", color: "from-yellow-900/40 to-amber-700/20" },
 ];
 
