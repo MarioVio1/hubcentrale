@@ -1605,12 +1605,13 @@ export default function MangaFlow() {
                     onTouchEnd={handleTouchEnd}
                   >
                     <div
-                      className={`relative w-full h-full grid place-items-center p-4 ${zoomLevel > 1 ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'}`}
+                      className={`relative w-full h-full ${zoomLevel > 1 ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'}`}
                       onMouseDown={handleMouseDown}
                       onMouseMove={handleMouseMove}
                       onClick={(e) => {
                         if (zoomLevel === 1) {
                           e.stopPropagation();
+                          setShowReaderControls(prev => !prev);
                           const rect = e.currentTarget.getBoundingClientRect();
                           const x = e.clientX - rect.left;
                           if (x < rect.width * 0.4) {
@@ -1625,23 +1626,25 @@ export default function MangaFlow() {
                         }
                       }}
                     >
-                      <img
-                        src={chapterPages[currentPageIndex]?.url}
-                        alt={`Page ${currentPageIndex + 1}`}
-                        className="max-w-full max-h-full object-contain select-none pointer-events-none block m-auto"
-                        style={{
-                          transform: `scale(${zoomLevel}) translate(${imagePosition.x / zoomLevel}px, ${imagePosition.y / zoomLevel}px)`,
-                          transformOrigin: 'center center',
-                          transition: isDragging ? 'none' : 'transform 0.2s ease-out',
-                        }}
-                        draggable={false}
-                        onError={(e) => {
-                          console.error('Failed to load page:', chapterPages[currentPageIndex]?.url);
-                          (e.target as HTMLImageElement).src = 'data:image/svg+xml,' + encodeURIComponent(
-                            '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="#1a1a2e" width="100" height="100"/><text x="50" y="50" text-anchor="middle" fill="#666" font-size="40">?</text><text x="50" y="70" text-anchor="middle" fill="#666" font-size="12">Pagina non disponibile</text></svg>'
-                          );
-                        }}
-                      />
+                      <div className="absolute inset-0 p-4">
+                        <img
+                          src={chapterPages[currentPageIndex]?.url}
+                          alt={`Page ${currentPageIndex + 1}`}
+                          className="w-full h-full object-contain select-none pointer-events-none"
+                          style={{
+                            transform: `scale(${zoomLevel}) translate(${imagePosition.x / zoomLevel}px, ${imagePosition.y / zoomLevel}px)`,
+                            transformOrigin: 'center center',
+                            transition: isDragging ? 'none' : 'transform 0.2s ease-out',
+                          }}
+                          draggable={false}
+                          onError={(e) => {
+                            console.error('Failed to load page:', chapterPages[currentPageIndex]?.url);
+                            (e.target as HTMLImageElement).src = 'data:image/svg+xml,' + encodeURIComponent(
+                              '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="#1a1a2e" width="100" height="100"/><text x="50" y="50" text-anchor="middle" fill="#666" font-size="40">?</text><text x="50" y="70" text-anchor="middle" fill="#666" font-size="12">Pagina non disponibile</text></svg>'
+                            );
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
                 </>

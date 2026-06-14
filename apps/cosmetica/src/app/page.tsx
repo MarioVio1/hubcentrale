@@ -131,6 +131,7 @@ export default function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoadingProducts, setIsLoadingProducts] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [productsError, setProductsError] = useState(false);
   
   // AI Assistant state
   const [showAIAssistant, setShowAIAssistant] = useState(false);
@@ -201,11 +202,17 @@ export default function Home() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("/api/products?limit=12");
-        const data = await response.json();
-        setProducts(data.products || []);
+      const response = await fetch("/api/products?limit=12");
+      if (!response.ok) {
+        console.error("Products API returned", response.status);
+        setProductsError(true);
+        return;
+      }
+      const data = await response.json();
+      setProducts(data.products || []);
       } catch (error) {
         console.error("Failed to fetch products:", error);
+        setProductsError(true);
       } finally {
         setIsLoadingProducts(false);
       }
@@ -635,6 +642,11 @@ export default function Home() {
                     </CardContent>
                   </Card>
                 ))
+              ) : productsError ? (
+                <div className="col-span-full text-center py-12">
+                  <p className="text-rose-500 font-medium mb-2">Impossibile caricare i prodotti</p>
+                  <p className="text-gray-400 text-sm">Riprova più tardi o controlla la connessione</p>
+                </div>
               ) : filteredProducts.length > 0 ? (
                 filteredProducts.map((product) => (
                   <ProductCard 
