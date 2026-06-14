@@ -57,12 +57,13 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // If not found locally, search the web
+    // If not found locally, search Korean beauty sites
     const zai = await getZAI();
-    const searchQuery = `${brand ? brand + ' ' : ''}${productName} skincare product official`;
+    const searchQuery = `${brand ? brand + ' ' : ''}${productName} skincare prodotto beauty coreano`;
+    const sites = ['miin-cosmetics.it', 'ovs.it/it/it/c/shaka', 'yesstyle.com', 'stylevana.com', 'cosrx.com', 'beautyofjoseon.com'];
     
     const searchResults = await zai.functions.invoke('web_search', {
-      query: searchQuery,
+      query: searchQuery + ' ' + sites.join(' OR '),
       num: 5
     });
 
@@ -78,6 +79,11 @@ export async function POST(request: NextRequest) {
         hostname.includes('sephora') ||
         hostname.includes('yesstyle') ||
         hostname.includes('amazon') ||
+        hostname.includes('miin-cosmetics') ||
+        hostname.includes('ovs.it') ||
+        hostname.includes('stylevana') ||
+        hostname.includes('oliveyoung') ||
+        hostname.includes('beautyofjoseon') ||
         hostname.includes('beauty') ||
         hostname.includes('skincare')
       ) {

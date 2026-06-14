@@ -21,6 +21,8 @@ async function fetchImageBatch(
         try {
           const res = await fetch(proxyUrl);
           if (!res.ok) return null;
+          const contentType = res.headers.get('content-type') || '';
+          if (contentType.includes('svg')) return null;
           const buffer = await res.arrayBuffer();
           const base64 = Buffer.from(buffer).toString('base64');
           const dimensions = probe.sync(Buffer.from(buffer));

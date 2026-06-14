@@ -14,23 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Trenity - Stream Movies & TV Shows",
-  description: "Watch your favorite movies and TV shows online. Browse, search, and stream a vast library of entertainment content.",
-  keywords: ["Trenity", "streaming", "movies", "TV shows", "watch online", "entertainment"],
-  authors: [{ name: "Trenity" }],
-  icons: {
-    icon: "/logo.svg",
-  },
-  openGraph: {
-    title: "Trenity - Stream Movies & TV Shows",
-    description: "Watch your favorite movies and TV shows online",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Trenity - Stream Movies & TV Shows",
-    description: "Watch your favorite movies and TV shows online",
-  },
+  title: "Multimedia - Film e Serie TV",
+  description: "Guarda film e serie TV in streaming. Cerca, sfoglia e riproduci i tuoi contenuti preferiti.",
+  authors: [{ name: "Multimedia" }],
+  icons: "/favicon.svg",
 };
 
 export default function RootLayout({

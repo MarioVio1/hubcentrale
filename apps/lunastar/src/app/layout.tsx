@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PartySally - Multiplayer Party Games",
-  description: "TV displays game, smartphones are controllers. Play Comic Hazard, Mercante in Fiera, UNO with friends!",
+  title: "LunaStar - Giochi da Tavolo",
+  description: "Gioca a giochi da tavolo multiplayer: Comic Hazard, Mercante in Fiera, UNO e altri!",
+  icons: "/favicon.svg",
 };
 
 export default function RootLayout({

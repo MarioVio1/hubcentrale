@@ -51,28 +51,40 @@ const getAutoEmbedUrl = (type: string, id: number, season: number, episode: numb
     ? `https://autoembed.cc/tv/tmdb/${id}-${season}-${episode}`
     : `https://autoembed.cc/movie/tmdb/${id}`;
 
-const get2EmbedUrl = (type: string, id: number, season: number, episode: number) =>
-  type === 'tv'
+const get2EmbedUrl = (type: string, id: number, season: number, episode: number) => {
+  const base = type === 'tv'
     ? `https://www.2embed.cc/embedtv/${id}&s=${season}&e=${episode}`
     : `https://www.2embed.cc/embed/${id}`;
+  return base + (base.includes('?') ? '&' : '?') + 'autoplay=1';
+};
 
-const getEmbedsuUrl = (type: string, id: number, season: number, episode: number) =>
-  type === 'tv'
+const getEmbedsuUrl = (type: string, id: number, season: number, episode: number) => {
+  const base = type === 'tv'
     ? `https://embedsu.com/play/tv/${id}/${season}/${episode}`
     : `https://embedsu.com/play/movie/${id}`;
+  return base + (base.includes('?') ? '&' : '?') + 'autoplay=1';
+};
+
+const getVixSrcUrl = (type: string, id: number, season: number, episode: number) => {
+  const base = type === 'tv'
+    ? `https://vixsrc.to/tv/${id}/${season}/${episode}`
+    : `https://vixsrc.to/movie/${id}`;
+  return base + '?autoplay=true&primaryColor=8b5cf6';
+};
 
 const getStreams = (type: string, id: number, season: number, episode: number): Stream[] => {
   const direct = (name: string, url: string) => ({ name, url, quality: 'HD' as const, type: 'embed' as const });
-  const proxied = (name: string, url: string) => ({ name: name + ' (Proxy)', url: proxyUrl(url), quality: 'HD' as const, type: 'embed' as const });
+  const proxied = (name: string, url: string) => ({ name, url: proxyUrl(url), quality: 'HD' as const, type: 'embed' as const });
 
   return [
+    direct('VixSrc', getVixSrcUrl(type, id, season, episode)),
     direct('2Embed', get2EmbedUrl(type, id, season, episode)),
     proxied('2Embed', get2EmbedUrl(type, id, season, episode)),
     direct('VidSrc', getVidSrcUrl(type, id, season, episode)),
-    proxied('VidSrc', getVidSrcUrl(type, id, season, episode)),
     direct('AutoEmbed', getAutoEmbedUrl(type, id, season, episode)),
-    proxied('AutoEmbed', getAutoEmbedUrl(type, id, season, episode)),
     direct('Embedsu', getEmbedsuUrl(type, id, season, episode)),
+    proxied('VidSrc', getVidSrcUrl(type, id, season, episode)),
+    proxied('AutoEmbed', getAutoEmbedUrl(type, id, season, episode)),
     proxied('Embedsu', getEmbedsuUrl(type, id, season, episode)),
   ];
 };
@@ -308,6 +320,7 @@ export default function VideoPlayer({ mediaId, title, type, tvDetails, initialSe
             <Loader2 className="w-12 h-12 animate-spin text-purple-500 mx-auto mb-4" />
             <p className="font-bold text-lg">Avvio player...</p>
             <p className="text-gray-400 text-sm mt-2">{currentStream.name}</p>
+            <p className="text-gray-500 text-xs mt-4 max-w-xs">Se il video non parte, clicca sul pulsante Play nell'iframe o cambia fonte</p>
           </div>
         </div>
       )}

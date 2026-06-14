@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ShadowKindle - Personal Ebook Reader",
-  description: "Self-hosted ebook reader with support for EPUB and PDF files. Dark mode, bookmarks, highlights, and progress tracking.",
-  keywords: ["ebook", "reader", "epub", "pdf", "kindle", "self-hosted", "open source"],
-  authors: [{ name: "ShadowKindle Team" }],
+  title: "Libri - Ebook Reader",
+  description: "Leggi ebook EPUB e PDF con supporto per bookmarks, highlight e progress tracking.",
+  authors: [{ name: "Libri" }],
+  icons: "/favicon.svg",
 };
 
 export default function RootLayout({

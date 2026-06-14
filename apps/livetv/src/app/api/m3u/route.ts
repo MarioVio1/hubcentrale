@@ -139,7 +139,7 @@ export async function GET(request: Request) {
       })
     }
     case 'cinema': {
-      const cinemaKeywords = ['cinema', 'movie', 'film', 'sky cinema', 'premium', 'disney', 'hbo', 'netflix', 'paramount', 'fox', 'axn']
+      const cinemaKeywords = ['cinema', 'movie', 'film', 'sky cinema', 'disney', 'hbo', 'netflix', 'paramount', 'marvel', 'star wars', 'cine']
       return NextResponse.json({
         channels: channelCache.filter(ch => {
           const name = ch.name.toLowerCase()

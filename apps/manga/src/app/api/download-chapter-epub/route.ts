@@ -29,6 +29,8 @@ async function fetchAllImages(
         try {
           const res = await fetch(proxyUrl);
           if (!res.ok) return null;
+          const contentType = res.headers.get('content-type') || '';
+          if (contentType.includes('svg')) return null;
           const buffer = await res.arrayBuffer();
           return { fileName: `page${start + idx + 1}.jpg`, buffer };
         } catch {

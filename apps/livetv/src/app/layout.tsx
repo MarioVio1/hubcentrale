@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LiveTV - Streaming Unificato",
-  description: "Piattaforma LiveTV unificata con canali da multiple fonti",
+  title: "LiveTV - Canali TV in Streaming",
+  description: "Guarda la TV in diretta streaming con 277 canali nazionali ed extra.",
+  icons: "/favicon.svg",
 };
 
 export default function RootLayout({

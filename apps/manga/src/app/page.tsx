@@ -247,25 +247,41 @@ export default function MangaFlow() {
     }
   };
 
-  // Load library
+  // Load library (API + localStorage fallback)
   const loadLibrary = async () => {
     try {
       const response = await fetch('/api/library');
       const data = await response.json();
-      setLibrary(data.map((entry: any) => entry.manga));
-    } catch (error) {
-      console.error('Error loading library:', error);
+      if (data && Array.isArray(data)) {
+        setLibrary(data.map((entry: any) => entry.manga));
+        localStorage.setItem('manga_library', JSON.stringify(data.map((entry: any) => entry.manga)));
+        return;
+      }
+    } catch {
+      // Fall through to localStorage
+    }
+    const saved = localStorage.getItem('manga_library');
+    if (saved) {
+      try { setLibrary(JSON.parse(saved)); } catch { /* ignore */ }
     }
   };
 
-  // Load history
+  // Load history (API + localStorage fallback)
   const loadHistory = async () => {
     try {
       const response = await fetch('/api/history');
       const data = await response.json();
-      setHistory(data);
-    } catch (error) {
-      console.error('Error loading history:', error);
+      if (data && Array.isArray(data)) {
+        setHistory(data);
+        localStorage.setItem('manga_history', JSON.stringify(data));
+        return;
+      }
+    } catch {
+      // Fall through to localStorage
+    }
+    const saved = localStorage.getItem('manga_history');
+    if (saved) {
+      try { setHistory(JSON.parse(saved)); } catch { /* ignore */ }
     }
   };
 
@@ -478,20 +494,23 @@ export default function MangaFlow() {
     });
   };
 
-  // Toggle library
+  // Toggle library (API + localStorage fallback)
   const toggleLibrary = async (manga: Manga) => {
-    console.log('[toggleLibrary] Called with manga:', manga.title);
-    console.log('[toggleLibrary] manga.inLibrary:', manga.inLibrary);
-    console.log('[toggleLibrary] manga.id:', manga.id);
+    const libKey = 'manga_library';
 
     if (manga.inLibrary) {
-      // Remove from library
-      console.log('[toggleLibrary] Removing from library...');
-      await fetch(`/api/library?mangaId=${manga.id}`, { method: 'DELETE' });
+      await fetch(`/api/library?mangaId=${manga.id}`, { method: 'DELETE' }).catch(() => {});
       manga.inLibrary = false;
+      // Update localStorage
+      const saved = localStorage.getItem(libKey);
+      if (saved) {
+        try {
+          const list = JSON.parse(saved).filter((m: Manga) => m.id !== manga.id);
+          localStorage.setItem(libKey, JSON.stringify(list));
+          setLibrary(list);
+        } catch { /* ignore */ }
+      }
     } else {
-      // Add to library - send complete manga data
-      console.log('[toggleLibrary] Adding to library...');
       const response = await fetch('/api/library', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -511,20 +530,27 @@ export default function MangaFlow() {
             sourceId: manga.sourceId,
           },
         }),
-      });
+      }).catch(() => null);
 
-      const result = await response.json();
-      console.log('[toggleLibrary] Add result:', result);
+      manga.inLibrary = true;
+      // Update localStorage regardless of API success
+      const saved = localStorage.getItem(libKey);
+      try {
+        const list = saved ? JSON.parse(saved) : [];
+        if (!list.find((m: Manga) => m.id === manga.id)) {
+          list.push({ ...manga, inLibrary: true });
+        }
+        localStorage.setItem(libKey, JSON.stringify(list));
+        setLibrary(list);
+      } catch { /* ignore */ }
 
-      if (result.success) {
-        manga.inLibrary = true;
-        manga.id = result.mangaId;
-      } else {
-        console.error('[toggleLibrary] Failed to add:', result.error);
-        return;
+      if (response) {
+        const result = await response.json().catch(() => null);
+        if (result?.success) {
+          manga.id = result.mangaId;
+        }
       }
     }
-    loadLibrary();
   };
 
   // Add repository
@@ -1555,7 +1581,7 @@ export default function MangaFlow() {
 
             {/* Page display */}
             <div
-              className="flex-1 overflow-hidden relative flex items-center justify-center"
+              className="flex-1 overflow-hidden relative grid place-items-center"
               onMouseUp={handleMouseUp}
               onMouseLeave={handleMouseUp}
             >
@@ -1571,56 +1597,51 @@ export default function MangaFlow() {
                 <>
                   {/* Page content */}
                   <div
-                    className="h-full w-full overflow-hidden"
+                    className="h-full w-full overflow-hidden grid place-items-center"
                     onClick={() => setShowReaderControls(!showReaderControls)}
                     onWheel={handleWheel}
                     onTouchStart={handleTouchStart}
                     onTouchMove={handleTouchMove}
                     onTouchEnd={handleTouchEnd}
                   >
-                    <div className="h-full flex items-center justify-center p-4">
-                      <div
-                        className={`relative w-full h-full ${zoomLevel > 1 ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'}`}
-                        onMouseDown={handleMouseDown}
-                        onMouseMove={handleMouseMove}
-                        onClick={(e) => {
-                          if (zoomLevel === 1) {
-                            e.stopPropagation();
-                            const rect = e.currentTarget.getBoundingClientRect();
-                            const x = e.clientX - rect.left;
-                            if (x < rect.width * 0.4) {
-                              // Left side - previous page
-                              if (currentPageIndex > 0) {
-                                setCurrentPageIndex(currentPageIndex - 1);
-                              }
-                            } else if (x > rect.width * 0.6) {
-                              // Right side - next page
-                              if (currentPageIndex < chapterPages.length - 1) {
-                                setCurrentPageIndex(currentPageIndex + 1);
-                              }
+                    <div
+                      className={`relative w-full h-full grid place-items-center p-4 ${zoomLevel > 1 ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'}`}
+                      onMouseDown={handleMouseDown}
+                      onMouseMove={handleMouseMove}
+                      onClick={(e) => {
+                        if (zoomLevel === 1) {
+                          e.stopPropagation();
+                          const rect = e.currentTarget.getBoundingClientRect();
+                          const x = e.clientX - rect.left;
+                          if (x < rect.width * 0.4) {
+                            if (currentPageIndex > 0) {
+                              setCurrentPageIndex(currentPageIndex - 1);
+                            }
+                          } else if (x > rect.width * 0.6) {
+                            if (currentPageIndex < chapterPages.length - 1) {
+                              setCurrentPageIndex(currentPageIndex + 1);
                             }
                           }
+                        }
+                      }}
+                    >
+                      <img
+                        src={chapterPages[currentPageIndex]?.url}
+                        alt={`Page ${currentPageIndex + 1}`}
+                        className="max-w-full max-h-full object-contain select-none pointer-events-none block m-auto"
+                        style={{
+                          transform: `scale(${zoomLevel}) translate(${imagePosition.x / zoomLevel}px, ${imagePosition.y / zoomLevel}px)`,
+                          transformOrigin: 'center center',
+                          transition: isDragging ? 'none' : 'transform 0.2s ease-out',
                         }}
-                      >
-                        <img
-                          src={chapterPages[currentPageIndex]?.url}
-                          alt={`Page ${currentPageIndex + 1}`}
-                          className="max-w-full max-h-full object-contain select-none pointer-events-none"
-                          style={{
-                            transform: `scale(${zoomLevel}) translate(${imagePosition.x / zoomLevel}px, ${imagePosition.y / zoomLevel}px)`,
-                            transformOrigin: 'center center',
-                            transition: isDragging ? 'none' : 'transform 0.2s ease-out',
-                          }}
-                          draggable={false}
-                          onError={(e) => {
-                            console.error('Failed to load page:', chapterPages[currentPageIndex]?.url);
-                            // Show error indicator
-                            (e.target as HTMLImageElement).src = 'data:image/svg+xml,' + encodeURIComponent(
-                              '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="#1a1a2e" width="100" height="100"/><text x="50" y="50" text-anchor="middle" fill="#666" font-size="40">?</text><text x="50" y="70" text-anchor="middle" fill="#666" font-size="12">Pagina non disponibile</text></svg>'
-                            );
-                          }}
-                        />
-                      </div>
+                        draggable={false}
+                        onError={(e) => {
+                          console.error('Failed to load page:', chapterPages[currentPageIndex]?.url);
+                          (e.target as HTMLImageElement).src = 'data:image/svg+xml,' + encodeURIComponent(
+                            '<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="#1a1a2e" width="100" height="100"/><text x="50" y="50" text-anchor="middle" fill="#666" font-size="40">?</text><text x="50" y="70" text-anchor="middle" fill="#666" font-size="12">Pagina non disponibile</text></svg>'
+                          );
+                        }}
+                      />
                     </div>
                   </div>
                 </>
