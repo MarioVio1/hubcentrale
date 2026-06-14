@@ -1580,7 +1580,7 @@ export default function MangaFlow() {
                   >
                     <div className="h-full flex items-center justify-center p-4">
                       <div
-                        className={`relative max-w-3xl max-h-full ${zoomLevel > 1 ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'}`}
+                        className={`relative w-full h-full ${zoomLevel > 1 ? 'cursor-grab active:cursor-grabbing' : 'cursor-pointer'}`}
                         onMouseDown={handleMouseDown}
                         onMouseMove={handleMouseMove}
                         onClick={(e) => {

@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// HLS Proxy - fetches and returns the stream
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const url = searchParams.get('url');
@@ -10,7 +9,6 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Follow redirects and get the final URL
     const response = await fetch(url, {
       redirect: 'follow',
       headers: {

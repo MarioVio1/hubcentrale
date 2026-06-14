@@ -7,11 +7,10 @@ import { Badge } from '@/components/ui/badge';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { 
   Search, Play, Heart, ChevronLeft, ChevronRight, 
-  Star, X, Tv, Film, Home, Radio, Menu, Loader2
+  Star, X, Tv, Film, Home, Radio, Menu, Loader2, ExternalLink
 } from 'lucide-react';
 import { toast } from 'sonner';
 import VideoPlayer from '@/components/video-player';
-import CheRobaPlayer from '@/components/cheroba-player';
 
 // Types
 interface Media {
@@ -58,36 +57,6 @@ interface MovieDetails extends Media {
   };
 }
 
-interface TVChannel {
-  id: string;
-  name: string;
-  url: string;
-  logo?: string;
-  group?: string;
-}
-
-interface M3UList {
-  id: string;
-  name: string;
-  description: string;
-  url: string;
-  icon: string;
-}
-
-// Available M3U Lists from StremioItalia
-const M3U_LISTS: M3UList[] = [
-  { id: 'lista', name: 'Lista Principale', description: 'Canali TV italiani', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/lista.m3u', icon: '📺' },
-  { id: 'dlhd', name: 'DLHD', description: 'Canali internazionali', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/dlhd.m3u', icon: '🎯' },
-  { id: 'static', name: 'Static', description: 'Canali stabili', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/static.m3u', icon: '📡' },
-  { id: 'staticestero', name: 'Estero', description: 'Canali internazionali', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/staticestero.m3u', icon: '🌍' },
-  { id: 'sports99', name: 'Sports99', description: 'Sport e eventi', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/sports99.m3u', icon: '⚽' },
-  { id: 'sportsonline', name: 'Sports Online', description: 'Sport in diretta', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/sportsonline.m3u', icon: '🏀' },
-  { id: 'eventi', name: 'Eventi', description: 'Eventi speciali', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/eventi_dlhd.m3u', icon: '🎬' },
-  { id: 'streamed', name: 'Streamed', description: 'Streaming vari', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/streamed.m3u', icon: '🎥' },
-  { id: 'vavoo', name: 'Vavoo', description: 'Canali Vavoo', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/vavoo.m3u', icon: '🔴' },
-  { id: 'thisnot', name: 'ThisNot', description: 'Canali ThisNot', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/thisnot.m3u', icon: '🟣' },
-];
-
 // Image helpers
 const getImageUrl = (path: string | null, size = 'w500') => {
   if (!path) return null;
@@ -123,9 +92,6 @@ export default function TrenityApp() {
   const [playerSeason, setPlayerSeason] = useState(1);
   const [playerEpisode, setPlayerEpisode] = useState(1);
   const [tvDetails, setTvDetails] = useState<TVShowDetails | null>(null);
-  
-  // CheRoba (Live TV) state
-  const [showCheRoba, setShowCheRoba] = useState(false);
   
   // Preloaded stream for faster playback
   const [preloadedStream, setPreloadedStream] = useState<{streams: any[], mediaId: number, type: string} | null>(null);
@@ -363,9 +329,11 @@ export default function TrenityApp() {
             </nav>
           </div>
           <div className="flex items-center gap-3">
-            {/* CheRoba Button - Glow Effect */}
-            <button 
-              onClick={() => setShowCheRoba(true)} 
+            {/* Live TV Link */}
+            <a 
+              href="https://hub-livetv.vercel.app/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-lg font-bold transition-all duration-300 hover:scale-105 glow-btn"
               style={{
                 background: 'linear-gradient(135deg, #00a8e1 0%, #f0b90b 100%)',
@@ -376,7 +344,8 @@ export default function TrenityApp() {
                 <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-red-500 rounded-full animate-pulse" />
               </div>
               <span className="text-black hidden sm:inline">Live TV</span>
-            </button>
+              <ExternalLink className="w-3 h-3 text-black/60 hidden sm:inline" />
+            </a>
             
             <button onClick={() => setShowSearch(true)} className="p-2 hover:bg-white/10 rounded-full transition">
               <Search className="w-5 h-5" />
@@ -416,10 +385,12 @@ export default function TrenityApp() {
               </button>
             </nav>
             
-            {/* CheRoba - Highlighted in Mobile Menu */}
+            {/* Live TV - Highlighted in Mobile Menu */}
             <div className="p-4 border-t border-white/10">
-              <button 
-                onClick={() => { setShowCheRoba(true); setShowMobileMenu(false); }} 
+              <a 
+                href="https://hub-livetv.vercel.app/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-3 p-4 rounded-xl font-bold transition-all glow-btn"
                 style={{
                   background: 'linear-gradient(135deg, #00a8e1 0%, #f0b90b 100%)',
@@ -430,7 +401,8 @@ export default function TrenityApp() {
                   <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-red-500 rounded-full animate-pulse" />
                 </div>
                 <span className="text-black">Live TV</span>
-              </button>
+                <ExternalLink className="w-3 h-3 text-black/60" />
+              </a>
             </div>
           </div>
         </div>
@@ -657,11 +629,6 @@ export default function TrenityApp() {
             ) : <p className="text-center text-gray-500 mt-8">La tua lista è vuota</p>}
           </ScrollArea>
         </div>
-      )}
-      
-      {/* CheRoba Player */}
-      {showCheRoba && (
-        <CheRobaPlayer onClose={() => setShowCheRoba(false)} />
       )}
       
       {/* CSS Animations & Styles */}

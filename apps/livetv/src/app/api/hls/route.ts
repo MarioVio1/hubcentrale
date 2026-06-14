@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// HLS Proxy - risolve redirect e serve lo stream con URL rewriting
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   let url = searchParams.get('url');
@@ -13,7 +12,6 @@ export async function GET(request: NextRequest) {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 15000);
     
-    // Fetch con redirect follow
     const response = await fetch(url, {
       redirect: 'follow',
       signal: controller.signal,
@@ -36,16 +34,13 @@ export async function GET(request: NextRequest) {
     const contentType = response.headers.get('content-type') || 'application/vnd.apple.mpegurl';
     let content = await response.text();
 
-    // Se è un M3U8, riscrivi gli URL per passare attraverso il nostro proxy
     if (contentType.includes('mpegurl') || url.includes('.m3u8') || content.includes('#EXTM3U')) {
       const baseUrl = finalUrl.substring(0, finalUrl.lastIndexOf('/') + 1);
       
       content = content.split('\n').map(line => {
         const trimmed = line.trim();
         
-        // Commenti e linee vuote
         if (trimmed.startsWith('#') || trimmed === '') {
-          // Gestisci URI dentro i tag (es. EXT-X-KEY)
           if (trimmed.includes('URI="')) {
             return trimmed.replace(/URI="([^"]+)"/, (match, uri) => {
               const absoluteUri = uri.startsWith('http') ? uri : baseUrl + uri;
@@ -55,12 +50,10 @@ export async function GET(request: NextRequest) {
           return trimmed;
         }
         
-        // URL già assoluto
         if (trimmed.startsWith('http://') || trimmed.startsWith('https://')) {
           return `/api/hls?url=${encodeURIComponent(trimmed)}`;
         }
         
-        // URL relativo - converti in assoluto
         const absoluteUrl = baseUrl + trimmed;
         return `/api/hls?url=${encodeURIComponent(absoluteUrl)}`;
       }).join('\n');
@@ -77,7 +70,6 @@ export async function GET(request: NextRequest) {
       });
     }
     
-    // Per segmenti video/audio (TS, AAC, etc.)
     const buffer = await response.arrayBuffer();
     
     return new NextResponse(buffer, {

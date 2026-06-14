@@ -36,6 +36,10 @@ interface VideoPlayerProps {
   onSeasonChange?: (season: number, episode: number) => void;
 }
 
+const PROXY_BASE = '/api/proxy/embed?url=';
+
+const proxyUrl = (url: string) => `${PROXY_BASE}${encodeURIComponent(url)}`;
+
 // Instant embed URL generators
 const getVidSrcUrl = (type: string, id: number, season: number, episode: number) => 
   type === 'tv'
@@ -57,18 +61,27 @@ const getEmbedsuUrl = (type: string, id: number, season: number, episode: number
     ? `https://embedsu.com/play/tv/${id}/${season}/${episode}`
     : `https://embedsu.com/play/movie/${id}`;
 
-// Generate instant streams
-const getInstantStreams = (type: string, id: number, season: number, episode: number): Stream[] => [
-  { name: 'VidSrc', url: getVidSrcUrl(type, id, season, episode), quality: 'HD', type: 'embed' as const },
-  { name: 'AutoEmbed', url: getAutoEmbedUrl(type, id, season, episode), quality: 'HD', type: 'embed' as const },
-  { name: '2Embed', url: get2EmbedUrl(type, id, season, episode), quality: 'HD', type: 'embed' as const },
-  { name: 'Embedsu', url: getEmbedsuUrl(type, id, season, episode), quality: 'HD', type: 'embed' as const },
-];
+const getStreams = (type: string, id: number, season: number, episode: number): Stream[] => {
+  const direct = (name: string, url: string) => ({ name, url, quality: 'HD' as const, type: 'embed' as const });
+  const proxied = (name: string, url: string) => ({ name: name + ' (Proxy)', url: proxyUrl(url), quality: 'HD' as const, type: 'embed' as const });
+
+  return [
+    direct('2Embed', get2EmbedUrl(type, id, season, episode)),
+    proxied('2Embed', get2EmbedUrl(type, id, season, episode)),
+    direct('VidSrc', getVidSrcUrl(type, id, season, episode)),
+    proxied('VidSrc', getVidSrcUrl(type, id, season, episode)),
+    direct('AutoEmbed', getAutoEmbedUrl(type, id, season, episode)),
+    proxied('AutoEmbed', getAutoEmbedUrl(type, id, season, episode)),
+    direct('Embedsu', getEmbedsuUrl(type, id, season, episode)),
+    proxied('Embedsu', getEmbedsuUrl(type, id, season, episode)),
+  ];
+};
 
 export default function VideoPlayer({ mediaId, title, type, tvDetails, initialSeason = 1, initialEpisode = 1, preloadedStreams, onClose, onSeasonChange }: VideoPlayerProps) {
   const [season, setSeason] = useState(initialSeason);
   const [episode, setEpisode] = useState(initialEpisode);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
   const [hlsStreams, setHlsStreams] = useState<Stream[]>([]);
   const [currentStreamIndex, setCurrentStreamIndex] = useState(0);
   const [showSettings, setShowSettings] = useState(false);
@@ -76,11 +89,12 @@ export default function VideoPlayer({ mediaId, title, type, tvDetails, initialSe
 
   const containerRef = useRef<HTMLDivElement>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const loadTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Combine instant streams with HLS streams (memoized)
+  // Combine HLS streams with embed streams (memoized)
   const streams = useMemo(() => {
-    const instant = getInstantStreams(type, mediaId, season, episode);
-    return [...hlsStreams, ...instant];
+    const embed = getStreams(type, mediaId, season, episode);
+    return [...hlsStreams, ...embed];
   }, [type, mediaId, season, episode, hlsStreams]);
 
   const currentStream = streams[currentStreamIndex] || streams[0];
@@ -149,22 +163,41 @@ export default function VideoPlayer({ mediaId, title, type, tvDetails, initialSe
   const changeStream = (index: number) => {
     setCurrentStreamIndex(index);
     setLoading(true);
+    setLoadError(false);
     setShowSettings(false);
+    if (loadTimeoutRef.current) clearTimeout(loadTimeoutRef.current);
+    loadTimeoutRef.current = setTimeout(() => {
+      setLoadError(true);
+      setLoading(false);
+    }, 15000);
   };
+
+  // Set load timeout on mount and when stream changes
+  useEffect(() => {
+    setLoading(true);
+    setLoadError(false);
+    if (loadTimeoutRef.current) clearTimeout(loadTimeoutRef.current);
+    loadTimeoutRef.current = setTimeout(() => {
+      setLoadError(true);
+      setLoading(false);
+    }, 15000);
+  }, [currentStreamIndex, season, episode]);
+
+  useEffect(() => {
+    return () => { if (loadTimeoutRef.current) clearTimeout(loadTimeoutRef.current); };
+  }, []);
 
   const changeSeason = (s: number) => {
     setSeason(s);
     setEpisode(1);
-    setCurrentStreamIndex(0);
-    setLoading(true);
     onSeasonChange?.(s, 1);
+    changeStream(0);
   };
 
   const changeEpisode = (e: number) => {
     setEpisode(e);
-    setCurrentStreamIndex(0);
-    setLoading(true);
     onSeasonChange?.(season, e);
+    changeStream(0);
   };
 
   const prevEp = () => episode > 1 && changeEpisode(episode - 1);
@@ -269,11 +302,38 @@ export default function VideoPlayer({ mediaId, title, type, tvDetails, initialSe
       </div>
 
       {/* Loading */}
-      {loading && (
+      {loading && !loadError && (
         <div className="absolute inset-0 flex items-center justify-center bg-black z-40">
           <div className="text-center">
             <Loader2 className="w-12 h-12 animate-spin text-purple-500 mx-auto mb-4" />
             <p className="font-bold text-lg">Avvio player...</p>
+            <p className="text-gray-400 text-sm mt-2">{currentStream.name}</p>
+          </div>
+        </div>
+      )}
+
+      {/* Error State */}
+      {loadError && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black z-40">
+          <div className="text-center max-w-md mx-auto p-6">
+            <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-500/20 flex items-center justify-center">
+              <X className="w-8 h-8 text-red-400" />
+            </div>
+            <p className="font-bold text-xl text-red-400 mb-2">Fonte non disponibile</p>
+            <p className="text-gray-400 mb-6">{currentStream.name} non risponde. Prova con un'altra fonte.</p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {streams.map((s, i) => (
+                <button
+                  key={i}
+                  onClick={() => changeStream(i)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
+                    i === currentStreamIndex ? 'bg-purple-600 text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  }`}
+                >
+                  {s.name}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}
@@ -285,7 +345,7 @@ export default function VideoPlayer({ mediaId, title, type, tvDetails, initialSe
         className="w-full h-full border-0"
         allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
         allowFullScreen
-        onLoad={() => setLoading(false)}
+        onLoad={() => { setLoading(false); setLoadError(false); if (loadTimeoutRef.current) clearTimeout(loadTimeoutRef.current); }}
       />
 
       {/* Settings Modal */}

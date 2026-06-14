@@ -23,34 +23,22 @@ export default function LiveTVPlayer({ url, title, logo, onClose }: LiveTVPlayer
     return () => window.removeEventListener('keydown', handleKey);
   }, [onClose]);
 
-  // Initialize HLS player
   useEffect(() => {
     const video = videoRef.current;
     if (!video || !url) return;
 
-    // Check if it's an m3u8 stream
     const isHLS = url.includes('.m3u8') || url.includes('m3u8');
     
     if (isHLS) {
-      // Dynamic import of HLS.js
       import('hls.js').then((Hls) => {
         if (Hls.default.isSupported()) {
-          const hls = new Hls.default({
-            enableWorker: true,
-            lowLatencyMode: true,
-            backBufferLength: 90,
-          });
-          
+          const hls = new Hls.default({ enableWorker: true, lowLatencyMode: true, backBufferLength: 90 });
           hls.loadSource(url);
           hls.attachMedia(video);
-          
           hls.on(Hls.Events.MANIFEST_PARSED, () => {
             setLoading(false);
-            video.play().catch(() => {
-              // Autoplay blocked, user needs to interact
-            });
+            video.play().catch(() => {});
           });
-          
           hls.on(Hls.Events.ERROR, (event: any, data: any) => {
             if (data.fatal) {
               switch (data.type) {
@@ -67,10 +55,8 @@ export default function LiveTVPlayer({ url, title, logo, onClose }: LiveTVPlayer
               setLoading(false);
             }
           });
-          
           hlsRef.current = hls;
         } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-          // Safari native HLS support
           video.src = url;
           video.addEventListener('loadedmetadata', () => {
             setLoading(false);
@@ -78,14 +64,10 @@ export default function LiveTVPlayer({ url, title, logo, onClose }: LiveTVPlayer
           });
         }
       }).catch(() => {
-        // HLS.js not loaded, try direct
         video.src = url;
-        video.addEventListener('loadeddata', () => {
-          setLoading(false);
-        });
+        video.addEventListener('loadeddata', () => { setLoading(false); });
       });
     } else {
-      // Direct video URL
       video.src = url;
       video.addEventListener('loadeddata', () => {
         setLoading(false);
@@ -94,9 +76,7 @@ export default function LiveTVPlayer({ url, title, logo, onClose }: LiveTVPlayer
     }
 
     return () => {
-      if (hlsRef.current) {
-        hlsRef.current.destroy();
-      }
+      if (hlsRef.current) hlsRef.current.destroy();
     };
   }, [url]);
 
@@ -109,24 +89,18 @@ export default function LiveTVPlayer({ url, title, logo, onClose }: LiveTVPlayer
 
   const toggleFullscreen = () => {
     if (videoRef.current) {
-      if (document.fullscreenElement) {
-        document.exitFullscreen();
-      } else {
-        videoRef.current.requestFullscreen();
-      }
+      if (document.fullscreenElement) document.exitFullscreen();
+      else videoRef.current.requestFullscreen();
     }
   };
 
   return (
     <div className="fixed inset-0 z-[100] bg-black flex flex-col">
-      {/* Header */}
       <div className="flex items-center justify-between p-3 bg-gradient-to-b from-purple-900/95 to-transparent z-20">
         <div className="flex items-center gap-3">
           {logo && (
             <img 
-              src={logo} 
-              alt={title} 
-              className="w-9 h-9 rounded-lg object-contain bg-white/10 p-1" 
+              src={logo} alt={title} className="w-9 h-9 rounded-lg object-contain bg-white/10 p-1" 
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} 
             />
           )}
@@ -138,39 +112,20 @@ export default function LiveTVPlayer({ url, title, logo, onClose }: LiveTVPlayer
           </div>
         </div>
         <div className="flex items-center gap-2">
-          <button 
-            onClick={toggleMute}
-            className="p-2 bg-purple-800/50 hover:bg-purple-700 rounded-lg transition"
-          >
+          <button onClick={toggleMute} className="p-2 bg-purple-800/50 hover:bg-purple-700 rounded-lg transition">
             {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
           </button>
-          <button 
-            onClick={toggleFullscreen}
-            className="p-2 bg-purple-800/50 hover:bg-purple-700 rounded-lg transition"
-          >
+          <button onClick={toggleFullscreen} className="p-2 bg-purple-800/50 hover:bg-purple-700 rounded-lg transition">
             <Maximize className="w-5 h-5" />
           </button>
-          <button 
-            onClick={onClose} 
-            className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 px-4 py-2 rounded-xl text-white font-bold flex items-center gap-2"
-          >
+          <button onClick={onClose} className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 px-4 py-2 rounded-xl text-white font-bold flex items-center gap-2">
             <X className="w-5 h-5" /> Chiudi
           </button>
         </div>
       </div>
 
-      {/* Video Player */}
       <div className="flex-1 relative bg-black flex items-center justify-center">
-        <video
-          ref={videoRef}
-          className="w-full h-full object-contain"
-          playsInline
-          autoPlay
-          muted={isMuted}
-          controls
-        />
-
-        {/* Loading Overlay */}
+        <video ref={videoRef} className="w-full h-full object-contain" playsInline autoPlay muted={isMuted} controls />
         {loading && (
           <div className="absolute inset-0 flex items-center justify-center bg-black z-30">
             <div className="text-center">
@@ -180,18 +135,13 @@ export default function LiveTVPlayer({ url, title, logo, onClose }: LiveTVPlayer
             </div>
           </div>
         )}
-
-        {/* Error Overlay */}
         {error && !loading && (
           <div className="absolute inset-0 flex items-center justify-center bg-black z-30">
             <div className="text-center p-6 max-w-md">
               <AlertCircle className="w-16 h-16 text-pink-500 mx-auto mb-4" />
               <p className="text-xl font-bold text-pink-400 mb-2">{error}</p>
               <p className="text-gray-400 mb-6">Prova un altro canale</p>
-              <button 
-                onClick={onClose} 
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-xl text-white font-bold transition"
-              >
+              <button onClick={onClose} className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-xl text-white font-bold transition">
                 Torna ai canali
               </button>
             </div>

@@ -10,7 +10,6 @@ interface TVChannel {
   group?: string;
 }
 
-// Parse M3U file
 function parseM3U(content: string): TVChannel[] {
   const lines = content.split('\n');
   const channels: TVChannel[] = [];
@@ -48,15 +47,11 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Try direct fetch first
     let response = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-      },
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
       signal: AbortSignal.timeout(10000)
     }).catch(() => null);
 
-    // If direct fails, use proxy
     if (!response || !response.ok) {
       console.log('[M3U] Direct fetch failed, using proxy...');
       response = await fetch(`${PROXY_URL}/proxy/raw?url=${encodeURIComponent(url)}`, {

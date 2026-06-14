@@ -1,8 +1,9 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Search, Tv, Grid3X3, List, Play, ExternalLink, Loader2, Zap, Star, Flag, Crown, Radio, MonitorPlay, Film, Sparkles, ChevronDown, X, Menu } from 'lucide-react'
+import { Search, Tv, Grid3X3, List, Play, ExternalLink, Loader2, Zap, Star, Flag, Crown, Radio, MonitorPlay, Film, Sparkles, ChevronDown, X, Menu, Globe, Satellite } from 'lucide-react'
 import ShakaPlayer from '@/components/shaka-player'
+import { webtvNationalChannels, webtvExtraChannels, type WebTVChannel } from '@/lib/channels-data'
 
 interface Category { id: string; name: string; slug: string; icon: string; color: string; sortOrder: number; isVisible: boolean; _count: { channels: number } }
 interface DBChannel { id: string; title: string; categoryId: string; mpdUrl: string | null; drmType: string | null; drmKeyId: string | null; drmKey: string | null; isLive: boolean; useProxy: boolean; proxyUrl: string | null; category: Category }
@@ -12,7 +13,7 @@ interface FeedChannel { id: string; name: string; group: string; type: 'iframe' 
 interface SportsonlineEvent { time: string; name: string; url: string }
 interface Sportsonline247 { name: string; url: string; group: string }
 
-type TabType = 'db' | 'all' | 'sports' | 'cinema' | 'italian' | 'paytv' | 'franchino' | 'feedtv' | 'live-events' | 'sportsonline-247' | 'dirette'
+type TabType = 'db' | 'all' | 'sports' | 'cinema' | 'italian' | 'paytv' | 'franchino' | 'feedtv' | 'nazionali' | 'sport-extra' | 'damitv' | 'live-events' | 'sportsonline-247' | 'dirette'
 
 declare global { interface Window { Hls: any; shaka: any } }
 
@@ -48,10 +49,21 @@ export default function LiveTVPage() {
   const [feedChannels, setFeedChannels] = useState<FeedChannel[]>([])
   const [selectedFeedChannel, setSelectedFeedChannel] = useState<FeedChannel | null>(null)
 
+  // WebTV (webtv_dump)
+  const [selectedWebTVChannel, setSelectedWebTVChannel] = useState<WebTVChannel | null>(null)
+  const [webtvPlayerLoading, setWebtvPlayerLoading] = useState(false)
+  const webtvVideoRef = useRef<HTMLVideoElement>(null)
+  const webtvHlsRef = useRef<any>(null)
+
   // Sportsonline
   const [sportsonlineEvents, setSportsonlineEvents] = useState<SportsonlineEvent[]>([])
   const [sportsonline247, setSportsonline247] = useState<Sportsonline247[]>([])
   const [selectedSportsonlineEvent, setSelectedSportsonlineEvent] = useState<SportsonlineEvent | null>(null)
+
+  // DAMI TV
+  interface DamiTVChannel { id: string; name: string; slug: string; group: string; logo: string; embedUrl: string }
+  const [damiChannels, setDamiChannels] = useState<DamiTVChannel[]>([])
+  const [selectedDamiChannel, setSelectedDamiChannel] = useState<DamiTVChannel | null>(null)
 
   // DiretteCommunity
   const [diretteMatches, setDiretteMatches] = useState<MatchEvent[]>([])
@@ -200,12 +212,7 @@ export default function LiveTVPage() {
       { id: 'rainews24-iptv', name: 'Rai News 24', group: 'IPTV Italia', type: 'hls', url: 'http://mediapolis.rai.it/relinker/relinkerServlet.htm?cont=1&output=7' },
     ]
 
-    const mixedChannels: FeedChannel[] = Array.from({ length: 50 }, (_, i) => ({
-      id: `canale-${i + 1}`, name: `Canale ${i + 1}`, group: 'Mista', type: 'hls',
-      url: `https://1nyaler.streamhostingcdn.top/stream/${i + 1}/index.m3u8?token=aN7QrmHIoz60HOhI`
-    }))
-
-    setFeedChannels([...staticChannels, ...iptvItaliaChannels, ...mixedChannels])
+    setFeedChannels([...staticChannels, ...iptvItaliaChannels])
   }, [])
 
   // Fetch sportsonline
@@ -219,6 +226,9 @@ export default function LiveTVPage() {
     if (activeTab === 'dirette') {
       fetch('/api/dirette').then(r => r.json()).then(d => setDiretteMatches(d.matches || [])).catch(console.error)
     }
+    if (activeTab === 'damitv') {
+      fetch('/api/damitv/channels').then(r => r.json()).then(d => setDamiChannels(d.channels || [])).catch(console.error)
+    }
   }, [activeTab])
 
   // Play M3U channel with HLS.js
@@ -227,6 +237,8 @@ export default function LiveTVPage() {
     setSelectedDbChannel(null)
     setSelectedFeedChannel(null)
     setSelectedSportsonlineEvent(null)
+    setSelectedWebTVChannel(null)
+    setSelectedDamiChannel(null)
     setPlayerLoading(true)
 
     const playUrl = channel.url
@@ -258,6 +270,49 @@ export default function LiveTVPage() {
     setCurrentM3uChannel(null)
     setSelectedDbChannel(null)
     setSelectedSportsonlineEvent(null)
+    setSelectedWebTVChannel(null)
+    setSelectedDamiChannel(null)
+  }
+
+  const playDamiChannel = (channel: DamiTVChannel) => {
+    setSelectedDamiChannel(channel)
+    setSelectedFeedChannel(null)
+    setCurrentM3uChannel(null)
+    setSelectedDbChannel(null)
+    setSelectedSportsonlineEvent(null)
+    setSelectedWebTVChannel(null)
+  }
+
+  const playWebTVChannel = async (channel: WebTVChannel) => {
+    setSelectedWebTVChannel(channel)
+    setSelectedFeedChannel(null)
+    setCurrentM3uChannel(null)
+    setSelectedDbChannel(null)
+    setSelectedSportsonlineEvent(null)
+    setWebtvPlayerLoading(true)
+
+    if (webtvHlsRef.current) { webtvHlsRef.current.destroy(); webtvHlsRef.current = null }
+
+    const video = webtvVideoRef.current
+    if (!video || !channel.url) { setWebtvPlayerLoading(false); return }
+
+    const url = channel.url
+    if (url.includes('.m3u8') && typeof window.Hls !== 'undefined' && window.Hls.isSupported()) {
+      const hls = new window.Hls({ enableWorker: true, lowLatencyMode: true })
+      hls.loadSource(url)
+      hls.attachMedia(video)
+      hls.on(window.Hls.Events.MANIFEST_PARSED, () => {
+        setWebtvPlayerLoading(false)
+        video.play().catch(console.error)
+      })
+      hls.on(window.Hls.Events.ERROR, (event: any, data: any) => {
+        if (data.fatal) { setWebtvPlayerLoading(false) }
+      })
+      webtvHlsRef.current = hls
+    } else {
+      video.src = url
+      video.play().then(() => setWebtvPlayerLoading(false)).catch(() => setWebtvPlayerLoading(false))
+    }
   }
 
   const playDbChannel = (channel: DBChannel) => {
@@ -266,6 +321,8 @@ export default function LiveTVPage() {
     setCurrentM3uChannel(null)
     setSelectedFeedChannel(null)
     setSelectedSportsonlineEvent(null)
+    setSelectedWebTVChannel(null)
+    setSelectedDamiChannel(null)
   }
 
   const tabs = [
@@ -276,6 +333,9 @@ export default function LiveTVPage() {
     { id: 'paytv' as TabType, label: 'Pay TV', icon: Crown, color: 'from-yellow-500/20 to-yellow-600/20' },
     { id: 'franchino' as TabType, label: 'Franchino', icon: Star, color: 'from-pink-500/20 to-pink-600/20' },
     { id: 'feedtv' as TabType, label: 'Feed TV', icon: Tv, color: 'from-violet-500/20 to-violet-600/20' },
+    { id: 'nazionali' as TabType, label: 'Nazionali', icon: Globe, color: 'from-sky-500/20 to-blue-600/20' },
+    { id: 'sport-extra' as TabType, label: 'Sport Extra', icon: Satellite, color: 'from-amber-500/20 to-orange-600/20' },
+    { id: 'damitv' as TabType, label: 'DAMI TV', icon: Tv, color: 'from-rose-500/20 to-pink-600/20' },
     { id: 'live-events' as TabType, label: 'Eventi Live', icon: Play, color: 'from-emerald-500/20 to-emerald-600/20' },
     { id: 'dirette' as TabType, label: 'Dirette', icon: Radio, color: 'from-cyan-500/20 to-cyan-600/20' },
     { id: 'db' as TabType, label: 'DB Canali', icon: MonitorPlay, color: 'from-red-500/20 to-red-600/20' },
@@ -371,6 +431,52 @@ export default function LiveTVPage() {
       )
     }
 
+    if (selectedDamiChannel) {
+      return (
+        <div className="border-b border-border bg-black">
+          <div className="p-4">
+            <iframe
+              key={selectedDamiChannel.embedUrl}
+              src={selectedDamiChannel.embedUrl}
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              className="w-full aspect-video border-0 bg-black"
+              title={selectedDamiChannel.name}
+            />
+            <div className="mt-2 flex items-center gap-2 text-sm">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="font-medium">{selectedDamiChannel.name}</span>
+              <span className="text-xs text-muted-foreground ml-auto">{selectedDamiChannel.group}</span>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
+    if (selectedWebTVChannel) {
+      return (
+        <div className="border-b border-border bg-black">
+          <div className="p-4">
+            <video ref={webtvVideoRef} className="w-full aspect-video bg-black" controls autoPlay playsInline />
+            {webtvPlayerLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-black/80">
+                <Loader2 className="w-8 h-8 animate-spin text-white" />
+              </div>
+            )}
+            <div className="mt-2 flex items-center gap-2 text-sm">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              {selectedWebTVChannel.logo && (
+                <img src={selectedWebTVChannel.logo} alt="" className="w-5 h-5 object-contain rounded"
+                  onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
+              )}
+              <span className="font-medium">{selectedWebTVChannel.name}</span>
+              <span className="text-xs text-muted-foreground ml-auto">{selectedWebTVChannel.categoria}</span>
+            </div>
+          </div>
+        </div>
+      )
+    }
+
     if (selectedSportsonlineEvent) {
       return (
         <div className="border-b border-border bg-black">
@@ -415,6 +521,118 @@ export default function LiveTVPage() {
                     </div>
                     <p className="text-sm font-medium text-white truncate">{ch.name}</p>
                     <p className="text-xs text-slate-500 mt-1">{ch.type.toUpperCase()}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    if (activeTab === 'nazionali') {
+      const filtered = webtvNationalChannels.filter(ch =>
+        ch.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        ch.categoria.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+      const grouped = filtered.reduce((acc, ch) => {
+        const cat = ch.categoria || 'Generale'
+        if (!acc[cat]) acc[cat] = []
+        acc[cat].push(ch)
+        return acc
+      }, {} as Record<string, WebTVChannel[]>)
+      const catOrder = ['Nazionali', 'Regionali', 'Notizie', 'Sportivi', 'Musicali', 'Bambini']
+      const sortedGroups = Object.entries(grouped).sort(([a], [b]) => {
+        const ai = catOrder.indexOf(a); const bi = catOrder.indexOf(b)
+        if (ai >= 0 && bi >= 0) return ai - bi
+        if (ai >= 0) return -1; if (bi >= 0) return 1
+        return a.localeCompare(b)
+      })
+
+      return (
+        <div className="space-y-6">
+          {sortedGroups.map(([categoria, channels]) => (
+            <div key={categoria}>
+              <h3 className="text-lg font-semibold text-white mb-3">{categoria} ({channels.length})</h3>
+              <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                {channels.map(ch => (
+                  <button key={ch.name} onClick={() => playWebTVChannel(ch)}
+                    className="p-4 bg-slate-800/50 hover:bg-slate-800 border border-slate-700 hover:border-sky-500/50 rounded-2xl transition-all text-center group"
+                  >
+                    <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-sky-500/20 to-blue-500/20 flex items-center justify-center mb-2 p-2 overflow-hidden">
+                      {ch.logo ? (
+                        <img src={ch.logo} alt={ch.name} className="w-full h-full object-contain"
+                          onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
+                      ) : (
+                        <Globe className="w-6 h-6 text-sky-400" />
+                      )}
+                    </div>
+                    <p className="text-sm font-medium text-white truncate">{ch.name}</p>
+                    <p className="text-xs text-slate-500 mt-1">HLS</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    if (activeTab === 'sport-extra') {
+      const filtered = webtvExtraChannels.filter(ch =>
+        ch.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        ch.categoria.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+      return (
+        <div className="space-y-2">
+          <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+            {filtered.map(ch => (
+              <button key={ch.name} onClick={() => playWebTVChannel(ch)}
+                className="p-4 bg-slate-800/50 hover:bg-slate-800 border border-slate-700 hover:border-amber-500/50 rounded-2xl transition-all text-center group"
+              >
+                <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-500/20 flex items-center justify-center mb-2 p-2 overflow-hidden">
+                  {ch.logo ? (
+                    <img src={ch.logo} alt={ch.name} className="w-full h-full object-contain"
+                      onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
+                  ) : (
+                    <Satellite className="w-6 h-6 text-amber-400" />
+                  )}
+                </div>
+                <p className="text-sm font-medium text-white truncate">{ch.name}</p>
+                <p className="text-xs text-slate-500 mt-1 truncate">{ch.categoria}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
+    if (activeTab === 'damitv') {
+      const filtered = damiChannels.filter(ch =>
+        ch.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        ch.group.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+      const grouped = filtered.reduce((acc, ch) => {
+        if (!acc[ch.group]) acc[ch.group] = []
+        acc[ch.group].push(ch)
+        return acc
+      }, {} as Record<string, DamiTVChannel[]>)
+
+      return (
+        <div className="space-y-6">
+          {Object.entries(grouped).map(([group, channels]) => (
+            <div key={group}>
+              <h3 className="text-lg font-semibold text-white mb-3">{group} ({channels.length})</h3>
+              <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                {channels.map(ch => (
+                  <button key={ch.id} onClick={() => playDamiChannel(ch)}
+                    className="p-4 bg-slate-800/50 hover:bg-slate-800 border border-slate-700 hover:border-rose-500/50 rounded-2xl transition-all text-center group"
+                  >
+                    <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-rose-500/20 to-pink-500/20 flex items-center justify-center mb-2 p-2 overflow-hidden">
+                      <Tv className="w-6 h-6 text-rose-400" />
+                    </div>
+                    <p className="text-sm font-medium text-white truncate">{ch.name}</p>
+                    <p className="text-xs text-slate-500 mt-1">{ch.group}</p>
                   </button>
                 ))}
               </div>

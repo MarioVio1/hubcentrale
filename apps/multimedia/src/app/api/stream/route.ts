@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const PROXY_URL = 'https://hushed-brett-annualetesina-2b360535.koyeb.app';
+const LOCAL_PROXY = '/api/proxy/embed?url=';
 
 interface Stream {
   name: string;
@@ -74,13 +75,18 @@ export async function GET(request: NextRequest) {
 
   const mediaId = parseInt(id);
 
-  // Return instant embed streams - NO WAITING
-  const streams: Stream[] = [
-    getVidSrcStream(type, mediaId, season, episode),
-    getAutoEmbedStream(type, mediaId, season, episode),
-    get2EmbedStream(type, mediaId, season, episode),
-    getEmbedsuStream(type, mediaId, season, episode),
+  // Return embed streams - direct + proxied
+  const embedStreams: Stream[] = [
+    { name: '2Embed', url: get2EmbedStream(type, mediaId, season, episode).url, quality: 'HD', type: 'embed' },
+    { name: '2Embed (Proxy)', url: LOCAL_PROXY + encodeURIComponent(get2EmbedStream(type, mediaId, season, episode).url), quality: 'HD', type: 'embed' },
+    { name: 'VidSrc', url: getVidSrcStream(type, mediaId, season, episode).url, quality: 'HD', type: 'embed' },
+    { name: 'VidSrc (Proxy)', url: LOCAL_PROXY + encodeURIComponent(getVidSrcStream(type, mediaId, season, episode).url), quality: 'HD', type: 'embed' },
+    { name: 'AutoEmbed', url: getAutoEmbedStream(type, mediaId, season, episode).url, quality: 'HD', type: 'embed' },
+    { name: 'AutoEmbed (Proxy)', url: LOCAL_PROXY + encodeURIComponent(getAutoEmbedStream(type, mediaId, season, episode).url), quality: 'HD', type: 'embed' },
+    { name: 'Embedsu', url: getEmbedsuStream(type, mediaId, season, episode).url, quality: 'HD', type: 'embed' },
+    { name: 'Embedsu (Proxy)', url: LOCAL_PROXY + encodeURIComponent(getEmbedsuStream(type, mediaId, season, episode).url), quality: 'HD', type: 'embed' },
   ];
+  const streams: Stream[] = [...embedStreams];
 
   // Try to add HLS streams (quickly, max 2 seconds)
   try {
@@ -89,7 +95,7 @@ export async function GET(request: NextRequest) {
       : `https://vixsrc.to/movie/${mediaId}/`;
 
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 2000);
+    const timeout = setTimeout(() => controller.abort(), 5000);
 
     const response = await fetch(`${PROXY_URL}/extractor/video?url=${encodeURIComponent(vixUrl)}&redirect_stream=false`, {
       headers: { 'User-Agent': USER_AGENT },

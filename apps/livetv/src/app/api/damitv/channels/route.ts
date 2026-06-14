@@ -49,6 +49,5 @@ export async function GET() {
     ...ch,
     embedUrl: `https://dami-tv.pro/embed/channel/?id=${ch.slug}`,
   }));
-
   return NextResponse.json({ success: true, channels, count: channels.length, source: 'DAMI TV' });
 }

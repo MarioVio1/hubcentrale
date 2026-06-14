@@ -10,7 +10,6 @@ import {
   ChevronRight, Link, Plus, Globe, Swords
 } from 'lucide-react';
 
-// M3U Lists from Stremio Italia
 const M3U_LISTS = [
   { id: 'lista', name: 'Lista Principale', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/lista.m3u', icon: '📺' },
   { id: 'static', name: 'Canali Statici', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/static.m3u', icon: '📡' },
@@ -24,51 +23,11 @@ const M3U_LISTS = [
   { id: 'mpd', name: 'MPD', url: 'https://gitea.stremioitalia.dpdns.org/admin/Tv/raw/branch/main/mpd.m3u', icon: '💿' },
 ];
 
-interface TVChannel {
-  id: string;
-  name: string;
-  url: string;
-  logo?: string;
-  group?: string;
-  listId: string;
-  listName: string;
-  sourceType?: 'm3u' | 'damitv';
-  embedUrl?: string;
-}
-
-interface ItalianChannel {
-  id: string;
-  name: string;
-  slug: string;
-  group: string;
-  logo: string;
-  embedUrl: string;
-}
-
-interface SportEvent {
-  id: string;
-  name: string;
-  category: string;
-  league: string;
-  status: string;
-  startsAt: number;
-  endsAt: number;
-  teams: { home: { name: string; badge: string }; away: { name: string; badge: string } };
-  viewers: number;
-  poster: string;
-  iframe: string;
-  embed: string;
-}
-
-interface CustomList {
-  id: string;
-  name: string;
-  url: string;
-}
-
-interface CheRobaPlayerProps {
-  onClose: () => void;
-}
+interface TVChannel { id: string; name: string; url: string; logo?: string; group?: string; listId: string; listName: string; sourceType?: 'm3u' | 'damitv'; embedUrl?: string; }
+interface ItalianChannel { id: string; name: string; slug: string; group: string; logo: string; embedUrl: string; }
+interface SportEvent { id: string; name: string; category: string; league: string; status: string; startsAt: number; endsAt: number; teams: { home: { name: string; badge: string }; away: { name: string; badge: string } }; viewers: number; poster: string; iframe: string; embed: string; }
+interface CustomList { id: string; name: string; url: string; }
+interface CheRobaPlayerProps { onClose: () => void; }
 
 export default function CheRobaPlayer({ onClose }: CheRobaPlayerProps) {
   const [channels, setChannels] = useState<TVChannel[]>([]);
@@ -139,7 +98,7 @@ export default function CheRobaPlayer({ onClose }: CheRobaPlayerProps) {
     for (let i = 0; i < M3U_LISTS.length; i++) {
       const list = M3U_LISTS[i];
       try {
-        const res = await fetch(`/api/m3u?url=${encodeURIComponent(list.url)}`);
+        const res = await fetch(`/api/m3u-fetch?url=${encodeURIComponent(list.url)}`);
         const data = await res.json();
         if (data.channels) {
           const parsedChannels = data.channels.map((ch: any) => ({ ...ch, id: `channel-${globalCounter++}`, listId: list.id, listName: list.name }));
@@ -156,7 +115,7 @@ export default function CheRobaPlayer({ onClose }: CheRobaPlayerProps) {
   const loadSingleList = async (listId: string, listUrl: string, listName: string) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/m3u?url=${encodeURIComponent(listUrl)}`);
+      const res = await fetch(`/api/m3u-fetch?url=${encodeURIComponent(listUrl)}`);
       const data = await res.json();
       if (data.channels) {
         setChannels(data.channels.map((ch: any, index: number) => ({ ...ch, id: `${listId}-${index}`, listId, listName })));
@@ -213,19 +172,8 @@ export default function CheRobaPlayer({ onClose }: CheRobaPlayerProps) {
     setLoading(false);
   };
 
-  const playChannel = (channel: TVChannel) => {
-    setSelectedChannel(channel);
-    setPlayerLoading(true);
-    setPlayerError(null);
-    setSelectedEvent(null);
-  };
-
-  const playEvent = (event: SportEvent) => {
-    setSelectedEvent(event);
-    setPlayerLoading(true);
-    setPlayerError(null);
-    setSelectedChannel(null);
-  };
+  const playChannel = (channel: TVChannel) => { setSelectedChannel(channel); setPlayerLoading(true); setPlayerError(null); setSelectedEvent(null); };
+  const playEvent = (event: SportEvent) => { setSelectedEvent(event); setPlayerLoading(true); setPlayerError(null); setSelectedChannel(null); };
 
   useEffect(() => {
     if (!selectedChannel?.url || selectedChannel.sourceType === 'damitv') return;
@@ -281,16 +229,8 @@ export default function CheRobaPlayer({ onClose }: CheRobaPlayerProps) {
     return () => window.removeEventListener('keydown', handleKey);
   }, [selectedChannel, selectedEvent, onClose]);
 
-  const toggleMute = () => {
-    if (videoRef.current) { videoRef.current.muted = !videoRef.current.muted; setIsMuted(videoRef.current.muted); }
-  };
-
-  const toggleFullscreen = () => {
-    if (videoRef.current) {
-      if (document.fullscreenElement) document.exitFullscreen();
-      else videoRef.current.requestFullscreen();
-    }
-  };
+  const toggleMute = () => { if (videoRef.current) { videoRef.current.muted = !videoRef.current.muted; setIsMuted(videoRef.current.muted); } };
+  const toggleFullscreen = () => { if (videoRef.current) { if (document.fullscreenElement) document.exitFullscreen(); else videoRef.current.requestFullscreen(); } };
 
   const isIframeSource = selectedChannel?.sourceType === 'damitv' || selectedEvent;
   const playerTitle = selectedChannel?.name || selectedEvent?.name || '';

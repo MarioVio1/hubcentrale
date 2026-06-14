@@ -2,6 +2,49 @@ import { NextRequest, NextResponse } from 'next/server';
 import JSZip from 'jszip';
 import { UnifiedMangaService } from '@/lib/unified-manga-service';
 
+const BATCH_SIZE = 5;
+
+function escapeXml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+async function fetchAllImages(
+  pages: { url: string; index: number }[],
+  origin: string,
+): Promise<{ fileName: string; buffer: ArrayBuffer }[]> {
+  const results: ({ fileName: string; buffer: ArrayBuffer } | null)[] = new Array(pages.length).fill(null);
+
+  for (let start = 0; start < pages.length; start += BATCH_SIZE) {
+    const end = Math.min(start + BATCH_SIZE, pages.length);
+    const batch = pages.slice(start, end);
+
+    const batchResults = await Promise.all(
+      batch.map(async (page, idx) => {
+        const proxyUrl = `${origin}/api/image-proxy?url=${encodeURIComponent(page.url)}`;
+        try {
+          const res = await fetch(proxyUrl);
+          if (!res.ok) return null;
+          const buffer = await res.arrayBuffer();
+          return { fileName: `page${start + idx + 1}.jpg`, buffer };
+        } catch {
+          return null;
+        }
+      })
+    );
+
+    for (let i = 0; i < batchResults.length; i++) {
+      results[start + i] = batchResults[i];
+    }
+  }
+
+  return results.filter((r): r is { fileName: string; buffer: ArrayBuffer } => r !== null);
+}
+
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
@@ -16,9 +59,7 @@ export async function GET(request: NextRequest) {
 
     console.log('[EPUB Download] Starting for:', mangaTitle, 'Chapter', chapterNum);
 
-    // Get chapter pages
-    const service = UnifiedMangaService.getInstance();
-    const pages = await service.getChapterPages(chapterUrl, sourceId);
+    const pages = await UnifiedMangaService.getChapterPages(chapterUrl, sourceId);
 
     if (!pages || pages.length === 0) {
       return NextResponse.json({ error: 'No pages found for this chapter' }, { status: 404 });
@@ -26,13 +67,9 @@ export async function GET(request: NextRequest) {
 
     console.log('[EPUB Download] Found', pages.length, 'pages');
 
-    // Create new ZIP archive
     const zip = new JSZip();
-
-    // 1. Add mimetype (must be first and uncompressed)
     zip.file('mimetype', 'application/epub+zip', { compression: 'STORE' });
 
-    // 2. Create META-INF directory and container.xml
     const metaInf = zip.folder('META-INF');
     if (metaInf) {
       metaInf.file('container.xml', `<?xml version="1.0" encoding="UTF-8"?>
@@ -43,57 +80,23 @@ export async function GET(request: NextRequest) {
 </container>`);
     }
 
-    // 3. Create OEBPS directory and files
     const oebps = zip.folder('OEBPS');
     if (!oebps) {
       return NextResponse.json({ error: 'Failed to create OEBPS directory' }, { status: 500 });
     }
 
-    // Create images directory
     const images = oebps.folder('images');
 
-    // Fetch all pages and add to EPUB
-    let totalSize = 0;
-    const imageFiles: string[] = [];
-
-    for (let i = 0; i < pages.length; i++) {
-      const pageUrl = pages[i];
-      console.log(`[EPUB Download] Fetching page ${i + 1}/${pages.length}`);
-
-      try {
-        // Fetch image through proxy
-        const proxyUrl = `${request.nextUrl.origin}/api/image-proxy?url=${encodeURIComponent(pageUrl)}`;
-        const imgResponse = await fetch(proxyUrl);
-
-        if (!imgResponse.ok) {
-          console.error(`[EPUB Download] Failed to fetch page ${i + 1}:`, imgResponse.statusText);
-          continue;
-        }
-
-        const buffer = await imgResponse.arrayBuffer();
-        const fileName = `page${i + 1}.jpg`;
-
-        if (images) {
-          images.file(fileName, buffer);
-        }
-
-        totalSize += buffer.byteLength;
-        imageFiles.push(fileName);
-
-        console.log(`[EPUB Download] Page ${i + 1}: ${buffer.byteLength} bytes`);
-      } catch (error) {
-        console.error(`[EPUB Download] Error processing page ${i + 1}:`, error);
-        continue;
-      }
-    }
+    const imageFiles = await fetchAllImages(pages, request.nextUrl.origin);
 
     if (imageFiles.length === 0) {
       return NextResponse.json({ error: 'Failed to process any images' }, { status: 500 });
     }
 
-    console.log('[EPUB Download] Total size:', totalSize, 'bytes');
+    for (const { fileName, buffer } of imageFiles) {
+      if (images) images.file(fileName, buffer);
+    }
 
-    // 4. Create content.opf (metadata)
     const uniqueId = `manga-${Date.now()}`;
     const contentOpf = `<?xml version="1.0" encoding="UTF-8"?>
 <package xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="uid">
@@ -104,16 +107,15 @@ export async function GET(request: NextRequest) {
   </metadata>
   <manifest>
     <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
-${imageFiles.map((file, idx) => `    <item id="image${idx}" href="images/${file}" media-type="image/jpeg"/>`).join('\n')}
+${imageFiles.map((f, idx) => `    <item id="image${idx}" href="images/${f.fileName}" media-type="image/jpeg"/>`).join('\n')}
   </manifest>
   <spine>
-${imageFiles.map((file, idx) => `    <itemref idref="image${idx}"/>`).join('\n')}
+${imageFiles.map((_, idx) => `    <itemref idref="image${idx}"/>`).join('\n')}
   </spine>
 </package>`;
 
     oebps.file('content.opf', contentOpf);
 
-    // 5. Create toc.ncx (table of contents)
     const tocNcx = `<?xml version="1.0" encoding="UTF-8"?>
 <ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2.0">
   <head>
@@ -123,25 +125,19 @@ ${imageFiles.map((file, idx) => `    <itemref idref="image${idx}"/>`).join('\n')
     <text>${escapeXml(mangaTitle)} - Capitolo ${chapterNum}</text>
   </docTitle>
   <navMap>
-${imageFiles.map((file, idx) => `    <navPoint id="navpoint-${idx}" playOrder="${idx + 1}">
+${imageFiles.map((f, idx) => `    <navPoint id="navpoint-${idx}" playOrder="${idx + 1}">
       <navLabel>
         <text>Pagina ${idx + 1}</text>
       </navLabel>
-      <content src="images/${file}"/>
+      <content src="images/${f.fileName}"/>
     </navPoint>`).join('\n')}
   </navMap>
 </ncx>`;
 
     oebps.file('toc.ncx', tocNcx);
 
-    console.log('[EPUB Download] Generating EPUB file...');
-
-    // Generate EPUB buffer
     const epubBuffer = await zip.generateAsync({ type: 'arraybuffer' });
 
-    console.log('[EPUB Download] EPUB generated successfully');
-
-    // Return EPUB file
     return new NextResponse(Buffer.from(epubBuffer), {
       status: 200,
       headers: {
@@ -157,14 +153,4 @@ ${imageFiles.map((file, idx) => `    <navPoint id="navpoint-${idx}" playOrder="$
       { status: 500 }
     );
   }
-}
-
-// Helper function to escape XML special characters
-function escapeXml(str: string): string {
-  return str
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&apos;');
 }
