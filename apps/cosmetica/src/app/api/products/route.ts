@@ -104,120 +104,57 @@ function formatProduct(p: RawProduct) {
   };
 }
 
+const allProducts: RawProduct[] = staticProducts.map(staticToRaw);
+
 export async function GET(request: NextRequest) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const skinType = searchParams.get("skinType");
-    const productType = searchParams.get("productType");
-    const category = searchParams.get("category");
-    const brand = searchParams.get("brand");
-    const concern = searchParams.get("concern");
-    const isKorean = searchParams.get("isKorean");
-    const search = searchParams.get("search");
-    const productId = searchParams.get("productId");
-    const limit = parseInt(searchParams.get("limit") || "20");
-    const offset = parseInt(searchParams.get("offset") || "0");
+  const { searchParams } = new URL(request.url);
+  const skinType = searchParams.get("skinType");
+  const productType = searchParams.get("productType");
+  const category = searchParams.get("category");
+  const brand = searchParams.get("brand");
+  const concern = searchParams.get("concern");
+  const isKorean = searchParams.get("isKorean");
+  const search = searchParams.get("search");
+  const productId = searchParams.get("productId");
+  const limit = parseInt(searchParams.get("limit") || "20");
+  const offset = parseInt(searchParams.get("offset") || "0");
 
-      // Try Prisma first (will fail without database on Vercel)
-      try {
-        const { db } = await import("@/lib/db");
+  let results = allProducts;
 
-        if (productId) {
-          const product = await db.product.findUnique({ where: { productId } });
-          if (product) {
-            return NextResponse.json({ products: [formatProduct(product)], total: 1 });
-          }
-          return NextResponse.json({ products: [], total: 0 });
-        }
+  if (productId) {
+    results = results.filter(p => p.productId === productId);
+    return NextResponse.json({ products: results.map(formatProduct), total: results.length });
+  }
 
-        const where: Record<string, unknown> = {};
-        if (search) {
-          where.OR = [
-            { name: { contains: search } },
-            { brand: { contains: search } },
-            { productType: { contains: search } },
-          ];
-        }
-        if (productType) where.productType = productType;
-        if (category) where.category = category;
-        if (brand) where.brand = { contains: brand };
-        if (isKorean === "true") where.isKorean = true;
-
-        const prismaProducts = await db.product.findMany({
-          where,
-          take: limit,
-          skip: offset,
-          orderBy: { rating: "desc" },
-        });
-
-        let filtered = prismaProducts;
-        if (skinType) {
-          filtered = filtered.filter(p =>
-            p.skinTypes?.toLowerCase().includes("all") ||
-            p.skinTypes?.toLowerCase().includes(skinType.toLowerCase())
-          );
-        }
-        if (concern) {
-          filtered = filtered.filter(p =>
-            p.skinConcerns?.toLowerCase().includes(concern.toLowerCase())
-          );
-        }
-
-        return NextResponse.json({
-          products: filtered.map(formatProduct),
-          total: filtered.length,
-        });
-      } catch {
-        // No database on Vercel — fall through to static data
-      }
-
-    // Fallback: static data
-    let results: RawProduct[] = staticProducts.map(staticToRaw);
-
-    if (productId) {
-      results = results.filter(p => p.productId === productId);
-      return NextResponse.json({ products: results.map(formatProduct), total: results.length });
-    }
-
-    if (search) {
-      const q = search.toLowerCase();
-      results = results.filter(p =>
-        p.name.toLowerCase().includes(q) ||
-        p.brand.toLowerCase().includes(q) ||
-        p.productType.toLowerCase().includes(q)
-      );
-    }
-    if (productType) results = results.filter(p => p.productType === productType);
-    if (category) results = results.filter(p => p.category === category);
-    if (brand) results = results.filter(p => p.brand.toLowerCase().includes(brand.toLowerCase()));
-    if (isKorean === "true") results = results.filter(p => p.isKorean);
-    if (skinType) {
-      results = results.filter(p =>
-        p.skinTypes?.toLowerCase().includes("all") ||
-        p.skinTypes?.toLowerCase().includes(skinType.toLowerCase())
-      );
-    }
-    if (concern) {
-      results = results.filter(p =>
-        p.skinConcerns?.toLowerCase().includes(concern.toLowerCase())
-      );
-    }
-
-    // Sort by rating desc
-    results.sort((a, b) => b.rating - a.rating);
-
-    // Paginate
-    const paginated = results.slice(offset, offset + limit);
-
-    return NextResponse.json({
-      products: paginated.map(formatProduct),
-      total: results.length,
-    });
-  } catch (error) {
-    console.error("Products API error:", error);
-    return NextResponse.json(
-      { error: "Failed to fetch products" },
-      { status: 500 }
+  if (search) {
+    const q = search.toLowerCase();
+    results = results.filter(p =>
+      p.name.toLowerCase().includes(q) ||
+      p.brand.toLowerCase().includes(q) ||
+      p.productType.toLowerCase().includes(q)
     );
   }
+  if (productType) results = results.filter(p => p.productType === productType);
+  if (category) results = results.filter(p => p.category === category);
+  if (brand) results = results.filter(p => p.brand.toLowerCase().includes(brand.toLowerCase()));
+  if (isKorean === "true") results = results.filter(p => p.isKorean);
+  if (skinType) {
+    results = results.filter(p =>
+      p.skinTypes?.toLowerCase().includes("all") ||
+      p.skinTypes?.toLowerCase().includes(skinType.toLowerCase())
+    );
+  }
+  if (concern) {
+    results = results.filter(p =>
+      p.skinConcerns?.toLowerCase().includes(concern.toLowerCase())
+    );
+  }
+
+  results.sort((a, b) => b.rating - a.rating);
+  const paginated = results.slice(offset, offset + limit);
+
+  return NextResponse.json({
+    products: paginated.map(formatProduct),
+    total: results.length,
+  });
 }
