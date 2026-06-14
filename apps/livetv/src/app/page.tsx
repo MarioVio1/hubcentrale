@@ -1,19 +1,18 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Search, Tv, Grid3X3, List, Play, ExternalLink, Loader2, Zap, Star, Flag, Crown, Radio, MonitorPlay, Film, Sparkles, ChevronDown, X, Menu, Globe, Satellite } from 'lucide-react'
+import { Search, Tv, Grid3X3, List, Play, ExternalLink, Loader2, Zap, Star, Flag, Crown, MonitorPlay, Film, Sparkles, ChevronDown, X, Menu, Globe, Satellite } from 'lucide-react'
 import ShakaPlayer from '@/components/shaka-player'
 import { webtvNationalChannels, webtvExtraChannels, webtvTvvooChannels, type WebTVChannel } from '@/lib/channels-data'
 
 interface Category { id: string; name: string; slug: string; icon: string; color: string; sortOrder: number; isVisible: boolean; _count: { channels: number } }
 interface DBChannel { id: string; title: string; categoryId: string; mpdUrl: string | null; drmType: string | null; drmKeyId: string | null; drmKey: string | null; isLive: boolean; useProxy: boolean; proxyUrl: string | null; category: Category }
 interface M3UChannel { duration: number; logo: string; tvgId: string; name: string; group: string; url: string; source: string }
-interface MatchEvent { id: string; title: string; url: string; image: string; time: string; category: string }
 interface FeedChannel { id: string; name: string; group: string; type: 'iframe' | 'hls' | 'mpd' | 'external'; url?: string }
 interface SportsonlineEvent { time: string; name: string; url: string }
 interface Sportsonline247 { name: string; url: string; group: string }
 
-type TabType = 'db' | 'all' | 'sports' | 'cinema' | 'italian' | 'paytv' | 'franchino' | 'feedtv' | 'nazionali' | 'sport-extra' | 'tvvoo' | 'damitv' | 'live-events' | 'sportsonline-247' | 'dirette'
+type TabType = 'db' | 'all' | 'sports' | 'cinema' | 'italian' | 'paytv' | 'franchino' | 'feedtv' | 'nazionali' | 'sport-extra' | 'tvvoo' | 'damitv' | 'live-events' | 'sportsonline-247'
 
 declare global { interface Window { Hls: any; shaka: any } }
 
@@ -68,9 +67,6 @@ export default function LiveTVPage() {
   interface DamiTVChannel { id: string; name: string; slug: string; group: string; logo: string; embedUrl: string }
   const [damiChannels, setDamiChannels] = useState<DamiTVChannel[]>([])
   const [selectedDamiChannel, setSelectedDamiChannel] = useState<DamiTVChannel | null>(null)
-
-  // DiretteCommunity
-  const [diretteMatches, setDiretteMatches] = useState<MatchEvent[]>([])
 
   // Loading
   const [loading, setLoading] = useState(false)
@@ -291,9 +287,6 @@ export default function LiveTVPage() {
     if (activeTab === 'sportsonline-247') {
       fetch('/api/sportsonline-247').then(r => r.json()).then(d => setSportsonline247(d.channels || [])).catch(console.error)
     }
-    if (activeTab === 'dirette') {
-      fetch('/api/dirette').then(r => r.json()).then(d => setDiretteMatches(d.matches || [])).catch(console.error)
-    }
     if (activeTab === 'damitv') {
       fetch('/api/damitv/channels').then(r => r.json()).then(d => setDamiChannels(d.channels || [])).catch(console.error)
     }
@@ -406,7 +399,6 @@ export default function LiveTVPage() {
     { id: 'tvvoo' as TabType, label: 'Tvvoo', icon: Tv, color: 'from-emerald-500/20 to-emerald-600/20' },
     { id: 'damitv' as TabType, label: 'DAMI TV', icon: Tv, color: 'from-rose-500/20 to-pink-600/20' },
     { id: 'live-events' as TabType, label: 'Eventi Live', icon: Play, color: 'from-emerald-500/20 to-emerald-600/20' },
-    { id: 'dirette' as TabType, label: 'Dirette', icon: Radio, color: 'from-cyan-500/20 to-cyan-600/20' },
     { id: 'db' as TabType, label: 'DB Canali', icon: MonitorPlay, color: 'from-red-500/20 to-red-600/20' },
   ]
 
@@ -550,13 +542,18 @@ export default function LiveTVPage() {
       return (
         <div className="border-b border-border bg-black">
           <div className="p-4">
-            <div className="w-full aspect-video flex flex-col items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900 p-8 text-center">
-              <Play className="w-12 h-12 text-emerald-400 mb-4" />
-              <h2 className="text-xl font-bold text-white mb-2">{selectedSportsonlineEvent.name}</h2>
-              <p className="text-slate-400 mb-2">{selectedSportsonlineEvent.time}</p>
-              <button onClick={() => window.open(selectedSportsonlineEvent.url, '_blank')} className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl font-semibold">
-                <ExternalLink className="w-5 h-5 inline mr-2" />Apri Evento
-              </button>
+            <iframe
+              key={selectedSportsonlineEvent.url}
+              src={selectedSportsonlineEvent.url}
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              className="w-full aspect-video border-0 bg-black"
+              title={selectedSportsonlineEvent.name}
+            />
+            <div className="mt-2 flex items-center gap-2 text-sm">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <span className="font-medium">{selectedSportsonlineEvent.name}</span>
+              <span className="text-xs text-muted-foreground ml-auto">{selectedSportsonlineEvent.time}</span>
             </div>
           </div>
         </div>
@@ -711,6 +708,35 @@ export default function LiveTVPage() {
       )
     }
 
+    if (activeTab === 'tvvoo') {
+      const filtered = webtvTvvooChannels.filter(ch =>
+        ch.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        ch.categoria.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+      return (
+        <div className="space-y-2">
+          <div className="grid gap-3 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+            {filtered.map(ch => (
+              <button key={ch.name} onClick={() => playWebTVChannel(ch)}
+                className="p-4 bg-slate-800/50 hover:bg-slate-800 border border-slate-700 hover:border-emerald-500/50 rounded-2xl transition-all text-center group"
+              >
+                <div className="w-14 h-14 mx-auto rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center mb-2 p-2 overflow-hidden">
+                  {ch.logo ? (
+                    <img src={ch.logo} alt={ch.name} className="w-full h-full object-contain"
+                      onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
+                  ) : (
+                    <Tv className="w-6 h-6 text-emerald-400" />
+                  )}
+                </div>
+                <p className="text-sm font-medium text-white truncate">{ch.name}</p>
+                <p className="text-xs text-slate-500 mt-1 truncate">{ch.categoria}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+      )
+    }
+
     if (activeTab === 'live-events') {
       return (
         <div className="space-y-2">
@@ -746,40 +772,6 @@ export default function LiveTVPage() {
               <span className="text-sm font-medium text-white">{ch.name}</span>
             </button>
           ))}
-        </div>
-      )
-    }
-
-    if (activeTab === 'dirette') {
-      return (
-        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {diretteMatches.map(match => (
-            <div key={match.id} className="bg-slate-800/50 border border-slate-700 rounded-xl overflow-hidden">
-              <div className="aspect-video bg-slate-900 flex items-center justify-center p-4">
-                {match.image ? (
-                  <img src={match.image} alt={match.title} className="max-w-full max-h-full object-contain" onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
-                ) : (<Tv className="w-12 h-12 text-white/20" />)}
-              </div>
-              <div className="p-4">
-                <h3 className="font-bold text-white mb-1 truncate">{match.title}</h3>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs px-2 py-0.5 bg-cyan-500/20 text-cyan-300 rounded-full">{match.time}</span>
-                  <span className="text-xs text-slate-500">{match.category}</span>
-                </div>
-                <button onClick={() => window.open(match.url, '_blank')}
-                  className="w-full py-2 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-lg text-sm font-semibold flex items-center justify-center gap-2"
-                >
-                  <Play className="w-4 h-4" />Guarda
-                </button>
-              </div>
-            </div>
-          ))}
-          {diretteMatches.length === 0 && (
-            <div className="col-span-full text-center py-12 text-muted-foreground">
-              <Radio className="w-16 h-16 mx-auto mb-4 opacity-30" />
-              <p>Nessuna diretta disponibile al momento</p>
-            </div>
-          )}
         </div>
       )
     }
