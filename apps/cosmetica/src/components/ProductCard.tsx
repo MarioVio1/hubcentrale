@@ -97,6 +97,30 @@ export default function ProductCard({ product, isFavorite, onFavoriteToggle }: P
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   const [showLinks, setShowLinks] = useState(false);
+  const [fallbackSrc, setFallbackSrc] = useState<string | null>(null);
+  const [fallbackAttempted, setFallbackAttempted] = useState(false);
+
+  const getImageSrc = () => {
+    if (fallbackSrc) return fallbackSrc;
+    return product.imageUrl;
+  };
+
+  const handleImageError = () => {
+    if (!fallbackAttempted) {
+      setFallbackAttempted(true);
+      if (product.miinUrl) {
+        setFallbackSrc(`/api/resolve-miin-image?url=${encodeURIComponent(product.miinUrl)}`);
+      } else if (product.imageUrl) {
+        setFallbackSrc(`/api/image-proxy?url=${encodeURIComponent(product.imageUrl)}`);
+      } else {
+        setImageError(true);
+        setImageLoading(false);
+      }
+    } else {
+      setImageError(true);
+      setImageLoading(false);
+    }
+  };
 
   // Get available shops
   const getAvailableShops = () => {
@@ -134,7 +158,7 @@ export default function ProductCard({ product, isFavorite, onFavoriteToggle }: P
           className={`relative aspect-square bg-gradient-to-br ${getProductPlaceholder(product.productType, product.brand)} overflow-hidden cursor-pointer`}
           onClick={() => setShowLinks(true)}
         >
-          {product.imageUrl && !imageError ? (
+          {(getImageSrc() && !imageError) ? (
             <>
               {imageLoading && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-pink-50 to-rose-50">
@@ -142,15 +166,12 @@ export default function ProductCard({ product, isFavorite, onFavoriteToggle }: P
                 </div>
               )}
               <img 
-                src={product.imageUrl} 
+                src={getImageSrc()}
                 alt={product.name}
                 className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 ${imageLoading ? 'opacity-0' : 'opacity-100'}`}
                 loading="lazy"
                 onLoad={() => setImageLoading(false)}
-                onError={() => {
-                  setImageError(true);
-                  setImageLoading(false);
-                }}
+                onError={handleImageError}
               />
             </>
           ) : (
@@ -297,12 +318,13 @@ export default function ProductCard({ product, isFavorite, onFavoriteToggle }: P
           
           <div className="space-y-4 pt-4">
             {/* Product Image */}
-            {product.imageUrl && (
+            {getImageSrc() && (
               <div className="aspect-square max-w-[200px] mx-auto rounded-xl overflow-hidden bg-gradient-to-br from-pink-50 to-rose-50">
                 <img 
-                  src={product.imageUrl} 
+                  src={getImageSrc()}
                   alt={product.name}
                   className="w-full h-full object-cover"
+                  onError={(e) => { (e.target as HTMLImageElement).src = "/api/image-proxy?url=" + encodeURIComponent(product.imageUrl || ''); }}
                 />
               </div>
             )}
