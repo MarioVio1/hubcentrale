@@ -45,6 +45,10 @@ export default function LiveTVPage() {
   const hlsRef = useRef<any>(null)
   const [shakaLoaded, setShakaLoaded] = useState(false)
 
+  // TV layout: focused channel index for arrow navigation
+  const [focusedIndex, setFocusedIndex] = useState(-1)
+  const channelListRef = useRef<HTMLDivElement>(null)
+
   // Feed TV (untiled2)
   const [feedChannels, setFeedChannels] = useState<FeedChannel[]>([])
   const [selectedFeedChannel, setSelectedFeedChannel] = useState<FeedChannel | null>(null)
@@ -70,6 +74,68 @@ export default function LiveTVPage() {
 
   // Loading
   const [loading, setLoading] = useState(false)
+
+  // Auto-scroll channel list to focused item
+  useEffect(() => {
+    if (focusedIndex < 0) return
+    const container = channelListRef.current
+    if (!container) return
+    const items = container.querySelectorAll('[data-channel-index]')
+    const el = items[focusedIndex] as HTMLElement
+    if (el) el.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+  }, [focusedIndex])
+
+  // Keyboard navigation (TV remote style)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const hasPlayer = !!(currentM3uChannel || selectedDbChannel || selectedFeedChannel || selectedWebTVChannel || selectedDamiChannel)
+      if (!hasPlayer) return
+
+      let channelList: any[] = []
+      if (activeTab === 'nazionali') {
+        channelList = webtvNationalChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()) || ch.categoria.toLowerCase().includes(searchQuery.toLowerCase()))
+      } else if (activeTab === 'sport-extra') {
+        channelList = webtvExtraChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()) || ch.categoria.toLowerCase().includes(searchQuery.toLowerCase()))
+      } else if (activeTab === 'feedtv') {
+        channelList = feedChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()))
+      } else if (activeTab === 'damitv') {
+        channelList = damiChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()))
+      } else {
+        channelList = m3uChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()))
+      }
+
+      if (channelList.length === 0) return
+
+      if (e.key === 'ArrowDown') {
+        e.preventDefault()
+        setFocusedIndex(prev => {
+          const next = prev + 1 >= channelList.length ? 0 : prev + 1
+          return next
+        })
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault()
+        setFocusedIndex(prev => {
+          const next = prev - 1 < 0 ? channelList.length - 1 : prev - 1
+          return next
+        })
+      } else if (e.key === 'Enter' && focusedIndex >= 0 && focusedIndex < channelList.length) {
+        e.preventDefault()
+        const ch = channelList[focusedIndex]
+        if (activeTab === 'nazionali' || activeTab === 'sport-extra') {
+          playWebTVChannel(ch)
+        } else if (activeTab === 'feedtv') {
+          playFeedChannel(ch)
+        } else if (activeTab === 'damitv') {
+          playDamiChannel(ch)
+        } else {
+          playM3UChannel(ch)
+        }
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [currentM3uChannel, selectedDbChannel, selectedFeedChannel, selectedWebTVChannel, selectedDamiChannel, activeTab, focusedIndex, searchQuery, m3uChannels, feedChannels, damiChannels])
 
   useEffect(() => {
     document.documentElement.classList.add('dark')
@@ -845,6 +911,60 @@ export default function LiveTVPage() {
     )
   }
 
+  const getFilteredChannels = () => {
+    if (activeTab === 'nazionali') return webtvNationalChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()) || ch.categoria.toLowerCase().includes(searchQuery.toLowerCase()))
+    if (activeTab === 'sport-extra') return webtvExtraChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()) || ch.categoria.toLowerCase().includes(searchQuery.toLowerCase()))
+    if (activeTab === 'feedtv') return feedChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    if (activeTab === 'damitv') return damiChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    const filtered = m3uChannels.filter(ch => ch.name.toLowerCase().includes(searchQuery.toLowerCase()))
+    if (selectedM3uCategory) return filtered.filter(ch => ch.group === selectedM3uCategory)
+    return filtered
+  }
+
+  const handleChannelSelect = (ch: any) => {
+    if (activeTab === 'nazionali' || activeTab === 'sport-extra') playWebTVChannel(ch)
+    else if (activeTab === 'feedtv') playFeedChannel(ch)
+    else if (activeTab === 'damitv') playDamiChannel(ch)
+    else playM3UChannel(ch)
+  }
+
+  const renderChannelSidebarList = () => {
+    const channelList = getFilteredChannels()
+    if (channelList.length === 0) {
+      return <div className="text-center py-8 text-sm text-white/30">Nessun canale trovato</div>
+    }
+    return (
+      <div className="space-y-0.5">
+        {channelList.map((ch: any, i: number) => (
+          <div key={ch.url || ch.id || i}
+            data-channel-index={i}
+            onClick={() => handleChannelSelect(ch)}
+            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-all ${
+              focusedIndex === i
+                ? 'bg-purple-500/20 border border-purple-500/40 shadow-lg shadow-purple-500/10'
+                : 'hover:bg-white/5 border border-transparent'
+            }`}
+          >
+            <div className="w-8 h-8 rounded-lg bg-slate-800 border border-white/10 flex items-center justify-center flex-shrink-0 overflow-hidden">
+              {ch.logo ? (
+                <img src={ch.logo} alt="" className="w-6 h-6 object-contain" onError={e => { (e.target as HTMLImageElement).style.display = 'none' }} />
+              ) : (
+                <Tv className="w-4 h-4 text-white/30" />
+              )}
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className={`text-sm truncate ${focusedIndex === i ? 'text-white font-medium' : 'text-white/70'}`}>{ch.name || ch.title}</p>
+              <p className="text-[10px] text-white/30 truncate">{ch.group || ch.categoria || ch.source || ''}</p>
+            </div>
+            {focusedIndex === i && <Play className="w-3.5 h-3.5 text-purple-400 flex-shrink-0" />}
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  const hasActivePlayer = !!(currentM3uChannel || selectedDbChannel || selectedFeedChannel || selectedDamiChannel || selectedWebTVChannel || selectedSportsonlineEvent)
+
   return (
     <div className="min-h-screen bg-[#0f172a] text-white flex flex-col">
       <header className="border-b border-white/10 bg-[#0f172a]/80 backdrop-blur-xl sticky top-0 z-50">
@@ -892,14 +1012,34 @@ export default function LiveTVPage() {
 
         {sidebarOpen && <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 lg:hidden" onClick={() => setSidebarOpen(false)} />}
 
-        <main className="flex-1 min-w-0">
-          {renderPlayer()}
-          <div className="p-4 lg:p-6">
-            <h2 className="text-2xl font-bold text-white mb-4">
-              {tabs.find(t => t.id === activeTab)?.label || 'Canali'}
-            </h2>
-            {renderChannelGrid()}
+        <main className="flex-1 min-w-0 flex">
+          <div className="flex-1 flex flex-col min-w-0">
+            {hasActivePlayer && (
+              <div className="bg-black flex-shrink-0">
+                {renderPlayer()}
+              </div>
+            )}
+            <div className="p-4 lg:p-6">
+              {!hasActivePlayer && (
+                <h2 className="text-2xl font-bold text-white mb-4">
+                  {tabs.find(t => t.id === activeTab)?.label || 'Canali'}
+                </h2>
+              )}
+              {renderChannelGrid()}
+            </div>
           </div>
+          {hasActivePlayer && (
+            <aside className="w-80 border-l border-white/10 bg-[#0a0f1c] flex flex-col h-[calc(100vh-57px)] sticky top-[57px] flex-shrink-0">
+              <div className="p-3 border-b border-white/10">
+                <h3 className="text-sm font-semibold text-white/80 uppercase tracking-wider">
+                  {tabs.find(t => t.id === activeTab)?.label || 'Canali'}
+                </h3>
+              </div>
+              <div ref={channelListRef} className="flex-1 overflow-y-auto p-2 space-y-1">
+                {renderChannelSidebarList()}
+              </div>
+            </aside>
+          )}
         </main>
       </div>
     </div>
