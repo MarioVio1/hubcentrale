@@ -247,22 +247,31 @@ export default function MangaFlow() {
     }
   };
 
-  // Load library (API + localStorage fallback)
+  // Load library (localStorage first, then try API merge)
   const loadLibrary = async () => {
+    // Always restore from localStorage first
+    const saved = localStorage.getItem('manga_library');
+    let localLib: Manga[] = [];
+    if (saved) {
+      try { localLib = JSON.parse(saved); setLibrary(localLib); } catch { /* ignore */ }
+    }
+
+    // Try API to sync (if it returns real data, merge; otherwise keep local)
     try {
       const response = await fetch('/api/library');
       const data = await response.json();
-      if (data && Array.isArray(data)) {
-        setLibrary(data.map((entry: any) => entry.manga));
-        localStorage.setItem('manga_library', JSON.stringify(data.map((entry: any) => entry.manga)));
-        return;
+      if (data && Array.isArray(data) && data.length > 0) {
+        const apiLib = data.map((entry: any) => entry.manga);
+        // Merge: prefer API data, but keep any local-only entries
+        const merged = [...apiLib];
+        for (const m of localLib) {
+          if (!merged.find((x: Manga) => x.id === m.id)) merged.push(m);
+        }
+        setLibrary(merged);
+        localStorage.setItem('manga_library', JSON.stringify(merged));
       }
     } catch {
-      // Fall through to localStorage
-    }
-    const saved = localStorage.getItem('manga_library');
-    if (saved) {
-      try { setLibrary(JSON.parse(saved)); } catch { /* ignore */ }
+      // Keep localStorage data
     }
   };
 

@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-10 bg-[#141414] text-white">
       <h1 className="text-4xl md:text-5xl font-light mb-10 tracking-wide text-center">
-        Chi vuole entrare?
+        Dove vuoi entrare?
       </h1>
 
       <div className="flex flex-wrap justify-center gap-8 max-w-[900px]">

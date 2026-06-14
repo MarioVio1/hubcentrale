@@ -1,16 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { products as staticProducts } from "@/lib/products-static";
 
-const isClientError = (err: unknown) =>
-  err instanceof Error && (
-    err.message.includes("Can't reach database") ||
-    err.message.includes("does not exist") ||
-    err.message.includes("getaddrinfo") ||
-    err.message.includes("connect ECONNREFUSED") ||
-    err.message.includes("Environment variable") ||
-    err.message.includes("DATABASE_URL")
-  );
-
 interface RawProduct {
   id: string;
   productId: string;
@@ -128,59 +118,58 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(searchParams.get("limit") || "20");
     const offset = parseInt(searchParams.get("offset") || "0");
 
-    // Try Prisma first
-    try {
-      const { db } = await import("@/lib/db");
+      // Try Prisma first (will fail without database on Vercel)
+      try {
+        const { db } = await import("@/lib/db");
 
-      if (productId) {
-        const product = await db.product.findUnique({ where: { productId } });
-        if (product) {
-          return NextResponse.json({ products: [formatProduct(product)], total: 1 });
+        if (productId) {
+          const product = await db.product.findUnique({ where: { productId } });
+          if (product) {
+            return NextResponse.json({ products: [formatProduct(product)], total: 1 });
+          }
+          return NextResponse.json({ products: [], total: 0 });
         }
-        return NextResponse.json({ products: [], total: 0 });
-      }
 
-      const where: Record<string, unknown> = {};
-      if (search) {
-        where.OR = [
-          { name: { contains: search } },
-          { brand: { contains: search } },
-          { productType: { contains: search } },
-        ];
-      }
-      if (productType) where.productType = productType;
-      if (category) where.category = category;
-      if (brand) where.brand = { contains: brand };
-      if (isKorean === "true") where.isKorean = true;
+        const where: Record<string, unknown> = {};
+        if (search) {
+          where.OR = [
+            { name: { contains: search } },
+            { brand: { contains: search } },
+            { productType: { contains: search } },
+          ];
+        }
+        if (productType) where.productType = productType;
+        if (category) where.category = category;
+        if (brand) where.brand = { contains: brand };
+        if (isKorean === "true") where.isKorean = true;
 
-      const prismaProducts = await db.product.findMany({
-        where,
-        take: limit,
-        skip: offset,
-        orderBy: { rating: "desc" },
-      });
+        const prismaProducts = await db.product.findMany({
+          where,
+          take: limit,
+          skip: offset,
+          orderBy: { rating: "desc" },
+        });
 
-      let filtered = prismaProducts;
-      if (skinType) {
-        filtered = filtered.filter(p =>
-          p.skinTypes?.toLowerCase().includes("all") ||
-          p.skinTypes?.toLowerCase().includes(skinType.toLowerCase())
-        );
-      }
-      if (concern) {
-        filtered = filtered.filter(p =>
-          p.skinConcerns?.toLowerCase().includes(concern.toLowerCase())
-        );
-      }
+        let filtered = prismaProducts;
+        if (skinType) {
+          filtered = filtered.filter(p =>
+            p.skinTypes?.toLowerCase().includes("all") ||
+            p.skinTypes?.toLowerCase().includes(skinType.toLowerCase())
+          );
+        }
+        if (concern) {
+          filtered = filtered.filter(p =>
+            p.skinConcerns?.toLowerCase().includes(concern.toLowerCase())
+          );
+        }
 
-      return NextResponse.json({
-        products: filtered.map(formatProduct),
-        total: filtered.length,
-      });
-    } catch (dbErr) {
-      if (!isClientError(dbErr)) throw dbErr;
-      // Fall through to static data
-    }
+        return NextResponse.json({
+          products: filtered.map(formatProduct),
+          total: filtered.length,
+        });
+      } catch {
+        // No database on Vercel — fall through to static data
+      }
 
     // Fallback: static data
     let results: RawProduct[] = staticProducts.map(staticToRaw);
